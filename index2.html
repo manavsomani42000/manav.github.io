@@ -92,14 +92,25 @@
         }
 
         /* Animation Classes */
-        .reveal {
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .reveal-up {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-        .reveal.active {
+        
+        .reveal-left.active, .reveal-right.active, .reveal-up.active {
             opacity: 1;
-            transform: translateY(0);
+            transform: translate(0, 0);
         }
     </style>
 </head>
@@ -151,22 +162,22 @@
             <div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#E20074]/15 rounded-full filter blur-[120px] opacity-40 animate-pulse"></div>
 
             <div class="z-10 flex flex-col items-center">
-                <h1 class="reveal text-6xl sm:text-8xl lg:text-9xl font-black mb-4 tracking-tighter italic uppercase text-white">
+                <h1 class="reveal-up text-6xl sm:text-8xl lg:text-9xl font-black mb-4 tracking-tighter italic uppercase text-white">
                     MANAV <span class="text-[#E20074]">SOMANI</span>
                 </h1>
-                <p class="reveal text-xl sm:text-2xl lg:text-3xl text-white font-light mb-8 uppercase tracking-[0.3em]">
+                <p class="reveal-up text-xl sm:text-2xl lg:text-3xl text-white font-light mb-8 uppercase tracking-[0.3em]">
                     Product <span class="text-[#E20074] font-black">&</span> Analytics
                 </p>
-                <p class="reveal max-w-3xl mx-auto text-lg md:text-xl text-slate-400 mb-12 font-medium leading-relaxed italic">
+                <p class="reveal-up max-w-3xl mx-auto text-lg md:text-xl text-slate-400 mb-12 font-medium leading-relaxed italic">
                     Skilled in developing and executing strategies by creating and leveraging <span class="text-white">data-driven insights</span> to optimize business and drive <span class="text-[#E20074] font-bold">measurable impact</span>.
                 </p>
-                <div class="reveal flex flex-col sm:flex-row justify-center gap-6 mb-12">
+                <div class="reveal-up flex flex-col sm:flex-row justify-center gap-6 mb-12">
                     <a href="#contact" class="btn btn-primary">Connect</a>
                     <a href="#projects" class="btn btn-secondary">View Work</a>
                 </div>
 
                 <!-- Profile Photo -->
-                <div class="reveal relative w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border-4 border-[#E20074] shadow-[0_0_40px_rgba(226,0,116,0.3)] hover:scale-105 transition-transform duration-300">
+                <div class="reveal-up relative w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border-4 border-[#E20074] shadow-[0_0_40px_rgba(226,0,116,0.3)] hover:scale-105 transition-transform duration-300">
                     <img src="Manav_Somani_Linkedin_Photo_2025_-_Cropped.jpeg" alt="Manav Somani" class="w-full h-full object-cover">
                 </div>
             </div>
@@ -178,7 +189,7 @@
                 <!-- Stacked vertically for alignment consistency -->
                 <div class="flex flex-col gap-12 items-start text-left">
                     <!-- Text Block -->
-                    <div class="reveal w-full max-w-4xl space-y-8">
+                    <div class="reveal-left w-full max-w-4xl space-y-8">
                         <p class="text-xl text-slate-300 leading-relaxed font-light">
                             I am a <span class="text-white font-bold">Product and Analytics professional</span> with 3 years of experience in e-commerce and fintech. From pioneering automated data platforms at Flipkart to scaling fintech portfolios at Axio, my focus is always on <span class="text-[#E20074] font-bold">measurable impact</span>.
                         </p>
@@ -189,10 +200,10 @@
                     
                     <!-- Education Block -->
                     <div class="w-full max-w-4xl space-y-8">
-                        <h3 class="text-2xl font-black uppercase tracking-tighter text-[#E20074] italic mb-8">EDUCATION</h3>
+                        <h3 class="reveal-left text-2xl font-black uppercase tracking-tighter text-[#E20074] italic mb-8">EDUCATION</h3>
                         
                         <!-- CMU Expanded Card -->
-                        <div class="reveal card bg-[#2d2d2d] border-l-4 border-[#E20074]">
+                        <div class="reveal-right card bg-[#2d2d2d] border-l-4 border-[#E20074]">
                             <h4 class="text-2xl font-black text-white italic uppercase tracking-tighter pl-2">Carnegie Mellon University</h4>
                             <p class="text-sm font-bold text-[#E20074] tracking-widest uppercase pl-2 mb-1">Master of Information Systems Management - Business Intelligence & Data Analytics</p>
                             <p class="text-xs text-slate-400 uppercase italic pl-2 mb-4">GPA 4.0/4.0</p>
@@ -236,7 +247,7 @@
                             </div>
                         </div>
                         
-                        <div class="reveal card bg-[#2d2d2d] border-l-4 border-transparent">
+                        <div class="reveal-left card bg-[#2d2d2d] border-l-4 border-transparent">
                             <h4 class="text-2xl font-black text-white italic uppercase tracking-tighter pl-2">PES University</h4>
                             <p class="text-sm font-bold text-[#E20074] mb-1 tracking-widest uppercase pl-2">B.Tech Mechanical</p>
                             <p class="text-xs text-slate-400 uppercase italic pl-2 mb-4">Distinction Graduate • GPA 3.8/4.0</p>
@@ -254,11 +265,11 @@
         <!-- Professional Journey -->
         <section id="experience" class="py-32 px-4 bg-[#121212]">
             <div class="container mx-auto max-w-6xl">
-                <h2 class="reveal text-2xl font-black mb-16 text-white uppercase tracking-tighter italic text-left">PROFESSIONAL <span class="text-[#E20074]">JOURNEY</span></h2>
+                <h2 class="reveal-up text-2xl font-black mb-16 text-white uppercase tracking-tighter italic text-left">PROFESSIONAL <span class="text-[#E20074]">JOURNEY</span></h2>
                 
                 <div class="space-y-16">
                     <!-- Flipkart AM -->
-                    <div class="reveal flex flex-col md:flex-row gap-6 items-start group">
+                    <div class="reveal-left flex flex-col md:flex-row gap-6 items-start group">
                         <!-- Left Column: Metadata -->
                         <div class="md:w-32 shrink-0 pt-2 text-left">
                             <p class="text-slate-500 font-bold text-xs uppercase tracking-widest mb-2">2024 — 2025</p>
@@ -280,7 +291,7 @@
                     </div>
 
                     <!-- Axio -->
-                    <div class="reveal flex flex-col md:flex-row gap-6 items-start group">
+                    <div class="reveal-right flex flex-col md:flex-row gap-6 items-start group">
                         <!-- Left Column: Metadata -->
                         <div class="md:w-32 shrink-0 pt-2 text-left">
                             <p class="text-slate-500 font-bold text-xs uppercase tracking-widest mb-2">2023 — 2024</p>
@@ -303,7 +314,7 @@
                     </div>
 
                     <!-- Flipkart Intern -->
-                    <div class="reveal flex flex-col md:flex-row gap-6 items-start group">
+                    <div class="reveal-left flex flex-col md:flex-row gap-6 items-start group">
                         <!-- Left Column: Metadata -->
                         <div class="md:w-32 shrink-0 pt-2 text-left">
                             <p class="text-slate-500 font-bold text-xs uppercase tracking-widest mb-2">2022</p>
@@ -329,10 +340,10 @@
         <!-- Arsenal -->
         <section id="skills" class="py-32 px-4 border-y border-white/5 bg-[#1f1f1f]">
             <div class="container mx-auto max-w-6xl">
-                <h2 class="reveal text-2xl font-black mb-16 text-white uppercase tracking-tighter italic text-left">TECHNICAL <span class="text-[#E20074]">ARSENAL</span></h2>
+                <h2 class="reveal-up text-2xl font-black mb-16 text-white uppercase tracking-tighter italic text-left">TECHNICAL <span class="text-[#E20074]">ARSENAL</span></h2>
                 
                 <div class="grid md:grid-cols-3 gap-12">
-                    <div class="reveal space-y-6">
+                    <div class="reveal-left space-y-6">
                         <h3 class="text-xs font-black uppercase tracking-[0.4em] text-white text-left border-b border-[#E20074] pb-4">Product & PM</h3>
                         <ul class="list-disc ml-5 space-y-2 text-slate-400 font-medium text-sm leading-relaxed marker:text-[#E20074]">
                             <li>Product Strategy</li>
@@ -346,7 +357,7 @@
                         </ul>
                     </div>
                     
-                    <div class="reveal space-y-6">
+                    <div class="reveal-up space-y-6">
                         <h3 class="text-xs font-black uppercase tracking-[0.4em] text-white text-left border-b border-[#E20074] pb-4">Data Stack</h3>
                         <ul class="list-disc ml-5 space-y-2 text-slate-400 font-medium text-sm leading-relaxed marker:text-[#E20074]">
                             <li>SQL</li>
@@ -360,7 +371,7 @@
                         </ul>
                     </div>
                     
-                    <div class="reveal space-y-6">
+                    <div class="reveal-right space-y-6">
                         <h3 class="text-xs font-black uppercase tracking-[0.4em] text-white text-left border-b border-[#E20074] pb-4">Engineering</h3>
                         <ul class="list-disc ml-5 space-y-2 text-slate-400 font-medium text-sm leading-relaxed marker:text-[#E20074]">
                             <li>Java</li>
@@ -377,10 +388,10 @@
         <!-- Projects -->
         <section id="projects" class="py-32 px-4 bg-[#1f1f1f]">
             <div class="container mx-auto max-w-6xl">
-                <h2 class="section-header">The <span class="text-[#E20074]">Lab</span></h2>
+                <h2 class="reveal-up section-header">The <span class="text-[#E20074]">Lab</span></h2>
                 
                 <div class="grid md:grid-cols-2 gap-10">
-                    <div class="reveal card card-hover group border-l-4 border-[#E20074] pl-2">
+                    <div class="reveal-left card card-hover group border-l-4 border-[#E20074] pl-2">
                         <div class="flex justify-between items-start mb-6">
                             <h3 class="text-3xl font-black text-white italic tracking-tighter uppercase leading-none">Housing Aggregator</h3>
                             <div class="bg-[#E20074] p-3 text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg></div>
@@ -392,7 +403,7 @@
                         </div>
                     </div>
 
-                    <div class="reveal card card-hover group pl-2">
+                    <div class="reveal-right card card-hover group pl-2">
                         <div class="flex justify-between items-start mb-6">
                             <h3 class="text-3xl font-black text-white italic tracking-tighter uppercase leading-none">TEDx Leadership</h3>
                             <div class="bg-white/10 p-3 text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></div>
@@ -406,7 +417,7 @@
                 </div>
 
                 <!-- Certifications Strip -->
-                <div class="reveal mt-20">
+                <div class="reveal-up mt-20">
                     <h3 class="text-xs font-black uppercase tracking-[0.5em] text-slate-500 mb-8 italic">Verified Expertise</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         <div class="bg-[#2d2d2d] p-4 flex items-center gap-4">
@@ -437,10 +448,10 @@
         <!-- Contact Section -->
         <section id="contact" class="py-32 px-4 bg-[#E20074] text-black">
             <div class="container mx-auto max-w-4xl text-center">
-                <h2 class="reveal text-6xl md:text-8xl font-black uppercase italic tracking-tighter mb-8 leading-none">Ready to <br>Scale?</h2>
-                <p class="reveal text-xl font-bold uppercase tracking-[0.2em] mb-12 opacity-80">Currently in Pittsburgh, PA — Available for Global Opportunities</p>
+                <h2 class="reveal-up text-6xl md:text-8xl font-black uppercase italic tracking-tighter mb-8 leading-none">Ready to <br>Scale?</h2>
+                <p class="reveal-up text-xl font-bold uppercase tracking-[0.2em] mb-12 opacity-80">Currently in Pittsburgh, PA — Available for Global Opportunities</p>
                 
-                <div class="reveal flex flex-col items-center gap-6">
+                <div class="reveal-up flex flex-col items-center gap-6">
                     <a href="mailto:msomani@andrew.cmu.edu" class="text-2xl md:text-4xl font-black hover:opacity-70 transition-opacity tracking-tighter uppercase italic underline">
                         MSOMANI@ANDREW.CMU.EDU
                     </a>
@@ -490,13 +501,14 @@
 
             const revealObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
+                    // entry.isIntersecting is true when the element enters the viewport
+                    // We toggle the 'active' class based on whether it is intersecting
+                    // This ensures it fades out when scrolling away
+                    entry.target.classList.toggle('active', entry.isIntersecting);
                 });
             }, observerOptions);
 
-            const revealElements = document.querySelectorAll('.reveal');
+            const revealElements = document.querySelectorAll('.reveal-left, .reveal-right, .reveal-up');
             revealElements.forEach(el => revealObserver.observe(el));
         });
     </script>
