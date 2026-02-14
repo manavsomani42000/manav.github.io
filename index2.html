@@ -23,7 +23,7 @@
                     },
                     colors: {
                         't-magenta': '#E20074', // Official T-Mobile Magenta
-                        't-grey-dark': '#121212',
+                        't-grey-dark': '#1f1f1f', // Changed from #121212 to #1f1f1f
                         't-grey-mid': '#1f1f1f',
                         't-grey-light': '#2d2d2d',
                     }
@@ -42,7 +42,7 @@
         /* Setting base font and colors */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #1f1f1f; /* Primary Grey Background */
+            background-color: #1f1f1f; /* Uniform Dark Grey Background */
             color: #f1f1f1;
         }
         
@@ -56,7 +56,7 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #121212;
+            background: #1f1f1f; /* Changed from #121212 */
         }
         ::-webkit-scrollbar-thumb {
             background: #E20074;
@@ -117,7 +117,7 @@
 <body class="antialiased">
 
     <!-- Header & Navigation -->
-    <header class="sticky top-0 z-50 w-full bg-[#121212]/95 backdrop-blur-md border-b border-white/5">
+    <header class="sticky top-0 z-50 w-full bg-[#1f1f1f]/95 backdrop-blur-md border-b border-white/5">
         <nav class="container mx-auto max-w-6xl px-4 py-5 flex justify-between items-center">
             <!-- Logo / Name -->
             <a href="#home" class="text-2xl font-black text-white tracking-tighter italic uppercase">
@@ -141,7 +141,7 @@
     </header>
 
     <!-- Mobile Nav Menu -->
-    <div id="mobile-menu" class="fixed inset-0 bg-[#121212] z-[100] hidden flex-col items-center justify-center space-y-10">
+    <div id="mobile-menu" class="fixed inset-0 bg-[#1f1f1f] z-[100] hidden flex-col items-center justify-center space-y-10">
         <button id="nav-close" class="absolute top-8 right-8 text-white">
             <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
@@ -263,7 +263,7 @@
         </section>
 
         <!-- Professional Journey -->
-        <section id="experience" class="py-32 px-4 bg-[#121212]">
+        <section id="experience" class="py-32 px-4 bg-[#1f1f1f]">
             <div class="container mx-auto max-w-6xl">
                 <h2 class="reveal-up text-2xl font-black mb-16 text-white uppercase tracking-tighter italic text-left">PROFESSIONAL <span class="text-[#E20074]">JOURNEY</span></h2>
                 
@@ -388,7 +388,7 @@
         <!-- Projects -->
         <section id="projects" class="py-32 px-4 bg-[#1f1f1f]">
             <div class="container mx-auto max-w-6xl">
-                <h2 class="reveal-up section-header">The <span class="text-[#E20074]">Lab</span></h2>
+                <h2 class="section-header">The <span class="text-[#E20074]">Lab</span></h2>
                 
                 <div class="grid md:grid-cols-2 gap-10">
                     <div class="reveal-left card card-hover group border-l-4 border-[#E20074] pl-2">
@@ -446,18 +446,18 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-32 px-4 bg-[#E20074] text-black">
+        <section id="contact" class="reveal-up py-32 px-4 bg-[#E20074] text-black">
             <div class="container mx-auto max-w-4xl text-center">
-                <h2 class="reveal-up text-6xl md:text-8xl font-black uppercase italic tracking-tighter mb-8 leading-none">Ready to <br>Scale?</h2>
-                <p class="reveal-up text-xl font-bold uppercase tracking-[0.2em] mb-12 opacity-80">Currently in Pittsburgh, PA — Available for Global Opportunities</p>
+                <h2 class="text-6xl md:text-8xl font-black uppercase italic tracking-tighter mb-8 leading-none text-[#1f1f1f]">Ready to <br>Scale?</h2>
+                <p class="text-xl font-bold uppercase tracking-[0.2em] mb-12 opacity-80 text-[#1f1f1f]">Currently in Pittsburgh, PA — Available for Global Opportunities</p>
                 
-                <div class="reveal-up flex flex-col items-center gap-6">
-                    <a href="mailto:msomani@andrew.cmu.edu" class="text-2xl md:text-4xl font-black hover:opacity-70 transition-opacity tracking-tighter uppercase italic underline">
+                <div class="flex flex-col items-center gap-6">
+                    <a href="mailto:msomani@andrew.cmu.edu" class="text-2xl md:text-4xl font-black hover:opacity-70 transition-opacity tracking-tighter uppercase italic underline text-[#1f1f1f]">
                         MSOMANI@ANDREW.CMU.EDU
                     </a>
                     <div class="flex gap-10 mt-6">
-                        <a href="https://www.linkedin.com/in/manavsomani/" target="_blank" class="text-sm font-black uppercase border-b-4 border-black pb-1 hover:translate-y-1 transition-transform">LinkedIn</a>
-                        <span class="text-sm font-black uppercase border-b-4 border-black pb-1">+1 412-689-7119</span>
+                        <a href="https://www.linkedin.com/in/manavsomani/" target="_blank" class="text-sm font-black uppercase border-b-4 border-[#1f1f1f] pb-1 hover:translate-y-1 transition-transform text-[#1f1f1f]">LinkedIn</a>
+                        <span class="text-sm font-black uppercase border-b-4 border-[#1f1f1f] pb-1 text-[#1f1f1f]">+1 412-689-7119</span>
                     </div>
                 </div>
             </div>
