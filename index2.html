@@ -3,214 +3,420 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manav Somani | Analytics & Project Management</title>
-    <meta name="description" content="Manav Somani - CMU MISM-BIDA Graduate Student. Analytics and Project Management professional with experience at Flipkart and Axio.">
+    <title>Manav Somani | Product & Analytics</title>
     
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- Google Fonts (Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
+    <!-- Custom Tailwind Configuration -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
                     colors: {
-                        'brand-primary': '#10b981', // emerald-500
-                        'brand-dark': '#0f172a',
+                        't-magenta': '#E20074', // Official T-Mobile Magenta
+                        't-grey-dark': '#121212',
+                        't-grey-mid': '#1f1f1f',
+                        't-grey-light': '#2d2d2d',
                     }
                 },
             },
         }
     </script>
     
+    <!-- Internal Styles -->
     <style>
-        html { scroll-behavior: smooth; }
-        body { background-color: #0f172a; color: #e2e8f0; font-family: 'Inter', sans-serif; }
-        .section-header { @apply text-4xl font-extrabold text-center mb-16 text-white tracking-tight; }
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
         
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #1e293b; }
-        ::-webkit-scrollbar-thumb { background: #10b981; border-radius: 4px; }
+        /* Setting base font and colors */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1f1f1f; /* Primary Grey Background */
+            color: #f1f1f1;
+        }
+        
+        /* Section header styling */
+        .section-header {
+            @apply text-3xl md:text-5xl font-black text-center mb-16 text-white uppercase tracking-tighter italic;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #121212;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #E20074;
+            border-radius: 0px;
+        }
 
-        /* Animation Classes */
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        /* Nav link active state */
+        .nav-link {
+            @apply text-slate-300 hover:text-white font-medium transition-colors duration-200 relative after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-[3px] after:w-0 after:bg-[#E20074] after:transition-all after:duration-300 hover:after:w-full;
+        }
 
-        .hero-name { @apply bg-clip-text text-transparent bg-gradient-to-r from-white via-emerald-100 to-emerald-500; }
-        .card { @apply bg-slate-800/50 backdrop-blur-sm p-6 rounded-2xl border border-slate-700/50 transition-all duration-300 hover:border-emerald-500/50 hover:shadow-2xl hover:shadow-emerald-900/20; }
-        .skill-badge { @apply bg-emerald-900/30 text-emerald-400 text-xs font-bold px-3 py-1.5 rounded-full border border-emerald-500/20 uppercase tracking-wider; }
-        .impact-tag { @apply bg-emerald-500/10 text-emerald-400 text-[10px] font-bold px-2 py-0.5 rounded border border-emerald-500/30; }
+        /* Button styles */
+        .btn {
+            @apply px-8 py-3 rounded-none font-black uppercase tracking-wider text-white transition-all duration-300;
+        }
+        .btn-primary {
+            @apply bg-[#E20074] hover:bg-[#b3005c] shadow-lg hover:shadow-[#E20074]/30 transform hover:-translate-y-1;
+        }
+        .btn-secondary {
+            @apply border-2 border-white hover:bg-white hover:text-black transform hover:-translate-y-1;
+        }
+
+        /* Card styles */
+        .card {
+            @apply bg-[#2d2d2d] p-6 rounded-none shadow-xl border-l-4 border-transparent transition-all duration-300;
+        }
+        .card-hover {
+            @apply hover:border-[#E20074] hover:bg-[#363636] hover:scale-[1.01];
+        }
+
+        .skill-badge {
+            @apply bg-[#E20074]/10 text-[#E20074] border border-[#E20074]/30 text-xs font-black uppercase tracking-widest px-4 py-2 rounded-none transition-all hover:bg-[#E20074] hover:text-white;
+        }
     </style>
 </head>
 <body class="antialiased">
 
-    <header class="fixed top-0 z-50 w-full bg-slate-900/60 backdrop-blur-xl border-b border-slate-700/50">
-        <nav class="container mx-auto max-w-6xl px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="text-xl font-black text-white tracking-tighter hover:text-emerald-400 transition-colors">
-                MANAV <span class="text-emerald-500">SOMANI</span>
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 w-full bg-[#121212]/95 backdrop-blur-md border-b border-white/5">
+        <nav class="container mx-auto max-w-6xl px-4 py-5 flex justify-between items-center">
+            <!-- Logo / Name -->
+            <a href="#home" class="text-2xl font-black text-white tracking-tighter italic uppercase">
+                MANAV <span class="text-[#E20074]">SOMANI</span>
             </a>
-            <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
-                <a href="#about" class="text-slate-400 hover:text-white transition-colors">About</a>
-                <a href="#experience" class="text-slate-400 hover:text-white transition-colors">Experience</a>
-                <a href="#projects" class="text-slate-400 hover:text-white transition-colors">Projects</a>
-                <a href="#skills" class="text-slate-400 hover:text-white transition-colors">Skills</a>
-                <a href="#contact" class="text-slate-400 hover:text-white transition-colors">Contact</a>
+            
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center space-x-10">
+                <a href="#about" class="nav-link uppercase text-xs tracking-widest">About</a>
+                <a href="#experience" class="nav-link uppercase text-xs tracking-widest">Experience</a>
+                <a href="#projects" class="nav-link uppercase text-xs tracking-widest">Projects</a>
+                <a href="#skills" class="nav-link uppercase text-xs tracking-widest">Skills</a>
+                <a href="#contact" class="nav-link uppercase text-xs tracking-widest">Contact</a>
             </div>
+            
+            <!-- Mobile Nav Toggle -->
+            <button id="nav-toggle" class="md:hidden text-white">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
         </nav>
     </header>
 
+    <!-- Mobile Nav Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-[#121212] z-[100] hidden flex-col items-center justify-center space-y-10">
+        <button id="nav-close" class="absolute top-8 right-8 text-white">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <a href="#about" class="text-4xl font-black text-white hover:text-[#E20074] uppercase tracking-tighter">About</a>
+        <a href="#experience" class="text-4xl font-black text-white hover:text-[#E20074] uppercase tracking-tighter">Experience</a>
+        <a href="#projects" class="text-4xl font-black text-white hover:text-[#E20074] uppercase tracking-tighter">Projects</a>
+        <a href="#skills" class="text-4xl font-black text-white hover:text-[#E20074] uppercase tracking-tighter">Skills</a>
+        <a href="#contact" class="text-4xl font-black text-white hover:text-[#E20074] uppercase tracking-tighter">Contact</a>
+    </div>
+
+    <!-- Main Content -->
     <main>
-        <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden px-6">
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-emerald-900/20 via-slate-900 to-slate-900 -z-10"></div>
-            <div class="text-center max-w-4xl">
-                <h1 class="text-6xl md:text-8xl font-black mb-6 hero-name leading-tight">Analytics & Strategy</h1>
-                <p class="text-xl md:text-2xl text-slate-400 font-medium mb-10 max-w-2xl mx-auto">
-                    Driving business growth through <span class="text-emerald-400">data-driven insights</span> and process automation. Currently MISM-BIDA at Carnegie Mellon.
+
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center justify-center text-center px-4 py-20 relative overflow-hidden bg-[#1f1f1f]">
+            <!-- Background glow effect -->
+            <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#E20074]/15 rounded-full filter blur-[120px] opacity-40 animate-pulse"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#E20074]/15 rounded-full filter blur-[120px] opacity-40 animate-pulse"></div>
+
+            <div class="z-10">
+                <h1 class="text-6xl sm:text-8xl lg:text-9xl font-black mb-4 tracking-tighter italic uppercase text-white">
+                    MANAV <span class="text-[#E20074]">SOMANI</span>
+                </h1>
+                <p class="text-xl sm:text-2xl lg:text-3xl text-white font-light mb-8 uppercase tracking-[0.3em]">
+                    Product <span class="text-[#E20074] font-black">&</span> Analytics
                 </p>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="#projects" class="bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-4 rounded-full font-bold transition-all transform hover:scale-105">View Projects</a>
-                    <a href="#contact" class="bg-slate-800 hover:bg-slate-700 text-white px-8 py-4 rounded-full font-bold transition-all border border-slate-700">Get In Touch</a>
+                <p class="max-w-3xl mx-auto text-lg md:text-xl text-slate-400 mb-12 font-medium leading-relaxed italic">
+                    Skilled in developing and executing strategies by creating and leveraging <span class="text-white">data-driven insights</span> to optimize business and drive <span class="text-[#E20074] font-bold">measurable impact</span>.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-6">
+                    <a href="#contact" class="btn btn-primary">Connect</a>
+                    <a href="#projects" class="btn btn-secondary">View Work</a>
                 </div>
             </div>
         </section>
 
-        <section id="experience" class="py-24 px-6 bg-slate-900/50">
-            <div class="container mx-auto max-w-5xl">
-                <h2 class="section-header">Professional <span class="text-emerald-500">Path</span></h2>
-                <div class="grid gap-8">
-                    <div class="card reveal flex flex-col md:flex-row gap-6">
-                        <div class="md:w-1/4">
-                            <span class="text-emerald-500 font-bold">2024 — 2025</span>
-                            <p class="text-sm text-slate-500 font-medium">Flipkart (Walmart)</p>
-                        </div>
-                        <div class="md:w-3/4">
-                            <h3 class="text-xl font-bold text-white mb-2">Asst. Manager - Supply Chain Analytics</h3>
-                            <p class="text-slate-400 text-sm mb-4">Optimized warehouse operations for India's largest e-commerce platform.</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="impact-tag">33% Efficiency Gain</span>
-                                <span class="impact-tag">50% Discrepancy Reduction</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card reveal flex flex-col md:flex-row gap-6">
-                        <div class="md:w-1/4">
-                            <span class="text-emerald-500 font-bold">2023 — 2024</span>
-                            <p class="text-sm text-slate-500 font-medium">Axio (Amazon)</p>
-                        </div>
-                        <div class="md:w-3/4">
-                            <h3 class="text-xl font-bold text-white mb-2">Data Analyst - Digital Collections</h3>
-                            <p class="text-slate-400 text-sm mb-4">Leveraged behavior analysis to boost debt recovery for Amazon Pay Later.</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="impact-tag">95% Recovery Rate</span>
-                                <span class="impact-tag">80% Automation Gain</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects" class="py-24 px-6">
+        <!-- About & Education -->
+        <section id="about" class="py-32 px-4 border-t border-white/5 bg-[#1f1f1f]">
             <div class="container mx-auto max-w-6xl">
-                <h2 class="section-header">Recent <span class="text-emerald-500">Projects</span></h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="card reveal">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="font-bold text-white text-lg">LLM Input Compression</h3>
-                            <span class="text-emerald-500 text-xs font-bold bg-emerald-500/10 px-2 py-1 rounded">HACKATHON</span>
-                        </div>
-                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                            Developed a compressor model for Prediction Markets (Polymarket), optimizing token usage for high-speed forecasting.
+                <div class="grid lg:grid-cols-3 gap-16 items-start">
+                    <div class="lg:col-span-1 space-y-8">
+                        <p class="text-xl text-slate-300 leading-relaxed font-light">
+                            I am a <span class="text-white font-bold">Product and Analytics professional</span> with 3 years of experience in e-commerce and fintech. From pioneering automated data platforms at Flipkart to scaling fintech portfolios at Axio, my focus is always on <span class="text-[#E20074] font-bold">measurable impact</span>.
                         </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="skill-badge">NLP</span>
-                            <span class="skill-badge">PyTorch</span>
+                        <div class="pt-4 border-l-4 border-[#E20074] pl-6 italic text-slate-400 text-sm">
+                            "Bridging the gap between technical data science and strategic product development."
                         </div>
                     </div>
-                    <div class="card reveal">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="font-bold text-white text-lg">CVaaS Market Strategy</h3>
-                            <span class="text-emerald-500 text-xs font-bold bg-emerald-500/10 px-2 py-1 rounded">STRATEGY</span>
+                    
+                    <div class="lg:col-span-2 space-y-8">
+                        <h3 class="text-xs font-black uppercase tracking-[0.5em] text-[#E20074]">Education</h3>
+                        
+                        <!-- CMU Expanded Card -->
+                        <div class="card bg-[#2d2d2d] border-l-4 border-[#E20074]">
+                            <h4 class="text-2xl font-black text-white italic uppercase tracking-tighter">Carnegie Mellon University</h4>
+                            <p class="text-sm font-bold text-[#E20074] mb-6 tracking-widest uppercase">MISM - BIDA | GPA 4.0/4.0</p>
+                            
+                            <div class="grid md:grid-cols-2 gap-12 mb-6 pl-2">
+                                <div>
+                                    <h5 class="text-[10px] font-black uppercase text-slate-500 tracking-[0.2em] mb-3">Fall 2025</h5>
+                                    <ul class="text-xs text-slate-300 leading-relaxed uppercase list-disc ml-5 space-y-2">
+                                        <li>STATS FOR IT MANAGERS</li>
+                                        <li>Applied Econometrics</li>
+                                        <li>UNSTRUCTURED DATA ANALYSIS</li>
+                                        <li>DATABASE MANAGEMENT</li>
+                                        <li>DATA FOCUSED PYTHON</li>
+                                        <li>Java</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="text-[10px] font-black uppercase text-slate-500 tracking-[0.2em] mb-3">Spring 2026</h5>
+                                    <ul class="text-xs text-slate-300 leading-relaxed uppercase list-disc ml-5 space-y-2">
+                                        <li>DataScience for Product Managers</li>
+                                        <li>Product Management Essentials</li>
+                                        <li>Advanced Business Analytics</li>
+                                        <li>Machine Learning for Problem Solving</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="mt-8 pt-6 border-t border-white/5 pl-2">
+                                <h5 class="text-xs font-black uppercase text-[#E20074] tracking-[0.2em] mb-2 italic">Project: Corporate Startup Lab</h5>
+                                <p class="text-sm text-slate-400 leading-relaxed">We partner with startups over the spring semester to deliver a defined project. The program is highly selective, with students chosen through a rigorous interview process, and it has given me hands-on exposure to product management in an early-stage environment.</p>
+                            </div>
                         </div>
-                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                            Market landscape analysis for Hellbender, identifying penetration points in Defense and Healthcare sectors.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="skill-badge">Market Analysis</span>
-                            <span class="skill-badge">Growth</span>
-                        </div>
-                    </div>
-                    <div class="card reveal">
-                        <div class="flex justify-between items-start mb-4">
-                            <h3 class="font-bold text-white text-lg">Housing Aggregator</h3>
-                            <span class="text-emerald-500 text-xs font-bold bg-emerald-500/10 px-2 py-1 rounded">ANALYTICS</span>
-                        </div>
-                        <p class="text-slate-400 text-sm mb-6 leading-relaxed">
-                            Web scraping engine with a custom scoring algorithm to rank properties based on proximity and transit metrics.
-                        </p>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="skill-badge">Python</span>
-                            <span class="skill-badge">Scraping</span>
+                        
+                        <div class="card bg-[#2d2d2d]">
+                            <h4 class="text-lg font-black text-white italic uppercase tracking-tighter">PES University</h4>
+                            <p class="text-sm font-bold text-slate-300 mb-2 tracking-widest uppercase">B.Tech Mechanical</p>
+                            <p class="text-xs text-slate-400 uppercase italic">Distinction Graduate • GPA 3.8/4.0</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="skills" class="py-24 px-6 bg-slate-800/20">
-            <div class="container mx-auto max-w-4xl text-center">
-                <h2 class="section-header">Technical <span class="text-emerald-500">Toolkit</span></h2>
-                <div class="grid md:grid-cols-3 gap-12 text-left">
-                    <div>
-                        <h4 class="text-white font-bold mb-4 flex items-center"><span class="w-2 h-2 bg-emerald-500 rounded-full mr-2"></span> DATA</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="skill-badge">SQL</span><span class="skill-badge">Python</span><span class="skill-badge">R</span>
-                            <span class="skill-badge">Spark</span><span class="skill-badge">Tableau</span>
+        <!-- Professional Experience -->
+        <section id="experience" class="py-32 px-4 bg-[#121212]">
+            <div class="container mx-auto max-w-5xl">
+                <h2 class="section-header">Core <span class="text-[#E20074]">Impact</span></h2>
+                
+                <div class="space-y-20">
+                    <!-- Flipkart AM -->
+                    <div class="flex flex-col md:flex-row gap-8 items-start group">
+                        <div class="md:w-1/4">
+                            <p class="text-[#E20074] font-black italic text-xl tracking-tighter">2024 — 2025</p>
+                            <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Flipkart (Walmart)</p>
+                            <p class="text-[10px] text-slate-600 font-bold uppercase mt-1">Assistant Manager</p>
+                        </div>
+                        <div class="md:w-3/4 card card-hover">
+                            <h3 class="text-2xl font-black text-white uppercase italic tracking-tighter mb-2">Control Tower Operations</h3>
+                            <ul class="mt-6 space-y-4 text-slate-400 font-medium text-sm leading-relaxed">
+                                <li class="flex items-start"><span class="text-[#E20074] mr-3 mt-1 font-black">/</span> Pioneered a <span class="text-white font-bold">"Data-as-a-Product"</span> platform, replacing legacy manual processes (3 members, 3+ hours daily) with real-time strategic views.</li>
+                                <li class="flex items-start"><span class="text-[#E20074] mr-3 mt-1 font-black">/</span> Owned inventory strategy for fast-moving SKUs, driving a <span class="text-white font-bold">33% improvement</span> in warehouse efficiency.</li>
+                                <li class="flex items-start"><span class="text-[#E20074] mr-3 mt-1 font-black">/</span> Managed end-to-end lifecycle of an internal data model that reduced inventory discrepancies by <span class="text-white font-bold">50%</span>.</li>
+                                <li class="flex items-start"><span class="text-[#E20074] mr-3 mt-1 font-black">/</span> Boosted CSAT by <span class="text-white font-bold">20%</span> by authoring user stories to resolve key customer delivery pain points.</li>
+                            </ul>
                         </div>
                     </div>
-                    <div>
-                        <h4 class="text-white font-bold mb-4 flex items-center"><span class="w-2 h-2 bg-emerald-500 rounded-full mr-2"></span> CORE</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="skill-badge">Java</span><span class="skill-badge">ML Models</span>
-                            <span class="skill-badge">Econometrics</span><span class="skill-badge">NLP</span>
+
+                    <!-- Axio -->
+                    <div class="flex flex-col md:flex-row gap-8 items-start group">
+                        <div class="md:w-1/4">
+                            <p class="text-[#E20074] font-black italic text-xl tracking-tighter">2023 — 2024</p>
+                            <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Axio (Amazon)</p>
+                            <p class="text-[10px] text-slate-600 font-bold uppercase mt-1">Product Analyst</p>
                         </div>
-                    </div>
-                    <div>
-                        <h4 class="text-white font-bold mb-4 flex items-center"><span class="w-2 h-2 bg-emerald-500 rounded-full mr-2"></span> MANAGEMENT</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="skill-badge">Agile</span><span class="skill-badge">Jira</span>
-                            <span class="skill-badge">Strategy</span><span class="skill-badge">Figma</span>
+                        <div class="md:w-3/4 card card-hover">
+                            <h3 class="text-2xl font-black text-white uppercase italic tracking-tighter mb-2">Digital Collections (Amazon Pay Later)</h3>
+                            <ul class="mt-6 space-y-4 text-slate-400 font-medium text-sm leading-relaxed">
+                                <li class="flex items-start"><span class="text-[#E20074] mr-3 mt-1 font-black">/</span> Executed product strategy for <span class="text-white font-bold">Amazon Pay Later</span>, driving a <span class="text-white font-bold">2x user base growth</span> through data-driven expansion plans.</li>
+                                <li class="flex items-start"><span class="text-[#E20074] mr-3 mt-1 font-black">/</span> Managed the development of interactive voice and chatbots, bridging the gap between engineering and collections teams.</li>
+                                <li class="flex items-start"><span class="text-[#E20074] mr-3 mt-1 font-black">/</span> Boosted debt recovery from <span class="text-white font-bold">85% to 95%</span> by launching region-specific personalized recovery strategies.</li>
+                                <li class="flex items-start"><span class="text-[#E20074] mr-3 mt-1 font-black">/</span> Defined key user personas by mapping customer journeys for partner integrations.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Arsenal -->
+        <section id="skills" class="py-32 px-4 border-y border-white/5 bg-[#1f1f1f]">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="section-header">Technical <span class="text-[#E20074]">Arsenal</span></h2>
+                
+                <div class="grid md:grid-cols-3 gap-12">
+                    <div class="space-y-6">
+                        <h3 class="text-xs font-black uppercase tracking-[0.4em] text-white text-center border-b border-[#E20074] pb-4">Product & PM</h3>
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <span class="skill-badge">Product Strategy</span>
+                            <span class="skill-badge">Roadmapping</span>
+                            <span class="skill-badge">Agile/Scrum</span>
+                            <span class="skill-badge">User Stories</span>
+                            <span class="skill-badge">A/B Testing</span>
+                            <span class="skill-badge">Asana</span>
+                            <span class="skill-badge">Figma</span>
+                            <span class="skill-badge">Jira</span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <h3 class="text-xs font-black uppercase tracking-[0.4em] text-white text-center border-b border-[#E20074] pb-4">Data Stack</h3>
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <span class="skill-badge">SQL</span>
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">R</span>
+                            <span class="skill-badge">Spark</span>
+                            <span class="skill-badge">Tableau</span>
+                            <span class="skill-badge">PowerBI</span>
+                            <span class="skill-badge">MATLAB</span>
+                            <span class="skill-badge">KNIME</span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <h3 class="text-xs font-black uppercase tracking-[0.4em] text-white text-center border-b border-[#E20074] pb-4">Engineering</h3>
+                        <div class="flex flex-wrap justify-center gap-3">
+                            <span class="skill-badge">Java</span>
+                            <span class="skill-badge">Database Mgmt</span>
+                            <span class="skill-badge">Econometrics</span>
+                            <span class="skill-badge">Excel (Expert)</span>
+                            <span class="skill-badge">G-Suite</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="py-32 px-4 bg-[#1f1f1f]">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="section-header">The <span class="text-[#E20074]">Lab</span></h2>
+                
+                <div class="grid md:grid-cols-2 gap-10">
+                    <div class="card card-hover group border-l-4 border-[#E20074]">
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-3xl font-black text-white italic tracking-tighter uppercase leading-none">Housing Aggregator</h3>
+                            <div class="bg-[#E20074] p-3 text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg></div>
+                        </div>
+                        <p class="text-slate-400 font-medium text-sm leading-relaxed">Identified key pain points for student housing searches. Built a <span class="text-white">Python-based full-stack solution</span> with a scoring algorithm that reduced user search time by over <span class="text-[#E20074] font-bold">50%</span>.</p>
+                        <div class="mt-6 flex gap-2">
+                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Python</span>
+                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Web Scraping</span>
+                        </div>
+                    </div>
+
+                    <div class="card card-hover group">
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-3xl font-black text-white italic tracking-tighter uppercase leading-none">TEDx Leadership</h3>
+                            <div class="bg-white/10 p-3 text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></div>
+                        </div>
+                        <p class="text-slate-400 font-medium text-sm leading-relaxed">Managed vision and execution for <span class="text-white">Bangalore's largest TEDx event</span>. Led a cross-domain team to host renowned speakers like ISRO Project Director Dr. Anuradha TK.</p>
+                        <div class="mt-6 flex gap-2">
+                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Leadership</span>
+                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Stakeholder Mgmt</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications Strip -->
+                <div class="mt-20">
+                    <h3 class="text-xs font-black uppercase tracking-[0.5em] text-slate-500 mb-8 italic">Verified Expertise</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="bg-[#2d2d2d] p-4 flex items-center gap-4">
+                            <div class="w-2 h-2 bg-[#E20074]"></div>
+                            <span class="text-[10px] uppercase font-bold tracking-widest">Google Data Analytics</span>
+                        </div>
+                        <div class="bg-[#2d2d2d] p-4 flex items-center gap-4">
+                            <div class="w-2 h-2 bg-[#E20074]"></div>
+                            <span class="text-[10px] uppercase font-bold tracking-widest">Google Project Mgmt & Agile</span>
+                        </div>
+                        <div class="bg-[#2d2d2d] p-4 flex items-center gap-4">
+                            <div class="w-2 h-2 bg-[#E20074]"></div>
+                            <span class="text-[10px] uppercase font-bold tracking-widest">Digital Marketing (Gies)</span>
+                        </div>
+                        <div class="bg-[#2d2d2d] p-4 flex items-center gap-4">
+                            <div class="w-2 h-2 bg-[#E20074]"></div>
+                            <span class="text-[10px] uppercase font-bold tracking-widest">IBM Python Analysis</span>
+                        </div>
+                        <div class="bg-[#2d2d2d] p-4 flex items-center gap-4">
+                            <div class="w-2 h-2 bg-[#E20074]"></div>
+                            <span class="text-[10px] uppercase font-bold tracking-widest">iNeuron PowerBI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-32 px-4 bg-[#E20074] text-black">
+            <div class="container mx-auto max-w-4xl text-center">
+                <h2 class="text-6xl md:text-8xl font-black uppercase italic tracking-tighter mb-8 leading-none">Ready to <br>Scale?</h2>
+                <p class="text-xl font-bold uppercase tracking-[0.2em] mb-12 opacity-80">Currently in Pittsburgh, PA — Available for Global Opportunities</p>
+                
+                <div class="flex flex-col items-center gap-6">
+                    <a href="mailto:msomani@andrew.cmu.edu" class="text-2xl md:text-4xl font-black hover:opacity-70 transition-opacity tracking-tighter uppercase italic underline">
+                        MSOMANI@ANDREW.CMU.EDU
+                    </a>
+                    <div class="flex gap-10 mt-6">
+                        <a href="https://www.linkedin.com/in/manavsomani/" target="_blank" class="text-sm font-black uppercase border-b-4 border-black pb-1 hover:translate-y-1 transition-transform">LinkedIn</a>
+                        <span class="text-sm font-black uppercase border-b-4 border-black pb-1">+1 412-689-7119</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="py-12 border-t border-slate-800 text-center">
-        <p class="text-slate-500 text-sm">&copy; 2026 Manav Somani. Pittsburgh, PA.</p>
+    <!-- Footer -->
+    <footer class="py-12 bg-[#121212] border-t border-white/5">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-[10px] font-black uppercase tracking-[1em] text-slate-700 italic">
+                © 2025 MANAV SOMANI / PRODUCT & ANALYTICS SPECIALIST
+            </p>
+        </div>
     </footer>
 
+    <!-- JavaScript -->
     <script>
-        // Scroll Reveal Animation
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-        window.addEventListener("scroll", reveal);
-        // Initial call
-        reveal();
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggle = document.getElementById('nav-toggle');
+            const navClose = document.getElementById('nav-close');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelectorAll('#mobile-menu a');
+
+            const toggleMenu = (show) => {
+                if(!mobileMenu) return;
+                mobileMenu.classList.toggle('hidden', !show);
+                mobileMenu.classList.toggle('flex', show);
+                document.body.style.overflow = show ? 'hidden' : 'auto';
+            };
+
+            navToggle?.addEventListener('click', () => toggleMenu(true));
+            navClose?.addEventListener('click', () => toggleMenu(false));
+            navLinks.forEach(link => link.addEventListener('click', () => toggleMenu(false)));
+        });
     </script>
 </body>
 </html>
