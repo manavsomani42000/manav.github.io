@@ -23,9 +23,9 @@
                     },
                     colors: {
                         't-magenta': '#E20074', // Official T-Mobile Magenta
-                        't-grey-dark': '#1f1f1f', // Changed from #121212 to #1f1f1f
-                        't-grey-mid': '#1f1f1f',
-                        't-grey-light': '#2d2d2d',
+                        't-black': '#000000',
+                        't-dark-grey': '#1a1a1a',
+                        't-light-grey': '#f4f4f4',
                     }
                 },
             },
@@ -42,13 +42,13 @@
         /* Setting base font and colors */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #1f1f1f; /* Uniform Dark Grey Background */
-            color: #f1f1f1;
+            background-color: #ffffff; /* White Background */
+            color: #1a1a1a;
         }
         
         /* Section header styling */
         .section-header {
-            @apply text-3xl md:text-5xl font-black text-center mb-16 text-white uppercase tracking-tighter italic;
+            @apply text-3xl md:text-5xl font-black text-center mb-16 text-black uppercase tracking-tighter italic;
         }
         
         /* Custom scrollbar */
@@ -56,7 +56,7 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #1f1f1f; /* Changed from #121212 */
+            background: #f4f4f4;
         }
         ::-webkit-scrollbar-thumb {
             background: #E20074;
@@ -65,7 +65,7 @@
 
         /* Nav link active state */
         .nav-link {
-            @apply text-slate-300 hover:text-white font-medium transition-colors duration-200 relative after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-[3px] after:w-0 after:bg-[#E20074] after:transition-all after:duration-300 hover:after:w-full;
+            @apply text-gray-600 hover:text-black font-medium transition-colors duration-200 relative after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-[3px] after:w-0 after:bg-[#E20074] after:transition-all after:duration-300 hover:after:w-full;
         }
 
         /* Button styles */
@@ -76,15 +76,15 @@
             @apply bg-[#E20074] hover:bg-[#b3005c] shadow-lg hover:shadow-[#E20074]/30 transform hover:-translate-y-1;
         }
         .btn-secondary {
-            @apply border-2 border-white hover:bg-white hover:text-black transform hover:-translate-y-1;
+            @apply border-2 border-black text-black hover:bg-black hover:text-white transform hover:-translate-y-1;
         }
 
         /* Card styles */
         .card {
-            @apply bg-[#2d2d2d] p-6 rounded-none shadow-xl border-l-4 border-transparent transition-all duration-300;
+            @apply bg-white p-6 rounded-none shadow-xl border border-gray-100 border-l-4 border-l-transparent transition-all duration-300;
         }
         .card-hover {
-            @apply hover:border-[#E20074] hover:bg-[#363636] hover:scale-[1.01];
+            @apply hover:border-l-[#E20074] hover:shadow-2xl hover:scale-[1.01];
         }
 
         .skill-badge {
@@ -117,10 +117,10 @@
 <body class="antialiased">
 
     <!-- Header & Navigation -->
-    <header class="sticky top-0 z-50 w-full bg-[#1f1f1f]/95 backdrop-blur-md border-b border-white/5">
+    <header class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-gray-100">
         <nav class="container mx-auto max-w-6xl px-4 py-5 flex justify-between items-center">
             <!-- Logo / Name -->
-            <a href="#home" class="text-2xl font-black text-white tracking-tighter italic uppercase">
+            <a href="#home" class="text-2xl font-black text-black tracking-tighter italic uppercase">
                 MANAV <span class="text-[#E20074]">SOMANI</span>
             </a>
             
@@ -134,42 +134,42 @@
             </div>
             
             <!-- Mobile Nav Toggle -->
-            <button id="nav-toggle" class="md:hidden text-white">
+            <button id="nav-toggle" class="md:hidden text-black">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </nav>
     </header>
 
     <!-- Mobile Nav Menu -->
-    <div id="mobile-menu" class="fixed inset-0 bg-[#1f1f1f] z-[100] hidden flex-col items-center justify-center space-y-10">
-        <button id="nav-close" class="absolute top-8 right-8 text-white">
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-[100] hidden flex-col items-center justify-center space-y-10">
+        <button id="nav-close" class="absolute top-8 right-8 text-black">
             <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
-        <a href="#about" class="text-4xl font-black text-white hover:text-[#E20074] uppercase tracking-tighter">About</a>
-        <a href="#experience" class="text-4xl font-black text-white hover:text-[#E20074] uppercase tracking-tighter">Experience</a>
-        <a href="#projects" class="text-4xl font-black text-white hover:text-[#E20074] uppercase tracking-tighter">Projects</a>
-        <a href="#skills" class="text-4xl font-black text-white hover:text-[#E20074] uppercase tracking-tighter">Skills</a>
-        <a href="#contact" class="text-4xl font-black text-white hover:text-[#E20074] uppercase tracking-tighter">Contact</a>
+        <a href="#about" class="text-4xl font-black text-black hover:text-[#E20074] uppercase tracking-tighter">About</a>
+        <a href="#experience" class="text-4xl font-black text-black hover:text-[#E20074] uppercase tracking-tighter">Experience</a>
+        <a href="#projects" class="text-4xl font-black text-black hover:text-[#E20074] uppercase tracking-tighter">Projects</a>
+        <a href="#skills" class="text-4xl font-black text-black hover:text-[#E20074] uppercase tracking-tighter">Skills</a>
+        <a href="#contact" class="text-4xl font-black text-black hover:text-[#E20074] uppercase tracking-tighter">Contact</a>
     </div>
 
     <!-- Main Content -->
     <main>
 
         <!-- Hero Section -->
-        <section id="home" class="min-h-screen flex items-center justify-center text-center px-4 py-20 relative overflow-hidden bg-[#1f1f1f]">
+        <section id="home" class="min-h-screen flex items-center justify-center text-center px-4 py-20 relative overflow-hidden bg-white">
             <!-- Background glow effect -->
-            <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#E20074]/15 rounded-full filter blur-[120px] opacity-40 animate-pulse"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#E20074]/15 rounded-full filter blur-[120px] opacity-40 animate-pulse"></div>
+            <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#E20074]/5 rounded-full filter blur-[120px] opacity-40 animate-pulse"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#E20074]/5 rounded-full filter blur-[120px] opacity-40 animate-pulse"></div>
 
             <div class="z-10 flex flex-col items-center">
-                <h1 class="reveal-up text-6xl sm:text-8xl lg:text-9xl font-black mb-4 tracking-tighter italic uppercase text-white">
+                <h1 class="reveal-up text-6xl sm:text-8xl lg:text-9xl font-black mb-4 tracking-tighter italic uppercase text-black">
                     MANAV <span class="text-[#E20074]">SOMANI</span>
                 </h1>
-                <p class="reveal-up text-xl sm:text-2xl lg:text-3xl text-white font-light mb-8 uppercase tracking-[0.3em]">
+                <p class="reveal-up text-xl sm:text-2xl lg:text-3xl text-gray-800 font-light mb-8 uppercase tracking-[0.3em]">
                     Product <span class="text-[#E20074] font-black">&</span> Analytics
                 </p>
-                <p class="reveal-up max-w-3xl mx-auto text-lg md:text-xl text-slate-400 mb-12 font-medium leading-relaxed italic">
-                    Skilled in developing and executing strategies by creating and leveraging <span class="text-white">data-driven insights</span> to optimize business and drive <span class="text-[#E20074] font-bold">measurable impact</span>.
+                <p class="reveal-up max-w-3xl mx-auto text-lg md:text-xl text-gray-500 mb-12 font-medium leading-relaxed italic">
+                    Skilled in developing and executing strategies by creating and leveraging <span class="text-black font-bold">data-driven insights</span> to optimize business and drive <span class="text-[#E20074] font-bold">measurable impact</span>.
                 </p>
                 <div class="reveal-up flex flex-col sm:flex-row justify-center gap-6 mb-12">
                     <a href="#contact" class="btn btn-primary">Connect</a>
@@ -177,23 +177,23 @@
                 </div>
 
                 <!-- Profile Photo -->
-                <div class="reveal-up relative w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border-4 border-[#E20074] shadow-[0_0_40px_rgba(226,0,116,0.3)] hover:scale-105 transition-transform duration-300">
+                <div class="reveal-up relative w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border-4 border-[#E20074] shadow-[0_0_40px_rgba(226,0,116,0.2)] hover:scale-105 transition-transform duration-300">
                     <img src="Manav_Somani_Linkedin_Photo_2025_-_Cropped.jpeg" alt="Manav Somani" class="w-full h-full object-cover">
                 </div>
             </div>
         </section>
 
         <!-- About & Education -->
-        <section id="about" class="py-32 px-4 border-t border-white/5 bg-[#1f1f1f]">
+        <section id="about" class="py-32 px-4 border-t border-gray-100 bg-white">
             <div class="container mx-auto max-w-6xl">
                 <!-- Stacked vertically for alignment consistency -->
                 <div class="flex flex-col gap-12 items-start text-left">
                     <!-- Text Block -->
                     <div class="reveal-left w-full max-w-4xl space-y-8">
-                        <p class="text-xl text-slate-300 leading-relaxed font-light">
-                            I am a <span class="text-white font-bold">Product and Analytics professional</span> with 3 years of experience in e-commerce and fintech. From pioneering automated data platforms at Flipkart to scaling fintech portfolios at Axio, my focus is always on <span class="text-[#E20074] font-bold">measurable impact</span>.
+                        <p class="text-xl text-gray-700 leading-relaxed font-light">
+                            I am a <span class="text-black font-bold">Product and Analytics professional</span> with 3 years of experience in e-commerce and fintech. From pioneering automated data platforms at Flipkart to scaling fintech portfolios at Axio, my focus is always on <span class="text-[#E20074] font-bold">measurable impact</span>.
                         </p>
-                        <div class="pt-4 border-l-4 border-[#E20074] pl-6 italic text-slate-400 text-sm">
+                        <div class="pt-4 border-l-4 border-[#E20074] pl-6 italic text-gray-500 text-sm">
                             "Bridging the gap between technical data science and strategic product development."
                         </div>
                     </div>
@@ -203,15 +203,15 @@
                         <h3 class="reveal-left text-2xl font-black uppercase tracking-tighter text-[#E20074] italic mb-8">EDUCATION</h3>
                         
                         <!-- CMU Expanded Card -->
-                        <div class="reveal-right card bg-[#2d2d2d] border-l-4 border-[#E20074]">
-                            <h4 class="text-2xl font-black text-white italic uppercase tracking-tighter pl-2">Carnegie Mellon University</h4>
+                        <div class="reveal-right card bg-white border-l-4 border-[#E20074]">
+                            <h4 class="text-2xl font-black text-black italic uppercase tracking-tighter pl-2">Carnegie Mellon University</h4>
                             <p class="text-sm font-bold text-[#E20074] tracking-widest uppercase pl-2 mb-1">Master of Information Systems Management - Business Intelligence & Data Analytics</p>
-                            <p class="text-xs text-slate-400 uppercase italic pl-2 mb-4">GPA 4.0/4.0</p>
+                            <p class="text-xs text-gray-500 uppercase italic pl-2 mb-4">GPA 4.0/4.0</p>
                             
                             <div class="grid md:grid-cols-2 gap-12 mb-6 pl-2">
                                 <div>
-                                    <h5 class="text-[10px] font-black uppercase text-slate-500 tracking-[0.2em] mb-3">Fall 2025</h5>
-                                    <ul class="text-xs text-slate-300 leading-relaxed uppercase list-disc ml-5 space-y-2">
+                                    <h5 class="text-[10px] font-black uppercase text-gray-400 tracking-[0.2em] mb-3">Fall 2025</h5>
+                                    <ul class="text-xs text-gray-600 leading-relaxed uppercase list-disc ml-5 space-y-2">
                                         <li>STATS FOR IT MANAGERS</li>
                                         <li>Applied Econometrics</li>
                                         <li>UNSTRUCTURED DATA ANALYSIS</li>
@@ -221,8 +221,8 @@
                                     </ul>
                                 </div>
                                 <div>
-                                    <h5 class="text-[10px] font-black uppercase text-slate-500 tracking-[0.2em] mb-3">Spring 2026</h5>
-                                    <ul class="text-xs text-slate-300 leading-relaxed uppercase list-disc ml-5 space-y-2">
+                                    <h5 class="text-[10px] font-black uppercase text-gray-400 tracking-[0.2em] mb-3">Spring 2026</h5>
+                                    <ul class="text-xs text-gray-600 leading-relaxed uppercase list-disc ml-5 space-y-2">
                                         <li>DataScience for Product Managers</li>
                                         <li>Product Management Essentials</li>
                                         <li>Advanced Business Analytics</li>
@@ -231,9 +231,9 @@
                                 </div>
                             </div>
 
-                            <div class="mt-8 pt-6 border-t border-white/5 pl-2">
+                            <div class="mt-8 pt-6 border-t border-gray-100 pl-2">
                                 <h5 class="text-xs font-black uppercase text-[#E20074] tracking-[0.2em] mb-2 italic">Project: Corporate Startup Lab</h5>
-                                <ul class="list-disc ml-5 text-sm text-slate-400 leading-relaxed marker:text-[#E20074] space-y-2">
+                                <ul class="list-disc ml-5 text-sm text-gray-600 leading-relaxed marker:text-[#E20074] space-y-2">
                                     <li>Highly selective program, with only select students chosen through a rigorous interview process.</li>
                                     <li>We partner with a startup on a crucial business project and assist them in attaining their goal over a semester.</li>
                                     <li>We take on multiple roles including: Identifying customer pain points, Market Research, Niche identification, Product segmentation, Competitor Analysis, and Go-to-Market Strategy.</li>
@@ -241,20 +241,28 @@
                                 </ul>
                             </div>
 
-                            <div class="mt-4 pt-4 border-t border-white/5 pl-2">
+                            <div class="mt-4 pt-4 border-t border-gray-100 pl-2">
                                 <h5 class="text-xs font-black uppercase text-[#E20074] tracking-[0.2em] mb-2 italic">CAPSTONE PROJECT: STUDENT HOUSING AGGREGATOR</h5>
-                                <p class="text-sm text-slate-400 leading-relaxed">Identified a key user pain point for student housing searches and developed a full-stack solution. Devised the project from concept to deployment, defining user requirements, building a Python-based web scraper, and creating a scoring algorithm to rank properties on key metrics, ultimately cutting user search time by over 50%</p>
+                                <p class="text-sm text-gray-600 leading-relaxed">Identified a key user pain point for student housing searches and developed a full-stack solution. Devised the project from concept to deployment, defining user requirements, building a Python-based web scraper, and creating a scoring algorithm to rank properties on key metrics, ultimately cutting user search time by over 50%</p>
                             </div>
                         </div>
                         
-                        <div class="reveal-left card bg-[#2d2d2d] border-l-4 border-transparent">
-                            <h4 class="text-2xl font-black text-white italic uppercase tracking-tighter pl-2">PES University</h4>
+                        <div class="reveal-left card bg-white border-l-4 border-transparent">
+                            <h4 class="text-2xl font-black text-black italic uppercase tracking-tighter pl-2">PES University</h4>
                             <p class="text-sm font-bold text-[#E20074] mb-1 tracking-widest uppercase pl-2">B.Tech Mechanical</p>
-                            <p class="text-xs text-slate-400 uppercase italic pl-2 mb-4">Distinction Graduate • GPA 3.8/4.0</p>
+                            <p class="text-xs text-gray-500 uppercase italic pl-2 mb-4">Distinction Graduate • GPA 3.8/4.0</p>
                             
-                            <div class="mt-4 pt-4 border-t border-white/5 pl-2">
+                            <div class="mt-4 pt-4 border-t border-gray-100 pl-2">
                                 <h5 class="text-xs font-black uppercase text-[#E20074] tracking-[0.2em] mb-2 italic">Capstone Project</h5>
-                                <p class="text-sm text-slate-400 leading-relaxed">Conducted extensive research and analysis on "The Effect of FDM Parameters on Mechanical Properties of Thermoplastic Polyurethane (TPU)", receiving the highest grade.</p>
+                                <p class="text-sm text-gray-600 leading-relaxed">Conducted extensive research and analysis on "The Effect of FDM Parameters on Mechanical Properties of Thermoplastic Polyurethane (TPU)", receiving the highest grade.</p>
+                            </div>
+
+                            <div class="mt-4 pt-4 border-t border-gray-100 pl-2">
+                                <h5 class="text-xs font-black uppercase text-[#E20074] tracking-[0.2em] mb-2 italic">Clubs & Extracurriculars</h5>
+                                <ul class="list-disc ml-5 text-sm text-gray-600 leading-relaxed marker:text-[#E20074] space-y-3">
+                                    <li><span class="font-bold text-black">Head of TEDxPESU Club:</span> Led the TEDxPESU club, collaborating with various domains to conduct the largest TEDx event in Bangalore, featuring renowned speakers such as Dr. Anuradha TK [ex-ISRO Project Director] and Nirmal Pillai [Content creator with 1.5M+ followers/subscribers]</li>
+                                    <li><span class="font-bold text-black">Team HAYA Off-Roading:</span> Integral member of the Chassis domain, building an ATV that placed 19th out of 120 teams in BAJA SAE INDIA 2020 and 3rd in Enduro Student India 2020</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -263,16 +271,16 @@
         </section>
 
         <!-- Professional Journey -->
-        <section id="experience" class="py-32 px-4 bg-[#1f1f1f]">
+        <section id="experience" class="py-32 px-4 bg-white">
             <div class="container mx-auto max-w-6xl">
-                <h2 class="reveal-up text-2xl font-black mb-16 text-white uppercase tracking-tighter italic text-left">PROFESSIONAL <span class="text-[#E20074]">JOURNEY</span></h2>
+                <h2 class="reveal-up text-2xl font-black mb-16 text-black uppercase tracking-tighter italic text-left">PROFESSIONAL <span class="text-[#E20074]">JOURNEY</span></h2>
                 
                 <div class="space-y-16">
                     <!-- Flipkart AM -->
                     <div class="reveal-left flex flex-col md:flex-row gap-6 items-start group">
                         <!-- Left Column: Metadata -->
                         <div class="md:w-32 shrink-0 pt-2 text-left">
-                            <p class="text-slate-500 font-bold text-xs uppercase tracking-widest mb-2">2024 — 2025</p>
+                            <p class="text-gray-500 font-bold text-xs uppercase tracking-widest mb-2">2024 — 2025</p>
                             <h4 class="text-[#E20074] font-black uppercase text-xl leading-none tracking-tighter">Flipkart</h4>
                             <p class="text-[#E20074] text-[10px] font-bold uppercase mb-3 opacity-80">(Walmart)</p>
                         </div>
@@ -280,12 +288,12 @@
                         <!-- Right Column: Card -->
                         <div class="flex-1 card card-hover border-l-4 border-[#E20074] pl-2">
                             <h3 class="text-xl font-black text-[#E20074] uppercase italic tracking-tighter mb-4">Assistant Manager - Control Tower Operations</h3>
-                            <ul class="list-disc ml-5 space-y-3 text-slate-400 font-medium text-sm leading-relaxed marker:text-[#E20074]">
-                                <li>Pioneered a <span class="text-white font-bold">data-as-a-product platform</span>, a new centralized automated data platform system that integrated nationwide data on orders and metrics, empowering leadership with a unified, real-time view for strategic decisions and replacing legacy manual processes which used to take 3 members, 3+ hours daily to generate.</li>
-                                <li>Drove a <span class="text-white font-bold">33% improvement</span> in warehouse operational efficiency by owning the inventory strategy for fast moving SKUs. Translated data insights into optimized storage solutions that directly reduced fulfillment lead times and costs for the Grocery Supply Chain.</li>
-                                <li>Reduced inventory discrepancies by <span class="text-white font-bold">50%</span> without increasing audit time by managing the end-to-end product lifecycle of the internal inventory data model that identified high-risk inventory locations enabling better targeted perpetual stock takes (PSTs).</li>
-                                <li>Improved CSAT by <span class="text-white font-bold">20%</span> by authoring and prioritizing user stories that guided internal operations teams to resolve key customer pain points in delivery and returns.</li>
-                                <li>Reduced inventory picking time by <span class="text-white font-bold">25%</span> by partnering with the ground team to understand their pain points and using this feedback along with data to optimize inventory placement and pick paths.</li>
+                            <ul class="list-disc ml-5 space-y-3 text-gray-600 font-medium text-sm leading-relaxed marker:text-[#E20074]">
+                                <li>Pioneered a <span class="text-black font-bold">data-as-a-product platform</span>, a new centralized automated data platform system that integrated nationwide data on orders and metrics, empowering leadership with a unified, real-time view for strategic decisions and replacing legacy manual processes which used to take 3 members, 3+ hours daily to generate.</li>
+                                <li>Drove a <span class="text-black font-bold">33% improvement</span> in warehouse operational efficiency by owning the inventory strategy for fast moving SKUs. Translated data insights into optimized storage solutions that directly reduced fulfillment lead times and costs for the Grocery Supply Chain.</li>
+                                <li>Reduced inventory discrepancies by <span class="text-black font-bold">50%</span> without increasing audit time by managing the end-to-end product lifecycle of the internal inventory data model that identified high-risk inventory locations enabling better targeted perpetual stock takes (PSTs).</li>
+                                <li>Improved CSAT by <span class="text-black font-bold">20%</span> by authoring and prioritizing user stories that guided internal operations teams to resolve key customer pain points in delivery and returns.</li>
+                                <li>Reduced inventory picking time by <span class="text-black font-bold">25%</span> by partnering with the ground team to understand their pain points and using this feedback along with data to optimize inventory placement and pick paths.</li>
                             </ul>
                         </div>
                     </div>
@@ -294,7 +302,7 @@
                     <div class="reveal-right flex flex-col md:flex-row gap-6 items-start group">
                         <!-- Left Column: Metadata -->
                         <div class="md:w-32 shrink-0 pt-2 text-left">
-                            <p class="text-slate-500 font-bold text-xs uppercase tracking-widest mb-2">2023 — 2024</p>
+                            <p class="text-gray-500 font-bold text-xs uppercase tracking-widest mb-2">2023 — 2024</p>
                             <h4 class="text-[#E20074] font-black uppercase text-xl leading-none tracking-tighter">Axio</h4>
                             <p class="text-[#E20074] text-[10px] font-bold uppercase mb-3 opacity-80">(Amazon)</p>
                         </div>
@@ -302,13 +310,13 @@
                         <!-- Right Column: Card -->
                         <div class="flex-1 card card-hover border-l-4 border-[#E20074] pl-2">
                             <h3 class="text-xl font-black text-[#E20074] uppercase italic tracking-tighter mb-4">Product Analyst – Digital Collections, Amazon Pay Later</h3>
-                            <ul class="list-disc ml-5 space-y-3 text-slate-400 font-medium text-sm leading-relaxed marker:text-[#E20074]">
-                                <li>Drove a <span class="text-white font-bold">2x increase</span> in the user base by defining and executing the product strategy for Amazon Pay Later portfolio expansion, translating data forecasts into a concrete growth plan that secured necessary resource allocation.</li>
-                                <li>Boosted debt recovery from <span class="text-white font-bold">85% to 95%</span> by analyzing customer payment trends to define and launch personalized, region-specific recovery strategies and incorporating this within the interactive bot's logic.</li>
-                                <li>Managed the development of an <span class="text-white font-bold">interactive voice and chatbot</span> for the digital debt collections process for Amazon Pay Later.</li>
+                            <ul class="list-disc ml-5 space-y-3 text-gray-600 font-medium text-sm leading-relaxed marker:text-[#E20074]">
+                                <li>Drove a <span class="text-black font-bold">2x increase</span> in the user base by defining and executing the product strategy for Amazon Pay Later portfolio expansion, translating data forecasts into a concrete growth plan that secured necessary resource allocation.</li>
+                                <li>Boosted debt recovery from <span class="text-black font-bold">85% to 95%</span> by analyzing customer payment trends to define and launch personalized, region-specific recovery strategies and incorporating this within the interactive bot's logic.</li>
+                                <li>Managed the development of an <span class="text-black font-bold">interactive voice and chatbot</span> for the digital debt collections process for Amazon Pay Later.</li>
                                 <li>One of the key product leaders bridging the technical and collections teams, translating collections strategies into a prioritized backlog of engineering requirements to ensure a successful product integration.</li>
                                 <li>Defined key user personas by mapping the end-to-end customer journey for partner integrations, authoring detailed user stories to address the unique needs of each segment to enhance customer experience.</li>
-                                <li>Reduced data processing time by <span class="text-white font-bold">80%</span> by creating an automation tool that reduced operational costs.</li>
+                                <li>Reduced data processing time by <span class="text-black font-bold">80%</span> by creating an automation tool that reduced operational costs.</li>
                             </ul>
                         </div>
                     </div>
@@ -317,7 +325,7 @@
                     <div class="reveal-left flex flex-col md:flex-row gap-6 items-start group">
                         <!-- Left Column: Metadata -->
                         <div class="md:w-32 shrink-0 pt-2 text-left">
-                            <p class="text-slate-500 font-bold text-xs uppercase tracking-widest mb-2">2022</p>
+                            <p class="text-gray-500 font-bold text-xs uppercase tracking-widest mb-2">2022</p>
                             <h4 class="text-[#E20074] font-black uppercase text-xl leading-none tracking-tighter">Flipkart</h4>
                             <p class="text-[#E20074] text-[10px] font-bold uppercase mb-3 opacity-80">(Walmart)</p>
                         </div>
@@ -325,10 +333,10 @@
                         <!-- Right Column: Card -->
                         <div class="flex-1 card card-hover border-l-4 border-[#E20074] pl-2">
                             <h3 class="text-xl font-black text-[#E20074] uppercase italic tracking-tighter mb-4">Intern – Control Tower Operations, Grocery Supply Chain</h3>
-                            <ul class="list-disc ml-5 space-y-3 text-slate-400 font-medium text-sm leading-relaxed marker:text-[#E20074]">
-                                <li>Sole candidate selected from a pool of <span class="text-white font-bold">250</span> highly-regarded students from all disciplines for this prestigious internship.</li>
-                                <li>Accomplished <span class="text-white font-bold">80% reduction</span> in product damage at the Lucknow Operations fulfillment center for groceries by conducting analysis of inventory sanity, optimizing last-mile transit, and analyzing consumer order data and feedback, formulating strategies.</li>
-                                <li>Achieved reduction of data management and analyses time by <span class="text-white font-bold">75%</span> by developing and implementing macros and Python Scripts.</li>
+                            <ul class="list-disc ml-5 space-y-3 text-gray-600 font-medium text-sm leading-relaxed marker:text-[#E20074]">
+                                <li>Sole candidate selected from a pool of <span class="text-black font-bold">250</span> highly-regarded students from all disciplines for this prestigious internship.</li>
+                                <li>Accomplished <span class="text-black font-bold">80% reduction</span> in product damage at the Lucknow Operations fulfillment center for groceries by conducting analysis of inventory sanity, optimizing last-mile transit, and analyzing consumer order data and feedback, formulating strategies.</li>
+                                <li>Achieved reduction of data management and analyses time by <span class="text-black font-bold">75%</span> by developing and implementing macros and Python Scripts.</li>
                                 <li>Identified key areas of improvement and facilitated new quality control measures in collaboration with the Warehouse Managers.</li>
                             </ul>
                         </div>
@@ -338,14 +346,14 @@
         </section>
 
         <!-- Arsenal -->
-        <section id="skills" class="py-32 px-4 border-y border-white/5 bg-[#1f1f1f]">
+        <section id="skills" class="py-32 px-4 border-y border-gray-100 bg-white">
             <div class="container mx-auto max-w-6xl">
-                <h2 class="reveal-up text-2xl font-black mb-16 text-white uppercase tracking-tighter italic text-left">TECHNICAL <span class="text-[#E20074]">ARSENAL</span></h2>
+                <h2 class="reveal-up text-2xl font-black mb-16 text-black uppercase tracking-tighter italic text-left">TECHNICAL <span class="text-[#E20074]">ARSENAL</span></h2>
                 
                 <div class="grid md:grid-cols-3 gap-12">
                     <div class="reveal-left space-y-6">
-                        <h3 class="text-xs font-black uppercase tracking-[0.4em] text-white text-left border-b border-[#E20074] pb-4">Product & PM</h3>
-                        <ul class="list-disc ml-5 space-y-2 text-slate-400 font-medium text-sm leading-relaxed marker:text-[#E20074]">
+                        <h3 class="text-xs font-black uppercase tracking-[0.4em] text-black text-left border-b border-[#E20074] pb-4">Product & PM</h3>
+                        <ul class="list-disc ml-5 space-y-2 text-gray-600 font-medium text-sm leading-relaxed marker:text-[#E20074]">
                             <li>Product Strategy</li>
                             <li>Roadmapping</li>
                             <li>Agile/Scrum</li>
@@ -358,8 +366,8 @@
                     </div>
                     
                     <div class="reveal-up space-y-6">
-                        <h3 class="text-xs font-black uppercase tracking-[0.4em] text-white text-left border-b border-[#E20074] pb-4">Data Stack</h3>
-                        <ul class="list-disc ml-5 space-y-2 text-slate-400 font-medium text-sm leading-relaxed marker:text-[#E20074]">
+                        <h3 class="text-xs font-black uppercase tracking-[0.4em] text-black text-left border-b border-[#E20074] pb-4">Data Stack</h3>
+                        <ul class="list-disc ml-5 space-y-2 text-gray-600 font-medium text-sm leading-relaxed marker:text-[#E20074]">
                             <li>SQL</li>
                             <li>Python</li>
                             <li>R</li>
@@ -372,8 +380,8 @@
                     </div>
                     
                     <div class="reveal-right space-y-6">
-                        <h3 class="text-xs font-black uppercase tracking-[0.4em] text-white text-left border-b border-[#E20074] pb-4">Engineering</h3>
-                        <ul class="list-disc ml-5 space-y-2 text-slate-400 font-medium text-sm leading-relaxed marker:text-[#E20074]">
+                        <h3 class="text-xs font-black uppercase tracking-[0.4em] text-black text-left border-b border-[#E20074] pb-4">Engineering</h3>
+                        <ul class="list-disc ml-5 space-y-2 text-gray-600 font-medium text-sm leading-relaxed marker:text-[#E20074]">
                             <li>Java</li>
                             <li>Database Mgmt</li>
                             <li>Econometrics</li>
@@ -386,59 +394,59 @@
         </section>
 
         <!-- Projects -->
-        <section id="projects" class="py-32 px-4 bg-[#1f1f1f]">
+        <section id="projects" class="py-32 px-4 bg-white">
             <div class="container mx-auto max-w-6xl">
-                <h2 class="section-header">The <span class="text-[#E20074]">Lab</span></h2>
+                <h2 class="reveal-up section-header text-black">The <span class="text-[#E20074]">Lab</span></h2>
                 
                 <div class="grid md:grid-cols-2 gap-10">
                     <div class="reveal-left card card-hover group border-l-4 border-[#E20074] pl-2">
                         <div class="flex justify-between items-start mb-6">
-                            <h3 class="text-3xl font-black text-white italic tracking-tighter uppercase leading-none">Housing Aggregator</h3>
+                            <h3 class="text-3xl font-black text-black italic tracking-tighter uppercase leading-none">Housing Aggregator</h3>
                             <div class="bg-[#E20074] p-3 text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg></div>
                         </div>
-                        <p class="text-slate-400 font-medium text-sm leading-relaxed">Identified key pain points for student housing searches. Built a <span class="text-white">Python-based full-stack solution</span> with a scoring algorithm that reduced user search time by over <span class="text-[#E20074] font-bold">50%</span>.</p>
+                        <p class="text-gray-600 font-medium text-sm leading-relaxed">Identified key pain points for student housing searches. Built a <span class="text-black font-bold">Python-based full-stack solution</span> with a scoring algorithm that reduced user search time by over <span class="text-[#E20074] font-bold">50%</span>.</p>
                         <div class="mt-6 flex gap-2">
-                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Python</span>
-                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Web Scraping</span>
+                            <span class="text-[10px] bg-gray-100 px-2 py-1 uppercase font-bold text-gray-600">Python</span>
+                            <span class="text-[10px] bg-gray-100 px-2 py-1 uppercase font-bold text-gray-600">Web Scraping</span>
                         </div>
                     </div>
 
                     <div class="reveal-right card card-hover group pl-2">
                         <div class="flex justify-between items-start mb-6">
-                            <h3 class="text-3xl font-black text-white italic tracking-tighter uppercase leading-none">TEDx Leadership</h3>
-                            <div class="bg-white/10 p-3 text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></div>
+                            <h3 class="text-3xl font-black text-black italic tracking-tighter uppercase leading-none">TEDx Leadership</h3>
+                            <div class="bg-gray-100 p-3 text-black"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></div>
                         </div>
-                        <p class="text-slate-400 font-medium text-sm leading-relaxed">Managed vision and execution for <span class="text-white">Bangalore's largest TEDx event</span>. Led a cross-domain team to host renowned speakers like ISRO Project Director Dr. Anuradha TK.</p>
+                        <p class="text-gray-600 font-medium text-sm leading-relaxed">Managed vision and execution for <span class="text-black font-bold">Bangalore's largest TEDx event</span>. Led a cross-domain team to host renowned speakers like ISRO Project Director Dr. Anuradha TK.</p>
                         <div class="mt-6 flex gap-2">
-                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Leadership</span>
-                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Stakeholder Mgmt</span>
+                            <span class="text-[10px] bg-gray-100 px-2 py-1 uppercase font-bold text-gray-600">Leadership</span>
+                            <span class="text-[10px] bg-gray-100 px-2 py-1 uppercase font-bold text-gray-600">Stakeholder Mgmt</span>
                         </div>
                     </div>
                 </div>
 
                 <!-- Certifications Strip -->
                 <div class="reveal-up mt-20">
-                    <h3 class="text-xs font-black uppercase tracking-[0.5em] text-slate-500 mb-8 italic">Verified Expertise</h3>
+                    <h3 class="text-xs font-black uppercase tracking-[0.5em] text-gray-400 mb-8 italic">Verified Expertise</h3>
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        <div class="bg-[#2d2d2d] p-4 flex items-center gap-4">
+                        <div class="bg-white p-4 flex items-center gap-4 border border-gray-100 shadow-sm">
                             <div class="w-2 h-2 bg-[#E20074]"></div>
-                            <span class="text-[10px] uppercase font-bold tracking-widest">Google Data Analytics</span>
+                            <span class="text-[10px] uppercase font-bold tracking-widest text-black">Google Data Analytics</span>
                         </div>
-                        <div class="bg-[#2d2d2d] p-4 flex items-center gap-4">
+                        <div class="bg-white p-4 flex items-center gap-4 border border-gray-100 shadow-sm">
                             <div class="w-2 h-2 bg-[#E20074]"></div>
-                            <span class="text-[10px] uppercase font-bold tracking-widest">Google Project Mgmt & Agile</span>
+                            <span class="text-[10px] uppercase font-bold tracking-widest text-black">Google Project Mgmt & Agile</span>
                         </div>
-                        <div class="bg-[#2d2d2d] p-4 flex items-center gap-4">
+                        <div class="bg-white p-4 flex items-center gap-4 border border-gray-100 shadow-sm">
                             <div class="w-2 h-2 bg-[#E20074]"></div>
-                            <span class="text-[10px] uppercase font-bold tracking-widest">Digital Marketing (Gies)</span>
+                            <span class="text-[10px] uppercase font-bold tracking-widest text-black">Digital Marketing (Gies)</span>
                         </div>
-                        <div class="bg-[#2d2d2d] p-4 flex items-center gap-4">
+                        <div class="bg-white p-4 flex items-center gap-4 border border-gray-100 shadow-sm">
                             <div class="w-2 h-2 bg-[#E20074]"></div>
-                            <span class="text-[10px] uppercase font-bold tracking-widest">IBM Python Analysis</span>
+                            <span class="text-[10px] uppercase font-bold tracking-widest text-black">IBM Python Analysis</span>
                         </div>
-                        <div class="bg-[#2d2d2d] p-4 flex items-center gap-4">
+                        <div class="bg-white p-4 flex items-center gap-4 border border-gray-100 shadow-sm">
                             <div class="w-2 h-2 bg-[#E20074]"></div>
-                            <span class="text-[10px] uppercase font-bold tracking-widest">iNeuron PowerBI</span>
+                            <span class="text-[10px] uppercase font-bold tracking-widest text-black">iNeuron PowerBI</span>
                         </div>
                     </div>
                 </div>
@@ -446,18 +454,18 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="reveal-up py-32 px-4 bg-[#E20074] text-black">
+        <section id="contact" class="reveal-up py-32 px-4 bg-white border-t border-gray-100">
             <div class="container mx-auto max-w-4xl text-center">
-                <h2 class="text-6xl md:text-8xl font-black uppercase italic tracking-tighter mb-8 leading-none text-[#1f1f1f]">Ready to <br>Scale?</h2>
-                <p class="text-xl font-bold uppercase tracking-[0.2em] mb-12 opacity-80 text-[#1f1f1f]">Currently in Pittsburgh, PA — Available for Global Opportunities</p>
+                <h2 class="text-6xl md:text-8xl font-black uppercase italic tracking-tighter mb-8 leading-none text-black">Ready to <br>Scale?</h2>
+                <p class="text-xl font-bold uppercase tracking-[0.2em] mb-12 opacity-80 text-gray-700">Currently in Pittsburgh, PA — Available for Global Opportunities</p>
                 
                 <div class="flex flex-col items-center gap-6">
-                    <a href="mailto:msomani@andrew.cmu.edu" class="text-2xl md:text-4xl font-black hover:opacity-70 transition-opacity tracking-tighter uppercase italic underline text-[#1f1f1f]">
+                    <a href="mailto:msomani@andrew.cmu.edu" class="text-2xl md:text-4xl font-black hover:opacity-70 transition-opacity tracking-tighter uppercase italic underline text-black">
                         MSOMANI@ANDREW.CMU.EDU
                     </a>
                     <div class="flex gap-10 mt-6">
-                        <a href="https://www.linkedin.com/in/manavsomani/" target="_blank" class="text-sm font-black uppercase border-b-4 border-[#1f1f1f] pb-1 hover:translate-y-1 transition-transform text-[#1f1f1f]">LinkedIn</a>
-                        <span class="text-sm font-black uppercase border-b-4 border-[#1f1f1f] pb-1 text-[#1f1f1f]">+1 412-689-7119</span>
+                        <a href="https://www.linkedin.com/in/manavsomani/" target="_blank" class="text-sm font-black uppercase border-b-4 border-black pb-1 hover:translate-y-1 transition-transform text-black">LinkedIn</a>
+                        <span class="text-sm font-black uppercase border-b-4 border-black pb-1 text-black">+1 412-689-7119</span>
                     </div>
                 </div>
             </div>
@@ -466,9 +474,9 @@
     </main>
 
     <!-- Footer -->
-    <footer class="py-12 bg-[#121212] border-t border-white/5">
+    <footer class="py-12 bg-white border-t border-gray-100">
         <div class="container mx-auto px-4 text-center">
-            <p class="text-[10px] font-black uppercase tracking-[1em] text-slate-700 italic">
+            <p class="text-[10px] font-black uppercase tracking-[1em] text-gray-400 italic">
                 © 2025 MANAV SOMANI / PRODUCT & ANALYTICS SPECIALIST
             </p>
         </div>
