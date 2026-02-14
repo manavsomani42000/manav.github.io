@@ -90,20 +90,6 @@
         .skill-badge {
             @apply bg-[#E20074]/10 text-[#E20074] border border-[#E20074]/30 text-xs font-black uppercase tracking-widest px-4 py-2 rounded-none transition-all hover:bg-[#E20074] hover:text-white;
         }
-
-        /* Markdown-like output styling for AI Response */
-        .ai-response h3 {
-            @apply text-xl font-bold text-white mb-2 mt-4;
-        }
-        .ai-response p {
-            @apply mb-2 text-slate-300;
-        }
-        .ai-response ul {
-            @apply list-disc list-inside mb-4 text-slate-300;
-        }
-        .ai-response strong {
-            @apply text-[#E20074];
-        }
     </style>
 </head>
 <body class="antialiased">
@@ -122,7 +108,6 @@
                 <a href="#experience" class="nav-link uppercase text-xs tracking-widest">Experience</a>
                 <a href="#projects" class="nav-link uppercase text-xs tracking-widest">Projects</a>
                 <a href="#skills" class="nav-link uppercase text-xs tracking-widest">Skills</a>
-                <a href="#ai-demo" class="nav-link uppercase text-xs tracking-widest text-[#E20074]">AI Demo</a>
                 <a href="#contact" class="nav-link uppercase text-xs tracking-widest">Contact</a>
             </div>
             
@@ -142,7 +127,6 @@
         <a href="#experience" class="text-4xl font-black text-white hover:text-[#E20074] uppercase tracking-tighter">Experience</a>
         <a href="#projects" class="text-4xl font-black text-white hover:text-[#E20074] uppercase tracking-tighter">Projects</a>
         <a href="#skills" class="text-4xl font-black text-white hover:text-[#E20074] uppercase tracking-tighter">Skills</a>
-        <a href="#ai-demo" class="text-4xl font-black text-[#E20074] uppercase tracking-tighter">AI Strategist</a>
         <a href="#contact" class="text-4xl font-black text-white hover:text-[#E20074] uppercase tracking-tighter">Contact</a>
     </div>
 
@@ -252,18 +236,19 @@
 
         <!-- Professional Experience -->
         <section id="experience" class="py-32 px-4 bg-[#121212]">
-            <div class="container mx-auto max-w-5xl">
-                <h2 class="section-header">Core <span class="text-[#E20074]">Impact</span></h2>
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="section-header">Professional <span class="text-[#E20074]">Journey</span></h2>
                 
                 <div class="space-y-20">
                     <!-- Flipkart AM -->
-                    <div class="flex flex-col md:flex-row gap-8 items-start group">
-                        <div class="md:w-1/4">
-                            <p class="text-[#E20074] font-black italic text-xl tracking-tighter">2024 — 2025</p>
-                            <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Flipkart (Walmart)</p>
-                            <p class="text-[10px] text-slate-600 font-bold uppercase mt-1">Assistant Manager</p>
+                    <div class="flex flex-col md:flex-row gap-6 items-start group">
+                        <div class="md:w-48 shrink-0">
+                            <p class="text-slate-500 font-bold text-sm mb-2">2024 — 2025</p>
+                            <p class="text-[#E20074] font-black uppercase text-lg tracking-wider">Flipkart</p>
+                            <p class="text-[#E20074] text-xs font-bold uppercase mb-1">(Walmart)</p>
+                            <p class="text-[#E20074] font-bold uppercase text-xs">Assistant Manager</p>
                         </div>
-                        <div class="md:w-3/4 card card-hover">
+                        <div class="flex-1 card card-hover">
                             <h3 class="text-2xl font-black text-white uppercase italic tracking-tighter mb-2">Control Tower Operations</h3>
                             <ul class="mt-6 space-y-4 text-slate-400 font-medium text-sm leading-relaxed">
                                 <li class="flex items-start"><span class="text-[#E20074] mr-3 mt-1 font-black">/</span> Pioneered a <span class="text-white font-bold">"Data-as-a-Product"</span> platform, replacing legacy manual processes (3 members, 3+ hours daily) with real-time strategic views.</li>
@@ -275,13 +260,14 @@
                     </div>
 
                     <!-- Axio -->
-                    <div class="flex flex-col md:flex-row gap-8 items-start group">
-                        <div class="md:w-1/4">
-                            <p class="text-[#E20074] font-black italic text-xl tracking-tighter">2023 — 2024</p>
-                            <p class="text-xs font-bold text-slate-500 uppercase tracking-widest">Axio (Amazon)</p>
-                            <p class="text-[10px] text-slate-600 font-bold uppercase mt-1">Product Analyst</p>
+                    <div class="flex flex-col md:flex-row gap-6 items-start group">
+                        <div class="md:w-48 shrink-0">
+                            <p class="text-slate-500 font-bold text-sm mb-2">2023 — 2024</p>
+                            <p class="text-[#E20074] font-black uppercase text-lg tracking-wider">Axio</p>
+                            <p class="text-[#E20074] text-xs font-bold uppercase mb-1">(Amazon)</p>
+                            <p class="text-[#E20074] font-bold uppercase text-xs">Product Analyst</p>
                         </div>
-                        <div class="md:w-3/4 card card-hover">
+                        <div class="flex-1 card card-hover">
                             <h3 class="text-2xl font-black text-white uppercase italic tracking-tighter mb-2">Digital Collections (Amazon Pay Later)</h3>
                             <ul class="mt-6 space-y-4 text-slate-400 font-medium text-sm leading-relaxed">
                                 <li class="flex items-start"><span class="text-[#E20074] mr-3 mt-1 font-black">/</span> Executed product strategy for <span class="text-white font-bold">Amazon Pay Later</span>, driving a <span class="text-white font-bold">2x user base growth</span> through data-driven expansion plans.</li>
@@ -403,40 +389,6 @@
             </div>
         </section>
 
-        <!-- AI Product Strategist Section -->
-        <section id="ai-demo" class="py-32 px-4 bg-[#1f1f1f] border-y border-white/5 relative overflow-hidden">
-             <!-- Decorative elements -->
-             <div class="absolute top-0 right-0 w-64 h-64 bg-[#E20074]/5 rounded-full filter blur-[80px] opacity-20 pointer-events-none"></div>
-             
-             <div class="container mx-auto max-w-4xl text-center relative z-10">
-                <h2 class="section-header mb-8">AI Product <span class="text-[#E20074]">Strategist</span></h2>
-                <p class="text-slate-400 mb-12 max-w-2xl mx-auto text-lg">
-                    Experience the power of data-driven decision making. Enter a business problem below, and my AI assistant (powered by Gemini) will generate a preliminary product strategy & metrics framework.
-                </p>
-                
-                <div class="bg-[#2d2d2d] p-8 shadow-2xl border-t-4 border-[#E20074] text-left">
-                    <div class="flex flex-col gap-6">
-                        <div>
-                            <label for="problemInput" class="block text-xs font-black uppercase tracking-widest text-[#E20074] mb-3">Business Problem / Opportunity</label>
-                            <textarea id="problemInput" rows="3" class="w-full bg-[#121212] border border-white/10 p-4 text-white placeholder-slate-600 focus:border-[#E20074] focus:outline-none transition-colors text-sm font-medium" placeholder="e.g., Customer retention in our food delivery app has dropped by 5% month-over-month..."></textarea>
-                        </div>
-                        
-                        <div class="flex justify-end">
-                            <button onclick="generateStrategy()" id="generateBtn" class="btn btn-primary flex items-center gap-2">
-                                <span>Generate Strategy</span>
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <div id="resultContainer" class="hidden mt-8 pt-8 border-t border-white/10 animation-fade-in">
-                        <h3 class="text-sm font-black uppercase tracking-widest text-white mb-4">Strategic Analysis</h3>
-                        <div id="aiOutput" class="text-sm text-slate-300 space-y-4 ai-response"></div>
-                    </div>
-                </div>
-             </div>
-        </section>
-
         <!-- Contact Section -->
         <section id="contact" class="py-32 px-4 bg-[#E20074] text-black">
             <div class="container mx-auto max-w-4xl text-center">
@@ -485,63 +437,6 @@
             navClose?.addEventListener('click', () => toggleMenu(false));
             navLinks.forEach(link => link.addEventListener('click', () => toggleMenu(false)));
         });
-
-        async function generateStrategy() {
-            const input = document.getElementById('problemInput').value;
-            const btn = document.getElementById('generateBtn');
-            const output = document.getElementById('aiOutput');
-            const container = document.getElementById('resultContainer');
-            
-            if (!input.trim()) return;
-
-            // UI Loading State
-            btn.innerHTML = '<span>Processing...</span>';
-            btn.disabled = true;
-            container.classList.add('hidden');
-            
-            // Gemini API Setup
-            const apiKey = ""; // API Key provided by environment
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-            
-            const prompt = `
-                Act as a Senior Product Manager & Analytics Lead. 
-                Analyze the following business problem: "${input}".
-                Provide a structured response with:
-                1. Diagnosis (Potential Root Causes)
-                2. North Star Metric & 2 Guardrail Metrics
-                3. A Hypothesis for an A/B Test.
-                Keep it concise, professional, and use bullet points. Format with HTML tags (<strong>, <ul>, <li>) for styling.
-            `;
-
-            try {
-                const response = await fetch(url, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        contents: [{ parts: [{ text: prompt }] }]
-                    })
-                });
-
-                const data = await response.json();
-                
-                if (data.candidates && data.candidates[0].content) {
-                    const text = data.candidates[0].content.parts[0].text;
-                    // Simple formatting cleanup if needed, but we asked for HTML tags
-                    output.innerHTML = text; 
-                    container.classList.remove('hidden');
-                } else {
-                    output.innerHTML = "<p class='text-red-400'>Analysis could not be generated at this time. Please try again.</p>";
-                    container.classList.remove('hidden');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                output.innerHTML = "<p class='text-red-400'>Connection error. Please check your network.</p>";
-                container.classList.remove('hidden');
-            } finally {
-                btn.innerHTML = '<span>Generate Strategy</span><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>';
-                btn.disabled = false;
-            }
-        }
     </script>
 </body>
 </html>
