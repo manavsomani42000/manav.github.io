@@ -44,6 +44,7 @@
             font-family: 'Inter', sans-serif;
             background-color: #1f1f1f; /* Primary Grey Background */
             color: #f1f1f1;
+            overflow-x: hidden; /* Prevent horizontal scroll */
         }
         
         /* Section header styling */
@@ -92,6 +93,7 @@
         }
 
         /* Animation Classes */
+        /* Note: Elements start invisible (opacity 0) */
         .reveal-left {
             opacity: 0;
             transform: translateX(-50px);
@@ -108,6 +110,7 @@
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
         
+        /* Active state makes them visible */
         .reveal-left.active, .reveal-right.active, .reveal-up.active {
             opacity: 1;
             transform: translate(0, 0);
@@ -178,7 +181,7 @@
 
                 <!-- Profile Photo -->
                 <div class="reveal-up relative w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border-4 border-[#E20074] shadow-[0_0_40px_rgba(226,0,116,0.3)] hover:scale-105 transition-transform duration-300">
-                    <img src="Manav_Somani_Linkedin_Photo_2025_-_Cropped.jpeg" alt="Manav Somani" class="w-full h-full object-cover">
+                    <img src="Manav_Somani_Linkedin_Photo_2025_-_Cropped.jpeg" alt="Manav Somani" class="w-full h-full object-cover" onerror="this.style.display='none'">
                 </div>
             </div>
         </section>
@@ -433,7 +436,7 @@
                             <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074]">
                                 <h4 class="text-lg font-black text-black uppercase tracking-tighter">Google Data Analytics Specialization</h4>
                             </div>
-                            <p class="text-sm text-slate-400 leading-relaxed pl-1">An intensive 8-course professional certificate covering the entire data analysis lifecycle: Ask, Prepare, Process, Analyze, Share, and Act. Developed hands-on skills in data cleaning, analysis, and visualization using SQL, R Programming, and Tableau.</p>
+                            <p class="text-sm text-slate-300 leading-relaxed pl-1">An intensive 8-course professional certificate covering the entire data analysis lifecycle: Ask, Prepare, Process, Analyze, Share, and Act. Developed hands-on skills in data cleaning, analysis, and visualization using SQL, R Programming, and Tableau.</p>
                         </div>
 
                         <!-- Project Management -->
@@ -441,7 +444,7 @@
                             <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074]">
                                 <h4 class="text-lg font-black text-black uppercase tracking-tighter">Project Management and Agile Specialization</h4>
                             </div>
-                            <p class="text-sm text-slate-400 leading-relaxed pl-1">6-course program by Google, mastering project management skills, including planning, execution, monitoring, and closure, with a focus on Agile and Scrum methodologies</p>
+                            <p class="text-sm text-slate-300 leading-relaxed pl-1">6-course program by Google, mastering project management skills, including planning, execution, monitoring, and closure, with a focus on Agile and Scrum methodologies</p>
                         </div>
 
                         <!-- Digital Marketing -->
@@ -449,7 +452,7 @@
                             <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074]">
                                 <h4 class="text-lg font-black text-black uppercase tracking-tighter">Digital Marketing Specialization [Gies School of Business]</h4>
                             </div>
-                            <p class="text-sm text-slate-400 leading-relaxed pl-1">4-course specialization covering the fundamentals and processes of Digital Marketing, including case studies of renowned campaigns such as Zoom, Budweiser and Burger King</p>
+                            <p class="text-sm text-slate-300 leading-relaxed pl-1">4-course specialization covering the fundamentals and processes of Digital Marketing, including case studies of renowned campaigns such as Zoom, Budweiser and Burger King</p>
                         </div>
 
                         <!-- Data Analysis Python -->
@@ -475,7 +478,7 @@
                     </div>
 
                     <div class="mt-10 pl-2">
-                        <a href="https://www.linkedin.com/in/manavsomani/details/certifications/" target="_blank" class="btn btn-secondary inline-flex items-center gap-2 border-white text-white hover:bg-white hover:text-black">
+                        <a href="https://www.linkedin.com/in/manavsomani/details/certifications/" target="_blank" class="btn btn-primary inline-flex items-center gap-2">
                             <span>View Certifications on LinkedIn</span>
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                         </a>
@@ -485,7 +488,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-32 px-4 bg-[#E20074] text-black">
+        <section id="contact" class="reveal-up py-32 px-4 bg-[#E20074] text-black">
             <div class="container mx-auto max-w-4xl text-center">
                 <h2 class="text-6xl md:text-8xl font-black uppercase italic tracking-tighter mb-8 leading-none text-[#1f1f1f]">Ready to <br>Scale?</h2>
                 <p class="text-xl font-bold uppercase tracking-[0.2em] mb-12 opacity-80 text-[#1f1f1f]">Currently in Pittsburgh, PA — Available for Global Opportunities</p>
@@ -540,10 +543,9 @@
 
             const revealObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    // entry.isIntersecting is true when the element enters the viewport
-                    // We toggle the 'active' class based on whether it is intersecting
-                    // This ensures it fades out when scrolling away
-                    entry.target.classList.toggle('active', entry.isIntersecting);
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
                 });
             }, observerOptions);
 
