@@ -44,6 +44,7 @@
             font-family: 'Inter', sans-serif;
             background-color: #1f1f1f; /* Primary Grey Background */
             color: #f1f1f1;
+            overflow-x: hidden; /* Prevent horizontal scroll */
         }
         
         /* Section header styling */
@@ -108,6 +109,7 @@
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
         
+        /* Active state makes them visible */
         .reveal-left.active, .reveal-right.active, .reveal-up.active {
             opacity: 1;
             transform: translate(0, 0);
@@ -178,7 +180,7 @@
 
                 <!-- Profile Photo -->
                 <div class="reveal-up relative w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border-4 border-[#E20074] shadow-[0_0_40px_rgba(226,0,116,0.3)] hover:scale-105 transition-transform duration-300">
-                    <img src="Manav_Somani_Linkedin_Photo_2025_-_Cropped.jpeg" alt="Manav Somani" class="w-full h-full object-cover">
+                    <img src="Manav_Somani_Linkedin_Photo_2025_-_Cropped.jpeg" alt="Manav Somani" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Manav+Somani&background=E20074&color=fff&size=256&font-size=0.4';">
                 </div>
             </div>
         </section>
@@ -251,7 +253,7 @@
                                 
                                 <!-- CMU Logo -->
                                 <div class="hidden md:flex shrink-0 items-center justify-center bg-white p-2 rounded-lg w-32 h-32">
-                                    <img src="cmu_logo.jpeg" alt="CMU Logo" class="w-full h-full object-contain">
+                                    <img src="cmu_logo.jpg" alt="CMU Logo" class="w-full h-full object-contain">
                                 </div>
                             </div>
                         </div>
@@ -280,7 +282,7 @@
 
                                 <!-- PES Logo -->
                                 <div class="hidden md:flex shrink-0 items-center justify-center bg-white p-2 rounded-lg w-32 h-32">
-                                    <img src="pes_logo.jpeg" alt="PES Logo" class="w-full h-full object-contain">
+                                    <img src="pes_logo.jpeg" alt="PES University Logo" class="w-full h-full object-contain">
                                 </div>
                             </div>
                         </div>
@@ -449,38 +451,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <!-- Google Data Analytics -->
                         <div class="flex flex-col gap-3">
-                            <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074]">
-                                <h4 class="text-lg font-black text-black uppercase tracking-tighter">Google Data Analytics Specialization</h4>
-                            </div>
-                            <p class="text-sm text-gray-400 leading-relaxed pl-1">An intensive 8-course professional certificate covering the entire data analysis lifecycle: Ask, Prepare, Process, Analyze, Share, and Act. Developed hands-on skills in data cleaning, analysis, and visualization using SQL, R Programming, and Tableau.</p>
-                        </div>
-                        <p class="text-slate-400 font-medium text-sm leading-relaxed">Identified key pain points for student housing searches. Built a <span class="text-white">Python-based full-stack solution</span> with a scoring algorithm that reduced user search time by over <span class="text-[#E20074] font-bold">50%</span>.</p>
-                        <div class="mt-6 flex gap-2">
-                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Python</span>
-                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Web Scraping</span>
-                        </div>
-                    </div>
-
-                    <div class="reveal-right card card-hover group pl-2">
-                        <div class="flex justify-between items-start mb-6">
-                            <h3 class="text-3xl font-black text-white italic tracking-tighter uppercase leading-none">TEDx Leadership</h3>
-                            <div class="bg-white/10 p-3 text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></div>
-                        </div>
-                        <p class="text-slate-400 font-medium text-sm leading-relaxed">Managed vision and execution for <span class="text-white">Bangalore's largest TEDx event</span>. Led a cross-domain team to host renowned speakers like ISRO Project Director Dr. Anuradha TK.</p>
-                        <div class="mt-6 flex gap-2">
-                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Leadership</span>
-                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Stakeholder Mgmt</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Certifications Strip -->
-                <div class="reveal-up mt-20">
-                    <h3 class="text-2xl font-black text-[#E20074] italic uppercase tracking-tighter mb-8 pl-2">CERTIFICATION</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <!-- Google Data Analytics -->
-                        <div class="flex flex-col gap-3">
-                            <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074]">
+                            <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074] min-h-[6rem] flex items-center">
                                 <h4 class="text-lg font-black text-black uppercase tracking-tighter">Google Data Analytics Specialization</h4>
                             </div>
                             <p class="text-sm text-slate-400 leading-relaxed pl-1">An intensive 8-course professional certificate covering the entire data analysis lifecycle: Ask, Prepare, Process, Analyze, Share, and Act. Developed hands-on skills in data cleaning, analysis, and visualization using SQL, R Programming, and Tableau.</p>
@@ -488,7 +459,7 @@
 
                         <!-- Project Management -->
                         <div class="flex flex-col gap-3">
-                            <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074]">
+                            <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074] min-h-[6rem] flex items-center">
                                 <h4 class="text-lg font-black text-black uppercase tracking-tighter">Project Management and Agile Specialization</h4>
                             </div>
                             <p class="text-sm text-slate-400 leading-relaxed pl-1">6-course program by Google, mastering project management skills, including planning, execution, monitoring, and closure, with a focus on Agile and Scrum methodologies</p>
@@ -496,7 +467,7 @@
 
                         <!-- Digital Marketing -->
                         <div class="flex flex-col gap-3">
-                            <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074]">
+                            <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074] min-h-[6rem] flex items-center">
                                 <h4 class="text-lg font-black text-black uppercase tracking-tighter">Digital Marketing Specialization [Gies School of Business]</h4>
                             </div>
                             <p class="text-sm text-slate-400 leading-relaxed pl-1">4-course specialization covering the fundamentals and processes of Digital Marketing, including case studies of renowned campaigns such as Zoom, Budweiser and Burger King</p>
@@ -504,21 +475,21 @@
 
                         <!-- Data Analysis Python -->
                         <div class="flex flex-col gap-3">
-                            <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074]">
+                            <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074] min-h-[6rem] flex items-center">
                                 <h4 class="text-lg font-black text-black uppercase tracking-tighter">Data Analysis with Python [IBM]</h4>
                             </div>
                         </div>
 
                         <!-- PowerBI -->
                         <div class="flex flex-col gap-3">
-                            <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074]">
+                            <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074] min-h-[6rem] flex items-center">
                                 <h4 class="text-lg font-black text-black uppercase tracking-tighter">Advanced PowerBI Certification [iNeuron]</h4>
                             </div>
                         </div>
 
                         <!-- Full Stack Data Analysis -->
                         <div class="flex flex-col gap-3">
-                            <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074]">
+                            <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074] min-h-[6rem] flex items-center">
                                 <h4 class="text-lg font-black text-black uppercase tracking-tighter">Full Stack Data Analysis [iNeuron]</h4>
                             </div>
                         </div>
@@ -535,7 +506,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-32 px-4 bg-[#E20074] text-black">
+        <section id="contact" class="reveal-up py-32 px-4 bg-[#E20074] text-black">
             <div class="container mx-auto max-w-4xl text-center">
                 <h2 class="text-6xl md:text-8xl font-black uppercase italic tracking-tighter mb-8 leading-none text-[#1f1f1f]">Ready to <br>Scale?</h2>
                 <p class="text-xl font-bold uppercase tracking-[0.2em] mb-12 opacity-80 text-[#1f1f1f]">Currently in Pittsburgh, PA — Available for Global Opportunities</p>
