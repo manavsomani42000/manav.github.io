@@ -44,7 +44,6 @@
             font-family: 'Inter', sans-serif;
             background-color: #1f1f1f; /* Primary Grey Background */
             color: #f1f1f1;
-            overflow-x: hidden; /* Prevent horizontal scroll */
         }
         
         /* Section header styling */
@@ -93,7 +92,6 @@
         }
 
         /* Animation Classes */
-        /* Note: Elements start invisible (opacity 0) */
         .reveal-left {
             opacity: 0;
             transform: translateX(-50px);
@@ -110,7 +108,6 @@
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
         
-        /* Active state makes them visible */
         .reveal-left.active, .reveal-right.active, .reveal-up.active {
             opacity: 1;
             transform: translate(0, 0);
@@ -181,7 +178,7 @@
 
                 <!-- Profile Photo -->
                 <div class="reveal-up relative w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border-4 border-[#E20074] shadow-[0_0_40px_rgba(226,0,116,0.3)] hover:scale-105 transition-transform duration-300">
-                    <img src="https://share.google/CvgvPg9iUrYbXm8Ds" alt="Manav Somani" class="w-full h-full object-cover" onerror="this.style.display='none'">
+                    <img src="Manav_Somani_Linkedin_Photo_2025_-_Cropped.jpeg" alt="Manav Somani" class="w-full h-full object-cover">
                 </div>
             </div>
         </section>
@@ -203,9 +200,9 @@
                     
                     <!-- Education Block -->
                     <div class="w-full max-w-4xl space-y-8">
-                        <h3 class="text-2xl font-black uppercase tracking-tighter text-[#E20074] italic mb-8">EDUCATION</h3>
+                        <h3 class="reveal-left text-2xl font-black uppercase tracking-tighter text-[#E20074] italic mb-8">EDUCATION</h3>
                         
-                        <!-- CMU Expanded Card -->
+                        <!-- CMU Expanded Card (Fixed: Dark Tile) -->
                         <div class="reveal-right card bg-[#2d2d2d] border-l-4 border-[#E20074]">
                             <div class="flex flex-col md:flex-row gap-6 justify-between items-start">
                                 <div class="flex-1">
@@ -254,11 +251,12 @@
                                 
                                 <!-- CMU Logo -->
                                 <div class="hidden md:flex shrink-0 items-center justify-center bg-white p-2 rounded-lg w-32 h-32">
-                                    <img src="https://upload.wikimedia.org/wikipedia/en/b/bb/Carnegie_Mellon_University_seal.svg" alt="CMU Logo" class="w-full h-full object-contain">
+                                    <img src="cmu_logo.jpeg" alt="CMU Logo" class="w-full h-full object-contain">
                                 </div>
                             </div>
                         </div>
                         
+                        <!-- PES Card (Fixed: Dark Tile) -->
                         <div class="reveal-left card bg-[#2d2d2d] border-l-4 border-transparent">
                             <div class="flex flex-col md:flex-row gap-6 justify-between items-start">
                                 <div class="flex-1">
@@ -271,7 +269,7 @@
                                         <p class="text-sm text-slate-400 leading-relaxed">Conducted extensive research and analysis on "The Effect of FDM Parameters on Mechanical Properties of Thermoplastic Polyurethane (TPU)", receiving the highest grade.</p>
                                     </div>
 
-                                    <div class="mt-4 pt-4 border-t border-gray-100 pl-2">
+                                    <div class="mt-4 pt-4 border-t border-white/5 pl-2">
                                         <h5 class="text-xs font-black uppercase text-[#E20074] tracking-[0.2em] mb-2 italic">Clubs & Extracurriculars</h5>
                                         <ul class="list-disc ml-5 text-sm text-slate-400 leading-relaxed marker:text-[#E20074] space-y-3">
                                             <li><span class="font-bold text-white">Head of TEDxPESU Club:</span> Led the TEDxPESU club, collaborating with various domains to conduct the largest TEDx event in Bangalore, featuring renowned speakers such as Dr. Anuradha TK [ex-ISRO Project Director] and Nirmal Pillai [Content creator with 1.5M+ followers/subscribers]</li>
@@ -282,7 +280,7 @@
 
                                 <!-- PES Logo -->
                                 <div class="hidden md:flex shrink-0 items-center justify-center bg-white p-2 rounded-lg w-32 h-32">
-                                    <img src="pes_university.png" alt="PES University Logo" class="w-full h-full object-contain">
+                                    <img src="pes_logo.jpeg" alt="PES Logo" class="w-full h-full object-contain">
                                 </div>
                             </div>
                         </div>
@@ -372,7 +370,7 @@
                 <h2 class="reveal-up text-2xl font-black mb-16 text-white uppercase tracking-tighter italic text-left">TECHNICAL <span class="text-[#E20074]">ARSENAL</span></h2>
                 
                 <div class="grid md:grid-cols-3 gap-12">
-                    <div class="reveal-left space-y-6">
+                    <div class="reveal-left card bg-[#2d2d2d] space-y-6">
                         <h3 class="text-xs font-black uppercase tracking-[0.4em] text-white text-left border-b border-[#E20074] pb-4">Product & PM</h3>
                         <ul class="list-disc ml-5 space-y-2 text-slate-400 font-medium text-sm leading-relaxed marker:text-[#E20074]">
                             <li>Product Strategy</li>
@@ -386,7 +384,7 @@
                         </ul>
                     </div>
                     
-                    <div class="reveal-up space-y-6">
+                    <div class="reveal-up card bg-[#2d2d2d] space-y-6">
                         <h3 class="text-xs font-black uppercase tracking-[0.4em] text-white text-left border-b border-[#E20074] pb-4">Data Stack</h3>
                         <ul class="list-disc ml-5 space-y-2 text-slate-400 font-medium text-sm leading-relaxed marker:text-[#E20074]">
                             <li>SQL</li>
@@ -400,7 +398,7 @@
                         </ul>
                     </div>
                     
-                    <div class="reveal-right space-y-6">
+                    <div class="reveal-right card bg-[#2d2d2d] space-y-6">
                         <h3 class="text-xs font-black uppercase tracking-[0.4em] text-white text-left border-b border-[#E20074] pb-4">Engineering</h3>
                         <ul class="list-disc ml-5 space-y-2 text-slate-400 font-medium text-sm leading-relaxed marker:text-[#E20074]">
                             <li>Java</li>
@@ -420,10 +418,41 @@
                 <h2 class="reveal-up section-header text-white">The <span class="text-[#E20074]">Lab</span></h2>
                 
                 <div class="grid md:grid-cols-2 gap-10">
-                    <div class="reveal-left card card-hover group border-l-4 border-[#E20074] pl-2">
+                    <div class="reveal-left card card-hover bg-[#2d2d2d] group border-l-4 border-[#E20074] pl-2">
                         <div class="flex justify-between items-start mb-6">
                             <h3 class="text-3xl font-black text-white italic tracking-tighter uppercase leading-none">Housing Aggregator</h3>
                             <div class="bg-[#E20074] p-3 text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg></div>
+                        </div>
+                        <p class="text-slate-400 font-medium text-sm leading-relaxed">Identified key pain points for student housing searches. Built a <span class="text-white">Python-based full-stack solution</span> with a scoring algorithm that reduced user search time by over <span class="text-[#E20074] font-bold">50%</span>.</p>
+                        <div class="mt-6 flex gap-2">
+                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Python</span>
+                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Web Scraping</span>
+                        </div>
+                    </div>
+
+                    <div class="reveal-right card card-hover bg-[#2d2d2d] group pl-2">
+                        <div class="flex justify-between items-start mb-6">
+                            <h3 class="text-3xl font-black text-white italic tracking-tighter uppercase leading-none">TEDx Leadership</h3>
+                            <div class="bg-white/10 p-3 text-white"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></div>
+                        </div>
+                        <p class="text-slate-400 font-medium text-sm leading-relaxed">Managed vision and execution for <span class="text-white">Bangalore's largest TEDx event</span>. Led a cross-domain team to host renowned speakers like ISRO Project Director Dr. Anuradha TK.</p>
+                        <div class="mt-6 flex gap-2">
+                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Leadership</span>
+                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Stakeholder Mgmt</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications Strip -->
+                <div class="reveal-up mt-20">
+                    <h3 class="text-2xl font-black text-[#E20074] italic uppercase tracking-tighter mb-8 pl-2">CERTIFICATION</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- Google Data Analytics -->
+                        <div class="flex flex-col gap-3">
+                            <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074]">
+                                <h4 class="text-lg font-black text-black uppercase tracking-tighter">Google Data Analytics Specialization</h4>
+                            </div>
+                            <p class="text-sm text-gray-400 leading-relaxed pl-1">An intensive 8-course professional certificate covering the entire data analysis lifecycle: Ask, Prepare, Process, Analyze, Share, and Act. Developed hands-on skills in data cleaning, analysis, and visualization using SQL, R Programming, and Tableau.</p>
                         </div>
                         <p class="text-slate-400 font-medium text-sm leading-relaxed">Identified key pain points for student housing searches. Built a <span class="text-white">Python-based full-stack solution</span> with a scoring algorithm that reduced user search time by over <span class="text-[#E20074] font-bold">50%</span>.</p>
                         <div class="mt-6 flex gap-2">
@@ -454,7 +483,7 @@
                             <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074]">
                                 <h4 class="text-lg font-black text-black uppercase tracking-tighter">Google Data Analytics Specialization</h4>
                             </div>
-                            <p class="text-sm text-slate-300 leading-relaxed pl-1">An intensive 8-course professional certificate covering the entire data analysis lifecycle: Ask, Prepare, Process, Analyze, Share, and Act. Developed hands-on skills in data cleaning, analysis, and visualization using SQL, R Programming, and Tableau.</p>
+                            <p class="text-sm text-slate-400 leading-relaxed pl-1">An intensive 8-course professional certificate covering the entire data analysis lifecycle: Ask, Prepare, Process, Analyze, Share, and Act. Developed hands-on skills in data cleaning, analysis, and visualization using SQL, R Programming, and Tableau.</p>
                         </div>
 
                         <!-- Project Management -->
@@ -462,7 +491,7 @@
                             <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074]">
                                 <h4 class="text-lg font-black text-black uppercase tracking-tighter">Project Management and Agile Specialization</h4>
                             </div>
-                            <p class="text-sm text-slate-300 leading-relaxed pl-1">6-course program by Google, mastering project management skills, including planning, execution, monitoring, and closure, with a focus on Agile and Scrum methodologies</p>
+                            <p class="text-sm text-slate-400 leading-relaxed pl-1">6-course program by Google, mastering project management skills, including planning, execution, monitoring, and closure, with a focus on Agile and Scrum methodologies</p>
                         </div>
 
                         <!-- Digital Marketing -->
@@ -470,7 +499,7 @@
                             <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074]">
                                 <h4 class="text-lg font-black text-black uppercase tracking-tighter">Digital Marketing Specialization [Gies School of Business]</h4>
                             </div>
-                            <p class="text-sm text-slate-300 leading-relaxed pl-1">4-course specialization covering the fundamentals and processes of Digital Marketing, including case studies of renowned campaigns such as Zoom, Budweiser and Burger King</p>
+                            <p class="text-sm text-slate-400 leading-relaxed pl-1">4-course specialization covering the fundamentals and processes of Digital Marketing, including case studies of renowned campaigns such as Zoom, Budweiser and Burger King</p>
                         </div>
 
                         <!-- Data Analysis Python -->
@@ -506,7 +535,7 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="reveal-up py-32 px-4 bg-[#E20074] text-black">
+        <section id="contact" class="py-32 px-4 bg-[#E20074] text-black">
             <div class="container mx-auto max-w-4xl text-center">
                 <h2 class="text-6xl md:text-8xl font-black uppercase italic tracking-tighter mb-8 leading-none text-[#1f1f1f]">Ready to <br>Scale?</h2>
                 <p class="text-xl font-bold uppercase tracking-[0.2em] mb-12 opacity-80 text-[#1f1f1f]">Currently in Pittsburgh, PA — Available for Global Opportunities</p>
@@ -561,9 +590,10 @@
 
             const revealObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
+                    // entry.isIntersecting is true when the element enters the viewport
+                    // We toggle the 'active' class based on whether it is intersecting
+                    // This ensures it fades out when scrolling away
+                    entry.target.classList.toggle('active', entry.isIntersecting);
                 });
             }, observerOptions);
 
