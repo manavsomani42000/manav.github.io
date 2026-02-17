@@ -23,8 +23,8 @@
                     },
                     colors: {
                         't-magenta': '#E20074', // Official T-Mobile Magenta
-                        't-grey-dark': '#333333',
-                        't-grey-mid': '#333333', 
+                        't-grey-dark': '#121212',
+                        't-grey-mid': '#121212', 
                         't-grey-light': '#1a1a1a',
                     }
                 },
@@ -42,7 +42,7 @@
         /* Setting base font and colors */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #333333; /* Primary Grey Background */
+            background-color: #121212; /* Primary Black Background */
             color: #f1f1f1;
             overflow-x: hidden;
         }
@@ -57,7 +57,7 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #333333;
+            background: #121212;
         }
         ::-webkit-scrollbar-thumb {
             background: #E20074;
@@ -80,17 +80,12 @@
             @apply border-2 border-white hover:bg-white hover:text-black transform hover:-translate-y-1;
         }
 
-        /* Card styles - Unified Grey */
+        /* Card styles - Unified Black */
         .card {
-            @apply bg-[#333333] p-8 rounded-none shadow-2xl border border-white/5 border-l-4 border-l-transparent transition-all duration-300 relative overflow-hidden;
+            @apply bg-[#121212] p-8 rounded-none shadow-2xl border border-white/5 border-l-4 border-l-transparent transition-all duration-300 relative overflow-hidden;
         }
         .card-hover {
             @apply hover:border-l-[#E20074] hover:bg-[#1a1a1a] hover:scale-[1.01];
-        }
-
-        /* Skill Tags format - Translucent White on Dark */
-        .tag-pill {
-            @apply text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300 tracking-wider inline-block;
         }
 
         .skill-badge {
@@ -124,7 +119,7 @@
 <body class="antialiased">
 
     <!-- Header & Navigation -->
-    <header class="sticky top-0 z-50 w-full bg-[#333333]/95 backdrop-blur-md border-b border-white/5">
+    <header class="sticky top-0 z-50 w-full bg-[#121212]/95 backdrop-blur-md border-b border-white/5">
         <nav class="container mx-auto max-w-6xl px-4 py-5 flex justify-between items-center">
             <!-- Logo / Name -->
             <a href="#home" class="text-2xl font-black text-white tracking-tighter italic uppercase">
@@ -150,7 +145,7 @@
     </header>
 
     <!-- Mobile Nav Menu -->
-    <div id="mobile-menu" class="fixed inset-0 bg-[#333333] z-[100] hidden flex-col items-center justify-center space-y-10">
+    <div id="mobile-menu" class="fixed inset-0 bg-[#121212] z-[100] hidden flex-col items-center justify-center space-y-10">
         <button id="nav-close" class="absolute top-8 right-8 text-white">
             <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
@@ -167,7 +162,7 @@
     <main>
 
         <!-- Hero Section -->
-        <section id="home" class="min-h-screen flex items-center justify-center text-center px-4 py-20 relative overflow-hidden bg-[#333333]">
+        <section id="home" class="min-h-screen flex items-center justify-center text-center px-4 py-20 relative overflow-hidden bg-[#121212]">
             <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#E20074]/15 rounded-full filter blur-[120px] opacity-40 animate-pulse"></div>
             <div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#E20074]/15 rounded-full filter blur-[120px] opacity-40 animate-pulse"></div>
 
@@ -203,128 +198,129 @@
                         <a href="https://wa.me/919611850688" target="_blank" class="flex items-center gap-2 hover:text-[#E20074] transition-colors border-b border-[#E20074] pb-0.5 tracking-normal">
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                                 <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.143c1.589.943 3.13 1.467 4.788 1.468 5.405 0 9.805-4.4 9.808-9.806.002-2.618-1.018-5.079-2.873-6.934-1.856-1.854-4.315-2.871-6.941-2.872-5.407 0-9.808 4.401-9.811 9.806-.001 1.76.49 3.42 1.417 4.795l-1.063 3.877 3.675-1.034zm11.045-4.758c-.285-.143-1.688-.833-1.947-.928-.26-.095-.448-.143-.639.143-.19.285-.738.928-.905 1.12-.166.19-.332.214-.618.071-.285-.143-1.204-.444-2.293-1.415-.848-.756-1.42-1.689-1.586-1.974-.166-.285-.018-.439.124-.581.128-.127.285-.333.428-.5.143-.167.19-.285.285-.476.095-.19.048-.357-.024-.5-.071-.143-.639-1.542-.875-2.113-.23-.553-.465-.478-.639-.487-.164-.008-.355-.01-.546-.01-.191 0-.5.071-.762.357-.262.285-1 0-1.78.357s-1.31 1.69-1.31 2.452c0 .761.548 1.499.625 1.604.077.105 1.071 1.635 2.595 2.293.363.156.646.25.867.32.364.116.696.099.957.06.291-.044.833-.341 1.024-.668.19-.327.19-.607.134-.668-.056-.06-.21-.143-.496-.285z"/>
-                        </svg>
-                        <span>+91-96118-50688</span>
-                    </a>
-
-                    <span class="text-sm font-black uppercase border-b-4 border-[#E20074] pb-1 text-white">+1 412-689-7119</span>
-                </div>
-            </div>
-
-            <!-- Profile Photo -->
-            <div class="reveal-up relative w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border-4 border-[#E20074] shadow-[0_0_40px_rgba(226,0,116,0.3)] hover:scale-105 transition-transform duration-300">
-                <img src="Manav_Somani_Linkedin_Photo_2025_-_Cropped.jpeg" alt="Manav Somani" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Manav+Somani&background=E20074&color=fff&size=256&font-size=0.4';">
-            </div>
-        </div>
-    </section>
-
-    <!-- About & Education -->
-    <section id="about" class="py-16 px-6 md:px-16 border-t border-white/5 bg-[#333333]">
-        <div class="container mx-auto max-w-6xl">
-            <div class="flex flex-col gap-12 items-start text-left">
-                <!-- Text Block -->
-                <div class="reveal-left w-full max-w-4xl space-y-8">
-                    <div class="flex justify-between items-center mb-4">
-                        <h3 class="text-2xl font-black uppercase tracking-tighter text-[#E20074] italic"><span class="text-white">ABOUT</span> ME</h3>
-                        <a href="https://drive.google.com/file/d/1fqu-KZpyKCBcOq5-2iL40XYHuPJUTpx4/view?usp=sharing" target="_blank" class="hidden sm:inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#E20074] border-b-2 border-[#E20074] pb-1 hover:text-white hover:border-white transition-all">
-                            <span>View Resume</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            </svg>
+                            <span>+91-96118-50688</span>
                         </a>
-                    </div>
-                    <p class="text-xl text-slate-300 leading-relaxed font-light">
-                        I am a <span class="text-white font-bold">Product and Analytics professional</span> with <span class="text-white font-bold">3 years</span> of experience in e-commerce and fintech. From pioneering automated data platforms at Flipkart to scaling fintech portfolios at Axio, my focus is always on <span class="text-[#E20074] font-bold">measurable impact</span>.
-                    </p>
-                    <p class="text-lg text-slate-400 leading-relaxed font-light">
-                        I specialize in translating complex data sets into actionable product roadmaps. With a background in Engineering and advanced training at Carnegie Mellon, I approach business challenges with a blend of technical precision and strategic vision. I thrive in high-velocity environments, leveraging my expertise in data science and product strategy to bridge the gap between technical potential and commercial success.
-                    </p>
-                    <div class="pt-4 border-l-4 border-[#E20074] pl-6 italic text-slate-400 text-sm">
-                        "Bridging the gap between technical data science and strategic product development."
+
+                        <span class="text-slate-300 tracking-wider">+1 412-689-7119</span>
                     </div>
                 </div>
-                
-                <!-- Education Block -->
-                <div class="w-full max-w-4xl space-y-8">
-                    <h3 class="reveal-left text-2xl font-black uppercase tracking-tighter text-[#E20074] italic mb-8">EDUCATION</h3>
-                    
-                    <!-- CMU Expanded Card -->
-                    <div class="reveal-right card bg-[#333333] border-l-4 border-[#E20074]">
-                        <div class="flex flex-col md:flex-row gap-6 justify-between items-start">
-                            <div class="flex-1 pl-4">
-                                <h4 class="text-2xl font-black text-white italic uppercase tracking-tighter mb-2">Carnegie Mellon University</h4>
-                                <p class="text-sm font-bold text-[#E20074] tracking-widest uppercase mb-1">Master of Information Systems Management - Business Intelligence & Data Analytics</p>
-                                <p class="text-xs text-slate-400 uppercase italic mb-6">GPA 4.0/4.0</p>
-                                
-                                <div class="grid md:grid-cols-2 gap-12 mb-8">
-                                    <div>
-                                        <h5 class="text-[10px] font-black uppercase text-slate-300 tracking-[0.2em] mb-3">Fall 2025</h5>
-                                        <ul class="text-xs text-slate-300 leading-relaxed uppercase list-disc ml-5 space-y-2">
-                                            <li>STATS FOR IT MANAGERS</li>
-                                            <li>Applied Econometrics</li>
-                                            <li>UNSTRUCTURED DATA ANALYSIS</li>
-                                            <li>DATABASE MANAGEMENT</li>
-                                            <li>DATA FOCUSED PYTHON</li>
-                                            <li>Java</li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <h5 class="text-[10px] font-black uppercase text-slate-300 tracking-[0.2em] mb-3">Spring 2026</h5>
-                                        <ul class="text-xs text-slate-300 leading-relaxed uppercase list-disc ml-5 space-y-2">
-                                            <li>DataScience for Product Managers</li>
-                                            <li>Product Management Essentials</li>
-                                            <li>Advanced Business Analytics</li>
-                                            <li>Machine Learning for Problem Solving</li>
-                                            <li>Corporate Startup Lab</li>
-                                        </ul>
-                                    </div>
-                                </div>
 
-                                <div class="mt-8 pt-6 border-t border-white/5">
-                                    <h5 class="text-xs font-black uppercase text-[#E20074] tracking-[0.2em] mb-2 italic">Project: Corporate Startup Lab</h5>
-                                    <ul class="list-disc ml-5 text-sm text-slate-400 leading-relaxed marker:text-[#E20074] space-y-2">
-                                        <li>Highly selective program, with only select students chosen through a rigorous interview process.</li>
-                                        <li>We partner with a startup on a crucial business project and assist them in attaining their goal over a semester.</li>
-                                        <li>We take on multiple responsibilities including: Identifying Customer Pain Points, Market Research, Niche Identification, Product Research, Product Segmentation, Competitor Analysis, and Go-to-Market Strategy.</li>
-                                    </ul>
-                                </div>
+                <!-- Profile Photo -->
+                <div class="reveal-up relative w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border-4 border-[#E20074] shadow-[0_0_40px_rgba(226,0,116,0.3)] hover:scale-105 transition-transform duration-300">
+                    <img src="Manav_Somani_Linkedin_Photo_2025_-_Cropped.jpeg" alt="Manav Somani" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Manav+Somani&background=E20074&color=fff&size=256&font-size=0.4';">
+                </div>
+            </div>
+        </section>
 
-                                <div class="mt-4 pt-4 border-t border-white/5">
-                                    <h5 class="text-xs font-black uppercase text-[#E20074] tracking-[0.2em] mb-2 italic">CAPSTONE PROJECT: STUDENT HOUSING AGGREGATOR</h5>
-                                    <ul class="list-disc ml-5 text-sm text-slate-400 leading-relaxed marker:text-[#E20074] space-y-2">
-                                        <li>Developed a full-stack housing aggregator that integrates multiple data sources via web scraping and APIs to analyze walkability and amenity proximity.</li>
-                                        <li>Engineered a custom scoring algorithm that processes user priorities (restaurants, schools, grocery stores) and distance preferences to generate tailored property rankings.</li>
-                                        <li>Reduced user search time by over <span class="text-white font-bold">50%</span> by delivering optimized, data-driven results.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="hidden md:flex shrink-0 items-center justify-center bg-white p-2 rounded-lg w-32 h-32">
-                                <img src="cmu_logo.jpg" alt="CMU Logo" class="w-full h-full object-contain">
-                            </div>
+        <!-- About & Education -->
+        <section id="about" class="py-16 px-6 md:px-16 border-t border-white/5 bg-[#121212]">
+            <div class="container mx-auto max-w-6xl">
+                <div class="flex flex-col gap-12 items-start text-left">
+                    <!-- Text Block -->
+                    <div class="reveal-left w-full max-w-4xl space-y-8">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-2xl font-black uppercase tracking-tighter text-[#E20074] italic"><span class="text-white">ABOUT</span> ME</h3>
+                            <a href="https://drive.google.com/file/d/1fqu-KZpyKCBcOq5-2iL40XYHuPJUTpx4/view?usp=sharing" target="_blank" class="hidden sm:inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#E20074] border-b-2 border-[#E20074] pb-1 hover:text-white hover:border-white transition-all">
+                                <span>View Resume</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                            </a>
+                        </div>
+                        <p class="text-xl text-slate-300 leading-relaxed font-light">
+                            I am a <span class="text-white font-bold">Product and Analytics professional</span> with <span class="text-white font-bold">3 years</span> of experience in e-commerce and fintech. From pioneering automated data platforms at Flipkart to scaling fintech portfolios at Axio, my focus is always on <span class="text-[#E20074] font-bold">measurable impact</span>.
+                        </p>
+                        <p class="text-lg text-slate-400 leading-relaxed font-light">
+                            I specialize in translating complex data sets into actionable product roadmaps. With a background in Engineering and advanced training at Carnegie Mellon, I approach business challenges with a blend of technical precision and strategic vision. I thrive in high-velocity environments, leveraging my expertise in data science and product strategy to bridge the gap between technical potential and commercial success.
+                        </p>
+                        <div class="pt-4 border-l-4 border-[#E20074] pl-6 italic text-slate-400 text-sm">
+                            "Bridging the gap between technical data science and strategic product development."
                         </div>
                     </div>
                     
-                    <!-- PES Card -->
-                    <div class="reveal-left card bg-[#333333] border-l-4 border-transparent">
-                        <div class="flex flex-col md:flex-row gap-6 justify-between items-start">
-                            <div class="flex-1 pl-4">
-                                <h4 class="text-2xl font-black text-white italic uppercase tracking-tighter mb-2">PES University</h4>
-                                <p class="text-sm font-bold text-[#E20074] mb-1 tracking-widest uppercase">B.Tech Mechanical</p>
-                                <p class="text-xs text-slate-400 uppercase italic mb-6">Distinction Graduate • GPA 3.8/4.0</p>
-                                
-                                <div class="mt-4 pt-4 border-t border-white/5">
-                                    <h5 class="text-xs font-black uppercase text-[#E20074] tracking-[0.2em] mb-2 italic">Capstone Project</h5>
-                                    <p class="text-sm text-slate-400 leading-relaxed">Conducted extensive research on <b>additive manufacturing</b>, specifically "The Effect of FDM Parameters on Mechanical Properties of Thermoplastic Polyurethane (TPU)", receiving the highest grade. This included an extensive <b>literature survey</b>, professional lab testing via <b>ASTM standards</b>, and rigorous analysis.</p>
-                                </div>
+                    <!-- Education Block -->
+                    <div class="w-full max-w-4xl space-y-8">
+                        <h3 class="reveal-left text-2xl font-black uppercase tracking-tighter text-[#E20074] italic mb-8">EDUCATION</h3>
+                        
+                        <!-- CMU Card -->
+                        <div class="reveal-right card card-hover border-l-4 border-[#E20074]">
+                            <div class="flex flex-col md:flex-row gap-6 justify-between items-start">
+                                <div class="flex-1 pl-4">
+                                    <h4 class="text-2xl font-black text-white italic uppercase tracking-tighter mb-2">Carnegie Mellon University</h4>
+                                    <p class="text-sm font-bold text-[#E20074] tracking-widest uppercase mb-1">Master of Information Systems Management - Business Intelligence & Data Analytics</p>
+                                    <p class="text-xs text-slate-400 uppercase italic mb-6">GPA 4.0/4.0</p>
+                                    
+                                    <div class="grid md:grid-cols-2 gap-12 mb-8">
+                                        <div>
+                                            <h5 class="text-[10px] font-black uppercase text-slate-300 tracking-[0.2em] mb-3">Fall 2025</h5>
+                                            <ul class="text-xs text-slate-300 leading-relaxed uppercase list-disc ml-5 space-y-2">
+                                                <li>STATS FOR IT MANAGERS</li>
+                                                <li>Applied Econometrics</li>
+                                                <li>UNSTRUCTURED DATA ANALYSIS</li>
+                                                <li>DATABASE MANAGEMENT</li>
+                                                <li>DATA FOCUSED PYTHON</li>
+                                                <li>Java</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h5 class="text-[10px] font-black uppercase text-slate-300 tracking-[0.2em] mb-3">Spring 2026</h5>
+                                            <ul class="text-xs text-slate-300 leading-relaxed uppercase list-disc ml-5 space-y-2">
+                                                <li>DataScience for Product Managers</li>
+                                                <li>Product Management Essentials</li>
+                                                <li>Advanced Business Analytics</li>
+                                                <li>Machine Learning for Problem Solving</li>
+                                                <li>Corporate Startup Lab</li>
+                                            </ul>
+                                        </div>
+                                    </div>
 
-                                <div class="mt-4 pt-4 border-t border-white/5">
-                                    <h5 class="text-xs font-black uppercase text-[#E20074] tracking-[0.2em] mb-2 italic">Clubs & Extracurriculars</h5>
-                                    <ul class="list-disc ml-5 text-sm text-slate-400 leading-relaxed marker:text-[#E20074] space-y-3">
-                                        <li><span class="font-bold text-white">Head of TEDxPESU Club:</span> Led the TEDxPESU club, featuring renowned speakers such as Dr. Anuradha TK and Nirmal Pillai.</li>
-                                        <li><span class="font-bold text-white">Team HAYA Off-Roading, Automobile Club:</span> Integral member of the Chassis domain, building an ATV that placed 19th out of 120 teams in BAJA SAE INDIA 2020.</li>
-                                    </ul>
+                                    <div class="mt-8 pt-6 border-t border-white/5">
+                                        <h5 class="text-xs font-black uppercase text-[#E20074] tracking-[0.2em] mb-2 italic">Project: Corporate Startup Lab</h5>
+                                        <ul class="list-disc ml-5 text-sm text-slate-400 leading-relaxed marker:text-[#E20074] space-y-2">
+                                            <li>Highly selective program, with only select students chosen through a rigorous interview process.</li>
+                                            <li>We partner with a startup on a crucial business project and assist them in attaining their goal over a semester.</li>
+                                            <li>We take on multiple responsibilities including: Identifying Customer Pain Points, Market Research, Niche Identification, Product Research, Product Segmentation, Competitor Analysis, and Go-to-Market Strategy.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="mt-4 pt-4 border-t border-white/5">
+                                        <h5 class="text-xs font-black uppercase text-[#E20074] tracking-[0.2em] mb-2 italic">CAPSTONE PROJECT: STUDENT HOUSING AGGREGATOR</h5>
+                                        <ul class="list-disc ml-5 text-sm text-slate-400 leading-relaxed marker:text-[#E20074] space-y-2">
+                                            <li>Developed a full-stack housing aggregator that integrates multiple data sources via web scraping and APIs to analyze walkability and amenity proximity.</li>
+                                            <li>Engineered a custom scoring algorithm that processes user priorities (restaurants, schools, grocery stores) and distance preferences to generate tailored property rankings.</li>
+                                            <li>Reduced user search time by over <span class="text-white font-bold">50%</span> by delivering optimized, data-driven results.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="hidden md:flex shrink-0 items-center justify-center bg-white p-2 rounded-lg w-32 h-32">
+                                    <img src="cmu_logo.jpg" alt="CMU Logo" class="w-full h-full object-contain">
                                 </div>
                             </div>
-                            <div class="hidden md:flex shrink-0 items-center justify-center bg-white p-2 rounded-lg w-32 h-32">
-                                <img src="pes_logo.jpeg" alt="PES University Logo" class="w-full h-full object-contain">
+                        </div>
+                        
+                        <!-- PES Card -->
+                        <div class="reveal-left card card-hover border-l-4 border-transparent">
+                            <div class="flex flex-col md:flex-row gap-6 justify-between items-start">
+                                <div class="flex-1 pl-4">
+                                    <h4 class="text-2xl font-black text-white italic uppercase tracking-tighter mb-2">PES University</h4>
+                                    <p class="text-sm font-bold text-[#E20074] mb-1 tracking-widest uppercase">B.Tech Mechanical</p>
+                                    <p class="text-xs text-slate-400 uppercase italic mb-6">Distinction Graduate • GPA 3.8/4.0</p>
+                                    
+                                    <div class="mt-4 pt-4 border-t border-white/5">
+                                        <h5 class="text-xs font-black uppercase text-[#E20074] tracking-[0.2em] mb-2 italic">Capstone Project</h5>
+                                        <p class="text-sm text-slate-400 leading-relaxed">Conducted extensive research on <b>additive manufacturing</b>, specifically "The Effect of FDM Parameters on Mechanical Properties of Thermoplastic Polyurethane (TPU)", receiving the highest grade. This included an extensive <b>literature survey</b>, professional lab testing via <b>ASTM standards</b>, and rigorous analysis.</p>
+                                    </div>
+
+                                    <div class="mt-4 pt-4 border-t border-white/5">
+                                        <h5 class="text-xs font-black uppercase text-[#E20074] tracking-[0.2em] mb-2 italic">Clubs & Extracurriculars</h5>
+                                        <ul class="list-disc ml-5 text-sm text-slate-400 leading-relaxed marker:text-[#E20074] space-y-3">
+                                            <li><span class="font-bold text-white">Head of TEDxPESU Club:</span> Led the TEDxPESU club, featuring renowned speakers such as Dr. Anuradha TK and Nirmal Pillai.</li>
+                                            <li><span class="font-bold text-white">Team HAYA Off-Roading, Automobile Club:</span> Integral member of the Chassis domain, building an ATV that placed 19th out of 120 teams in BAJA SAE INDIA 2020.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="hidden md:flex shrink-0 items-center justify-center bg-white p-2 rounded-lg w-32 h-32">
+                                    <img src="pes_logo.jpeg" alt="PES University Logo" class="w-full h-full object-contain">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -333,7 +329,7 @@
         </section>
 
         <!-- Professional Journey -->
-        <section id="experience" class="py-16 px-6 md:px-16 bg-[#333333]">
+        <section id="experience" class="py-16 px-6 md:px-16 bg-[#121212]">
             <div class="container mx-auto max-w-6xl">
                 <h2 class="reveal-up text-2xl font-black mb-16 text-white uppercase tracking-tighter italic text-left pl-6">PROFESSIONAL <span class="text-[#E20074]">JOURNEY</span></h2>
                 
@@ -345,7 +341,7 @@
                             <h4 class="text-[#E20074] font-black uppercase text-xl leading-none tracking-tighter">Flipkart</h4>
                             <p class="text-[#E20074] text-[10px] font-bold uppercase mb-3 opacity-80">(Walmart)</p>
                         </div>
-                        <div class="flex-1 card bg-[#333333] card-hover border-l-4 border-[#E20074] pl-6">
+                        <div class="flex-1 card card-hover border-l-4 border-[#E20074] pl-6">
                             <h3 class="text-xl font-black text-[#E20074] uppercase italic tracking-tighter mb-4">Assistant Manager - Control Tower Operations</h3>
                             <ul class="list-disc ml-5 space-y-3 text-slate-400 font-medium text-sm leading-relaxed marker:text-[#E20074]">
                                 <li>Pioneered a <span class="text-white font-bold">data-as-a-product platform</span> integrating nationwide data to empower leadership with real-time views, replacing manual processes that required 9+ man-hours daily.</li>
@@ -364,12 +360,14 @@
                             <h4 class="text-[#E20074] font-black uppercase text-xl leading-none tracking-tighter">Axio</h4>
                             <p class="text-[#E20074] text-[10px] font-bold uppercase mb-3 opacity-80">(Amazon)</p>
                         </div>
-                        <div class="flex-1 card bg-[#333333] card-hover border-l-4 border-[#E20074] pl-6">
-                            <h3 class="text-xl font-black text-[#E20074] uppercase italic tracking-tighter mb-4">Product Analyst – Amazon Pay Later</h3>
+                        <div class="flex-1 card card-hover border-l-4 border-[#E20074] pl-6">
+                            <h3 class="text-xl font-black text-[#E20074] uppercase italic tracking-tighter mb-4">Product Analyst – Digital Collections, Amazon Pay Later</h3>
                             <ul class="list-disc ml-5 space-y-3 text-slate-400 font-medium text-sm leading-relaxed marker:text-[#E20074]">
                                 <li>Drove a <span class="text-white font-bold">2x increase</span> in the user base via defined product strategies for expansion.</li>
-                                <li>Boosted debt recovery from <span class="text-white font-bold">85% to 95%</span> through regional recovery automation.</li>
-                                <li>Managed development of an <span class="text-white font-bold">interactive voice and chatbot</span> for fintech collections.</li>
+                                <li>Boosted debt recovery from <span class="text-white font-bold">85% to 95%</span> via region-specific recovery strategies launched within interactive bot logic.</li>
+                                <li>Managed development of an <span class="text-white font-bold">interactive voice and chatbot</span> for debt collections.</li>
+                                <li>Served as a key bridge between technical and collections teams, managing a prioritized backlog of engineering requirements.</li>
+                                <li>Reduced data processing time by <span class="text-white font-bold">80%</span> through automation tools.</li>
                             </ul>
                         </div>
                     </div>
@@ -381,7 +379,7 @@
                             <h4 class="text-[#E20074] font-black uppercase text-xl leading-none tracking-tighter">Flipkart</h4>
                             <p class="text-[#E20074] text-[10px] font-bold uppercase mb-3 opacity-80">(Walmart)</p>
                         </div>
-                        <div class="flex-1 card bg-[#333333] card-hover border-l-4 border-[#E20074] pl-6">
+                        <div class="flex-1 card card-hover border-l-4 border-[#E20074] pl-6">
                             <h3 class="text-xl font-black text-[#E20074] uppercase italic tracking-tighter mb-4">Intern – Control Tower Operations</h3>
                             <ul class="list-disc ml-5 space-y-3 text-slate-400 font-medium text-sm leading-relaxed marker:text-[#E20074]">
                                 <li>Sole candidate selected from a pool of <span class="text-white font-bold">250</span> students for this prestigious internship.</li>
@@ -396,54 +394,63 @@
         </section>
 
         <!-- Projects -->
-        <section id="projects" class="py-16 px-6 md:px-16 bg-[#333333]">
+        <section id="projects" class="py-16 px-6 md:px-16 bg-[#121212]">
             <div class="container mx-auto max-w-6xl">
                 <h2 class="reveal-up text-2xl font-black mb-16 text-[#E20074] uppercase tracking-tighter italic text-left pl-6">PROJECTS</h2>
                 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
                     <!-- Corporate Startup Lab -->
-                    <div class="reveal-left card card-hover group bg-[#333333] pl-6">
+                    <div class="reveal-left card card-hover group pl-6">
                         <div class="flex justify-between items-start mb-6">
                             <h3 class="text-3xl font-black text-white italic tracking-tighter uppercase leading-none">Corporate Startup Lab</h3>
                             <div class="bg-white/10 p-3 text-[#E20074]"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></div>
                         </div>
                         <ul class="list-disc ml-5 text-sm text-slate-400 leading-relaxed marker:text-[#E20074] space-y-2">
-                            <li>Partnering with a startup on a crucial business project over a full semester.</li>
-                            <li>Executed product research, segmentation, and GTM strategy to address specific customer pain points.</li>
+                            <li>Highly selective program, with only select students chosen through a rigorous interview process.</li>
+                            <li>We partner with a startup on a crucial business project and assist them in attaining their goal over a semester.</li>
+                            <li>We take on multiple responsibilities including: Identifying Customer Pain Points, Market Research, Niche Identification, Product Research, Product Segmentation, Competitor Analysis, and Go-to-Market Strategy.</li>
+                            <li>It has given me hands-on exposure in product management and multiple other domains in an early-stage fast paced environment.</li>
                         </ul>
                         <div class="mt-6 flex flex-wrap gap-2">
-                            <span class="tag-pill">Product Research</span>
-                            <span class="tag-pill">Product Strategy</span>
-                            <span class="tag-pill">Market Research</span>
+                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Product Research</span>
+                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Product Strategy</span>
+                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Market Research</span>
+                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Market Sizing</span>
+                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Go-to-Market Strategy</span>
                         </div>
                     </div>
 
                     <!-- Housing Aggregator -->
-                    <div class="reveal-up card card-hover group bg-[#333333] border-l-4 border-[#E20074] pl-6">
+                    <div class="reveal-up card card-hover group border-l-4 border-[#E20074] pl-6">
                         <div class="flex justify-between items-start mb-6">
                             <h3 class="text-3xl font-black text-white italic tracking-tighter uppercase leading-none">Housing Aggregator</h3>
                             <div class="bg-white/10 p-3 text-[#E20074]"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg></div>
                         </div>
                         <ul class="list-disc ml-5 text-sm text-slate-400 leading-relaxed marker:text-[#E20074] space-y-2">
-                            <li>Developed a full-stack housing aggregator that integrates <span class="text-white">multiple data sources via web scraping and APIs</span> to analyze walkability and amenity proximity.</li>
+                            <li>Developed a full-stack housing aggregator that integrates <span class="text-white font-bold">multiple data sources via web scraping and APIs</span> to analyze walkability and amenity proximity.</li>
                             <li>Engineered a custom scoring algorithm that processes user priorities (restaurants, schools, grocery stores) and distance preferences to generate tailored property rankings.</li>
                             <li>Reduced user search time by over <span class="text-white font-bold">50%</span> by delivering optimized, data-driven results.</li>
                         </ul>
                         <div class="mt-6 flex flex-wrap gap-2">
-                            <span class="tag-pill">Python</span>
-                            <span class="tag-pill">Web Scraping</span>
-                            <span class="tag-pill">API Integration</span>
-                            <span class="tag-pill">Algorithm Design</span>
-                            <span class="tag-pill">Data Analytics</span>
-                            <span class="tag-pill">Full Stack</span>
+                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Python</span>
+                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Web Scraping</span>
+                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">API Integration</span>
+                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Algorithm Design</span>
+                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Data Analytics</span>
+                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Full Stack</span>
                         </div>
                     </div>
 
                     <!-- B.Tech Capstone Project -->
-                    <div class="reveal-right card card-hover group bg-[#333333] pl-6">
+                    <div class="reveal-right card card-hover group border-l-4 border-[#E20074] pl-6">
                         <div class="flex justify-between items-start mb-6">
                             <h3 class="text-3xl font-black text-white italic tracking-tighter uppercase leading-none">B.Tech Capstone Project</h3>
-                            <div class="bg-white/10 p-3 text-[#E20074]"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path></svg></div>
+                            <div class="bg-white/10 p-3 text-[#E20074]">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
                         </div>
                         <ul class="list-disc ml-5 text-sm text-slate-400 leading-relaxed marker:text-[#E20074] space-y-2">
                             <li>Conducted extensive research on <b>additive manufacturing</b>, specifically "The Effect of FDM Parameters on Mechanical Properties of Thermoplastic Polyurethane (TPU)", receiving the highest grade.</li>
@@ -451,10 +458,10 @@
                             <li>Executed rigorous data analysis to optimize print parameters and mechanical output, contributing to performance additive manufacturing research.</li>
                         </ul>
                         <div class="mt-6 flex flex-wrap gap-2">
-                            <span class="tag-pill">Literature Survey</span>
-                            <span class="tag-pill">Additive Mfg</span>
-                            <span class="tag-pill">ASTM Testing</span>
-                            <span class="tag-pill">Data Analysis</span>
+                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Literature Survey</span>
+                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Additive Mfg</span>
+                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">ASTM Testing</span>
+                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Data Analysis</span>
                         </div>
                     </div>
                 </div>
@@ -467,37 +474,37 @@
                             <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074] min-h-[6rem] flex items-center">
                                 <h4 class="text-lg font-black text-black uppercase tracking-tighter">Google Data Analytics Specialization</h4>
                             </div>
-                            <p class="text-sm text-slate-400 leading-relaxed pl-6">Hands-on skills in data cleaning, analysis, and visualization using SQL, R, and Tableau.</p>
+                            <p class="text-sm text-slate-400 leading-relaxed pl-6">An intensive 8-course professional certificate covering the entire data analysis lifecycle: Ask, Prepare, Process, Analyze, Share, and Act. Developed hands-on skills in data cleaning, analysis, and visualization using SQL, R Programming, and Tableau.</p>
                         </div>
                         <div class="flex flex-col gap-3">
                             <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074] min-h-[6rem] flex items-center">
                                 <h4 class="text-lg font-black text-black uppercase tracking-tighter">Project Management and Agile Specialization</h4>
                             </div>
-                            <p class="text-sm text-slate-400 leading-relaxed pl-6">Mastering project management skills with a focus on Agile and Scrum methodologies.</p>
+                            <p class="text-sm text-slate-400 leading-relaxed pl-6">6-course program by Google, mastering project management skills, including planning, execution, monitoring, and closure, with a focus on Agile and Scrum methodologies.</p>
                         </div>
                         <div class="flex flex-col gap-3">
                             <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074] min-h-[6rem] flex items-center">
-                                <h4 class="text-lg font-black text-black uppercase tracking-tighter">Digital Marketing Specialization</h4>
+                                <h4 class="text-lg font-black text-black uppercase tracking-tighter">Digital Marketing Specialization [Gies School of Business]</h4>
                             </div>
-                            <p class="text-sm text-slate-400 leading-relaxed pl-6">Specialization from Gies School of Business covering Digital Marketing fundamentals.</p>
+                            <p class="text-sm text-slate-400 leading-relaxed pl-6">4-course specialization covering fundamentals of Digital Marketing including case studies like Zoom and Burger King.</p>
                         </div>
                         <div class="flex flex-col gap-3">
                             <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074] min-h-[6rem] flex items-center">
                                 <h4 class="text-lg font-black text-black uppercase tracking-tighter">Data Analysis with Python [IBM]</h4>
                             </div>
-                            <p class="text-sm text-slate-400 leading-relaxed pl-6">Upskilled in data analysis using Python libraries like Pandas and NumPy.</p>
+                            <p class="text-sm text-slate-400 leading-relaxed pl-6">Upskilled in data analysis using Python, utilizing libraries like Pandas and NumPy for data manipulation and visualization to derive insights.</p>
                         </div>
                         <div class="flex flex-col gap-3">
                             <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074] min-h-[6rem] flex items-center">
                                 <h4 class="text-lg font-black text-black uppercase tracking-tighter">Advanced PowerBI Certification [iNeuron]</h4>
                             </div>
-                            <p class="text-sm text-slate-400 leading-relaxed pl-6">Comprehensive training in data modeling and visualization techniques to transform raw data into interactive dashboards.</p>
+                            <p class="text-sm text-slate-400 leading-relaxed pl-6">Comprehensive training in data modeling, DAX functions, and advanced visualization techniques to transform raw data into interactive dashboards.</p>
                         </div>
                         <div class="flex flex-col gap-3">
                             <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074] min-h-[6rem] flex items-center">
                                 <h4 class="text-lg font-black text-black uppercase tracking-tighter">Full Stack Data Analysis [iNeuron]</h4>
                             </div>
-                            <p class="text-sm text-slate-400 leading-relaxed pl-6">End-to-end coverage including SQL, statistics, and machine learning fundamentals.</p>
+                            <p class="text-sm text-slate-400 leading-relaxed pl-6">End-to-end coverage of the data analysis lifecycle, including SQL for database management, statistics, and machine learning fundamentals for scalable solutions.</p>
                         </div>
                     </div>
                     <div class="mt-10">
@@ -511,13 +518,13 @@
         </section>
 
         <!-- Technical Arsenal -->
-        <section id="skills" class="py-16 px-6 md:px-16 border-y border-white/5 bg-[#333333]">
+        <section id="skills" class="py-16 px-6 md:px-16 border-y border-white/5 bg-[#121212]">
             <div class="container mx-auto max-w-6xl">
                 <h2 class="reveal-up text-2xl font-black mb-16 text-white uppercase tracking-tighter italic text-left pl-6">TECHNICAL <span class="text-[#E20074]">ARSENAL</span></h2>
                 
                 <div class="grid md:grid-cols-2 gap-12">
                     <!-- Product & PM -->
-                    <div class="reveal-left card bg-[#333333] space-y-6">
+                    <div class="reveal-left card space-y-6">
                         <div class="pl-4">
                             <h3 class="text-xs font-black uppercase tracking-[0.4em] text-white text-left border-b border-[#E20074] pb-4 mb-6">Product & PM</h3>
                             <ul class="list-disc ml-5 space-y-2 text-slate-400 font-medium text-sm leading-relaxed marker:text-[#E20074]">
@@ -533,7 +540,7 @@
                     </div>
                     
                     <!-- Analytics -->
-                    <div class="reveal-up card bg-[#333333] space-y-6">
+                    <div class="reveal-up card space-y-6">
                         <div class="pl-4">
                             <h3 class="text-xs font-black uppercase tracking-[0.4em] text-white text-left border-b border-[#E20074] pb-4 mb-6">Analytics</h3>
                             <ul class="list-disc ml-5 space-y-2 text-slate-400 font-medium text-sm leading-relaxed marker:text-[#E20074]">
@@ -580,7 +587,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="py-12 bg-[#333333] border-t border-white/5">
+    <footer class="py-12 bg-[#121212] border-t border-white/5">
         <div class="container mx-auto px-4 text-center">
             <p class="text-[10px] font-black uppercase tracking-[1em] text-slate-700 italic">
                 © 2025 MANAV SOMANI / PRODUCT & ANALYTICS SPECIALIST
