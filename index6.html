@@ -3,21 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Manav Somani</title>
-
-  <meta
-    name="description"
-    content="Manav Somani — Product, Data & AI professional at Carnegie Mellon University."
-  >
+  <meta name="description" content="Manav Somani — Product, Data & AI professional at Carnegie Mellon University.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -33,9 +24,7 @@
       --max: 1060px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     html {
       scroll-behavior: smooth;
@@ -72,7 +61,7 @@
     }
 
     /* =========================
-       HEADER
+       NAVIGATION
        ========================= */
 
     header {
@@ -144,27 +133,8 @@
       display: grid;
       grid-template-columns: 210px 1fr;
       gap: 42px;
-      padding: 70px 0 45px;
+      padding: 70px 0 55px;
       align-items: start;
-      position: relative;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      width: 260px;
-      height: 260px;
-      right: -80px;
-      top: 20px;
-      border-radius: 50%;
-      background:
-        radial-gradient(
-          circle,
-          rgba(196,18,48,.08),
-          rgba(196,18,48,0) 68%
-        );
-      pointer-events: none;
-      animation: floatGlow 7s ease-in-out infinite;
     }
 
     .portrait {
@@ -176,32 +146,11 @@
       box-shadow: 5px 5px 0 rgba(196,18,48,.12);
     }
 
-    .hero-main {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 145px;
-      gap: 35px;
-      align-items: start;
-      position: relative;
-      z-index: 1;
-    }
-
     .eyebrow {
       color: var(--accent);
       font-size: 13px;
       font-weight: 600;
       margin-bottom: 8px;
-      letter-spacing: .045em;
-    }
-
-    .eyebrow::before {
-      content: "";
-      display: inline-block;
-      width: 24px;
-      height: 2px;
-      background: var(--accent);
-      vertical-align: middle;
-      margin-right: 8px;
-      transform: translateY(-1px);
     }
 
     h1 {
@@ -217,8 +166,7 @@
       font-size: 18px;
       color: #444;
       margin: 0 0 18px;
-      font-weight: 600;
-      letter-spacing: .01em;
+      font-weight: 500;
     }
 
     .hero-copy {
@@ -237,120 +185,81 @@
     .links a {
       color: var(--accent);
       font-weight: 500;
-      position: relative;
     }
 
-    .links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 100%;
-      bottom: -3px;
-      height: 1px;
-      background: var(--accent);
-      transition: right .25s ease;
-    }
+    /* Resume thumbnail */
 
-    .links a:hover::after {
-      right: 0;
-    }
-
-    /* =========================
-       RESUME
-       ========================= */
-
-    .resume-preview {
-      display: block;
-      width: 145px;
-      text-align: center;
-      border: 0;
-      transition: transform .3s ease;
-    }
-
-    .resume-preview img {
-      display: block;
-      width: 145px;
-      height: auto;
-      border: 1px solid #d8d8d8;
-      box-shadow: 5px 6px 18px rgba(0,0,0,.10);
-      transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-    }
-
-    .resume-preview:hover {
-      color: var(--accent);
-      transform: translateY(-4px);
-    }
-
-    .resume-preview:hover img {
-      box-shadow: 7px 10px 24px rgba(0,0,0,.15);
-    }
-
-    .resume-label {
-      display: block;
-      margin-top: 9px;
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    /* =========================
-       LOGO STRIP
-       ========================= */
-
-    .logo-strip {
-      padding: 18px 0 28px;
-      border-top: 0;
-      border-bottom: 1px solid var(--border);
-      overflow: hidden;
-    }
-
-    .logo-strip-inner {
+    .hero-content {
       display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 20px;
+      grid-template-columns: minmax(0, 1fr) 145px;
+      gap: 35px;
       align-items: center;
+      position: relative;
+      z-index: 2;
     }
 
-    .logo-item {
-      height: 105px;
+    .hero-intro {
+      min-width: 0;
+    }
+
+    .hero-resume {
+      width: 145px;
+      justify-self: end;
+      text-align: center;
+    }
+
+    .hero-resume-link {
+      display: block;
+      position: relative;
+      width: 145px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #fff;
+      box-shadow: 0 8px 22px rgba(0,0,0,.08);
+      transition: transform .3s ease,
+                  box-shadow .3s ease,
+                  border-color .3s ease;
+    }
+
+    .hero-resume-link:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+      box-shadow: 0 14px 30px rgba(196,18,48,.18);
+    }
+
+    .hero-resume-image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .hero-resume-overlay {
+      position: absolute;
+      inset: 0;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 12px 22px;
-      background: #fff;
-      overflow: visible;
+      background: rgba(196,18,48,.88);
+      opacity: 0;
+      transition: opacity .25s ease;
     }
 
-    .logo-item img {
-      display: block;
-      width: auto;
-      height: auto;
-      max-width: 100%;
-      max-height: 82px;
-      object-fit: contain;
-      object-position: center;
-      opacity: .92;
-      transition:
-        transform .3s ease,
-        opacity .3s ease;
-    }
-
-    .logo-item:hover img {
-      transform: scale(1.05);
+    .hero-resume-link:hover .hero-resume-overlay {
       opacity: 1;
     }
 
-    /* Extra room for Hellbender */
-    .logo-item:nth-child(3) {
-      padding-left: 32px;
-      padding-right: 32px;
+    .hero-resume-overlay span {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
     }
 
-    .logo-item:nth-child(3) img {
-      max-width: 90%;
-      max-height: 72px;
+    .hero-resume-label {
+      margin-top: 8px;
+      color: var(--accent);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .16em;
     }
 
     /* =========================
@@ -388,26 +297,197 @@
     }
 
     /* =========================
+       EXPERIENCE TIMELINE
+       ========================= */
+
+    .timeline {
+      position: relative;
+      padding: 8px 0;
+    }
+
+    .timeline-track {
+      position: absolute;
+      left: 202px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #e8e8e8;
+      overflow: hidden;
+    }
+
+    .timeline-progress {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 0%;
+      background: linear-gradient(to bottom, #C41230, #9e0e27);
+      transform-origin: top;
+      transition: height .12s linear;
+    }
+
+    .entry {
+      display: grid;
+      grid-template-columns: 185px 35px 1fr;
+      gap: 0;
+      padding: 0 0 48px;
+      border-bottom: 0;
+      position: relative;
+    }
+
+    .entry:last-child {
+      padding-bottom: 5px;
+    }
+
+    /* Date + company logo */
+
+    .date {
+      color: var(--cmu-gray);
+      font-size: 13px;
+      line-height: 1.6;
+      padding-top: 4px;
+      padding-right: 25px;
+      text-align: right;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
+    }
+
+    .company-logo {
+      display: block;
+      width: auto;
+      max-width: 92px;
+      height: 38px;
+      object-fit: contain;
+      object-position: center;
+      opacity: .88;
+      filter: saturate(.92);
+      transition: opacity .3s ease,
+                  transform .3s ease;
+    }
+
+    .entry:hover .company-logo {
+      opacity: 1;
+      transform: translateY(-2px);
+    }
+
+    /* Timeline node */
+
+    .timeline-node {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      justify-content: center;
+      padding-top: 3px;
+    }
+
+    .timeline-dot {
+      width: 13px;
+      height: 13px;
+      border: 3px solid #fff;
+      background: #d5d5d5;
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px #d5d5d5;
+      transition: .3s ease;
+    }
+
+    .entry.active .timeline-dot,
+    .entry:hover .timeline-dot {
+      background: var(--accent);
+      box-shadow:
+        0 0 0 4px rgba(196,18,48,.13),
+        0 0 0 1px var(--accent);
+      transform: scale(1.1);
+    }
+
+    /* Experience content */
+
+    .entry-content {
+      padding-left: 28px;
+      transition: transform .35s ease;
+    }
+
+    .entry:hover .entry-content {
+      transform: translateX(5px);
+    }
+
+    .entry h3 {
+      margin: 0 0 3px;
+      font-size: 17px;
+      font-weight: 600;
+      color: #222;
+    }
+
+    /* Increased company name size */
+
+    .org {
+      color: var(--accent);
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .location {
+      color: var(--cmu-gray);
+      font-size: 13px;
+      font-weight: 400;
+    }
+
+    .entry ul {
+      margin: 10px 0 0;
+      padding-left: 19px;
+      color: #555;
+    }
+
+    .entry li {
+      margin: 5px 0;
+    }
+
+    /* =========================
        EDUCATION
        ========================= */
+
+    .education-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .education-item {
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .education-item:last-child {
+      border-bottom: 0;
+    }
+
+    .education-item h3 {
+      margin: 0 0 3px;
+      font-size: 17px;
+    }
+
+    .education-meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
 
     .education-highlight {
       position: relative;
       padding: 30px 32px 30px 30px;
       border: 1px solid #dedede;
       border-left: 5px solid var(--accent);
-      background:
-        linear-gradient(
-          135deg,
-          #fff 0%,
-          #fff 72%,
-          #fbf4f5 100%
-        );
+      background: linear-gradient(
+        135deg,
+        #fff 0%,
+        #fff 72%,
+        #fbf4f5 100%
+      );
       box-shadow: 0 12px 35px rgba(0,0,0,.045);
       overflow: hidden;
-      transition:
-        transform .35s ease,
-        box-shadow .35s ease;
+      transition: transform .35s ease,
+                  box-shadow .35s ease;
     }
 
     .education-highlight:hover {
@@ -510,143 +590,17 @@
       font-size: 17px;
     }
 
-    .education-meta {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* =========================
-       EXPERIENCE TIMELINE
-       ========================= */
-
-    .timeline {
-      position: relative;
-      padding: 8px 0;
-    }
-
-    .timeline-track {
-      position: absolute;
-      left: 202px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: #e8e8e8;
-      overflow: hidden;
-    }
-
-    .timeline-progress {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 0%;
-      background:
-        linear-gradient(
-          to bottom,
-          #C41230,
-          #9e0e27
-        );
-      transform-origin: top;
-      transition: height .12s linear;
-    }
-
-    .entry {
-      display: grid;
-      grid-template-columns: 185px 35px 1fr;
-      gap: 0;
-      padding: 0 0 48px;
-      position: relative;
-    }
-
-    .entry:last-child {
-      padding-bottom: 5px;
-    }
-
-    .date {
-      color: var(--cmu-gray);
-      font-size: 13px;
-      line-height: 1.6;
-      padding-top: 4px;
-      padding-right: 25px;
-      text-align: right;
-    }
-
-    .timeline-node {
-      position: relative;
-      z-index: 3;
-      display: flex;
-      justify-content: center;
-      padding-top: 3px;
-    }
-
-    .timeline-dot {
-      width: 13px;
-      height: 13px;
-      border: 3px solid #fff;
-      background: #d5d5d5;
-      border-radius: 50%;
-      box-shadow: 0 0 0 1px #d5d5d5;
-      transition: .3s ease;
-    }
-
-    .entry.active .timeline-dot,
-    .entry:hover .timeline-dot {
-      background: var(--accent);
-      box-shadow:
-        0 0 0 4px rgba(196,18,48,.13),
-        0 0 0 1px var(--accent);
-      transform: scale(1.1);
-    }
-
-    .entry-content {
-      padding-left: 28px;
-      transition: transform .35s ease;
-    }
-
-    .entry:hover .entry-content {
-      transform: translateX(5px);
-    }
-
-    .entry h3 {
-      margin: 0 0 3px;
-      font-size: 17px;
-      font-weight: 600;
-      color: #222;
-    }
-
-    .org {
-      color: var(--accent);
-      font-size: 14px;
-      font-weight: 500;
+    .education-secondary .education-meta {
       margin-bottom: 8px;
     }
 
-    .location {
-      color: var(--cmu-gray);
-      font-size: 13px;
-      font-weight: 400;
-    }
-
-    .entry ul {
-      margin: 10px 0 0;
-      padding-left: 19px;
-      color: #555;
-    }
-
-    .entry li {
-      margin: 5px 0;
-    }
-
     /* =========================
-       PROJECT WORK
+       SELECTED WORK
        ========================= */
 
     .work-item {
       padding: 27px 0;
       border-bottom: 1px solid var(--border);
-      transition:
-        transform .3s ease,
-        padding-left .3s ease;
     }
 
     .work-item:first-child {
@@ -655,11 +609,6 @@
 
     .work-item:last-child {
       border-bottom: 0;
-    }
-
-    .work-item:hover {
-      transform: translateX(6px);
-      padding-left: 8px;
     }
 
     .work-title {
@@ -679,50 +628,12 @@
     .work-number {
       color: #aaa;
       font-size: 13px;
-      transition:
-        color .25s ease,
-        transform .25s ease;
-    }
-
-    .work-item:hover .work-number {
-      color: var(--accent);
-      transform: translateX(-4px);
     }
 
     .work-item p {
       margin: 7px 0 0;
       color: #555;
       max-width: 850px;
-    }
-
-    /* RubricGuard links */
-
-    .work-links {
-      display: flex;
-      gap: 18px;
-      margin-top: 16px;
-      font-size: 14px;
-    }
-
-    .work-links a {
-      color: var(--accent);
-      font-weight: 600;
-      position: relative;
-    }
-
-    .work-links a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 100%;
-      bottom: -3px;
-      height: 1px;
-      background: var(--accent);
-      transition: right .25s ease;
-    }
-
-    .work-links a:hover::after {
-      right: 0;
     }
 
     /* =========================
@@ -791,6 +702,105 @@
 
     .fade {
       opacity: 0;
+      transform: translateY(12px);
+      transition: opacity .6s ease,
+                  transform .6s ease;
+    }
+
+    .fade.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero {
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      right: -80px;
+      top: 20px;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(196,18,48,.08),
+        rgba(196,18,48,0) 68%
+      );
+      pointer-events: none;
+      animation: floatGlow 7s ease-in-out infinite;
+    }
+
+    @keyframes floatGlow {
+      0%, 100% {
+        transform: translate(0,0) scale(1);
+      }
+
+      50% {
+        transform: translate(-12px, 10px) scale(1.08);
+      }
+    }
+
+    .links a {
+      position: relative;
+    }
+
+    .links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: -3px;
+      height: 1px;
+      background: var(--accent);
+      transition: right .25s ease;
+    }
+
+    .links a:hover::after {
+      right: 0;
+    }
+
+    .work-item,
+    .education-item,
+    .skill-group {
+      transition: transform .3s ease,
+                  padding-left .3s ease;
+    }
+
+    .work-item:hover {
+      transform: translateX(6px);
+      padding-left: 8px;
+    }
+
+    .work-number {
+      transition: color .25s ease,
+                  transform .25s ease;
+    }
+
+    .work-item:hover .work-number {
+      color: var(--accent);
+      transform: translateX(-4px);
+    }
+
+    .eyebrow {
+      letter-spacing: .045em;
+    }
+
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 24px;
+      height: 2px;
+      background: var(--accent);
+      vertical-align: middle;
+      margin-right: 8px;
+      transform: translateY(-1px);
+    }
+
+    .fade {
+      opacity: 0;
       transform: translateY(18px);
       transition:
         opacity .75s cubic-bezier(.22,1,.36,1),
@@ -820,7 +830,7 @@
     }
 
     .entry:nth-child(3) .entry-content {
-      transition-delay: .10s;
+      transition-delay: .1s;
     }
 
     .entry:nth-child(4) .entry-content {
@@ -833,9 +843,8 @@
 
     .entry .date {
       opacity: .55;
-      transition:
-        opacity .3s ease,
-        color .3s ease;
+      transition: opacity .3s ease,
+                  color .3s ease;
     }
 
     .entry.active .date {
@@ -843,19 +852,7 @@
       color: var(--accent);
     }
 
-    @keyframes floatGlow {
-      0%, 100% {
-        transform: translate(0,0) scale(1);
-      }
-
-      50% {
-        transform: translate(-12px, 10px) scale(1.08);
-      }
-    }
-
-    /* =========================
-       BACK TO TOP
-       ========================= */
+    /* Back to top */
 
     .back-top {
       position: fixed;
@@ -929,7 +926,7 @@
       .hero {
         grid-template-columns: 1fr;
         gap: 24px;
-        padding: 48px 0 35px;
+        padding: 48px 0 42px;
       }
 
       .portrait {
@@ -937,51 +934,23 @@
         height: 145px;
       }
 
-      .hero-main {
-        grid-template-columns: 1fr;
-        gap: 25px;
+      .hero-content {
+        grid-template-columns: minmax(0, 1fr) 100px;
+        gap: 20px;
+        align-items: start;
       }
 
-      .resume-preview {
-        width: 125px;
+      .hero-resume {
+        width: 100px;
+        justify-self: end;
       }
 
-      .resume-preview img {
-        width: 125px;
+      .hero-resume-link {
+        width: 100px;
       }
 
-      /* Logo strip becomes horizontally scrollable */
-      .logo-strip-inner {
-        display: flex;
-        gap: 18px;
-        overflow-x: auto;
-        padding: 5px 5px 10px;
-        scrollbar-width: none;
-      }
-
-      .logo-strip-inner::-webkit-scrollbar {
-        display: none;
-      }
-
-      .logo-item {
-        flex: 0 0 150px;
-        height: 80px;
-        padding: 8px 16px;
-      }
-
-      .logo-item img {
-        max-width: 130px;
-        max-height: 65px;
-      }
-
-      .logo-item:nth-child(3) {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-
-      .logo-item:nth-child(3) img {
-        max-width: 125px;
-        max-height: 58px;
+      .hero-resume-label {
+        font-size: 8px;
       }
 
       .timeline-track {
@@ -998,7 +967,14 @@
         grid-column: 2;
         grid-row: 1;
         text-align: left;
-        padding: 0 0 6px;
+        align-items: flex-start;
+        padding: 0 0 10px;
+        gap: 8px;
+      }
+
+      .company-logo {
+        max-width: 82px;
+        height: 32px;
       }
 
       .timeline-node {
@@ -1071,8 +1047,7 @@
     <button
       class="mobile-toggle"
       id="menuToggle"
-      aria-label="Open menu"
-    >
+      aria-label="Open menu">
       ☰
     </button>
 
@@ -1080,13 +1055,15 @@
       <a href="#about">About</a>
       <a href="#education">Education</a>
       <a href="#experience">Experience</a>
-      <a href="#work">Project Work</a>
+      <a href="resume_manav_somani.pdf" target="_blank" rel="noopener">
+        Resume
+      </a>
+      <a href="#work">Selected Work</a>
       <a href="#contact">Contact</a>
     </nav>
 
   </div>
 </header>
-
 
 <main id="top" class="site">
 
@@ -1094,20 +1071,16 @@
        HERO
        ========================= -->
 
-  <section
-    class="hero fade"
-    style="border-top:0;"
-  >
+  <section class="hero fade" style="border-top:0;">
 
     <img
       class="portrait"
       src="Manav_Somani_Linkedin_Photo_2025_-_Cropped.jpeg"
-      alt="Manav Somani"
-    >
+      alt="Manav Somani">
 
-    <div class="hero-main">
+    <div class="hero-content">
 
-      <div>
+      <div class="hero-intro">
 
         <div class="eyebrow">
           CARNEGIE MELLON UNIVERSITY · PRODUCT · DATA · AI
@@ -1118,7 +1091,7 @@
         </h1>
 
         <p class="hero-title">
-          PRODUCT and ANALYTICS professional (3.5+ YOE)
+          Analytics turned Product &amp; Program Management professional
         </p>
 
         <p class="hero-copy">
@@ -1129,7 +1102,6 @@
         </p>
 
         <div class="links">
-
           <a href="mailto:msomani@andrew.cmu.edu">
             Email
           </a>
@@ -1137,8 +1109,7 @@
           <a
             href="https://www.linkedin.com/in/manavsomani/"
             target="_blank"
-            rel="noopener"
-          >
+            rel="noopener">
             LinkedIn
           </a>
 
@@ -1147,104 +1118,43 @@
           </a>
 
           <a href="#work">
-            Project Work ↓
+            Selected Work ↓
           </a>
-
         </div>
 
       </div>
 
+      <!-- Resume thumbnail -->
 
-      <!-- RESUME THUMBNAIL -->
+      <div class="hero-resume">
 
-      <a
-        class="resume-preview"
-        href="resume_manav_somani.pdf"
-        target="_blank"
-        rel="noopener"
-        aria-label="Open Manav Somani resume"
-      >
+        <a
+          href="resume_manav_somani.pdf"
+          target="_blank"
+          rel="noopener"
+          aria-label="Open Manav Somani Resume"
+          class="hero-resume-link">
 
-        <img
-          src="resume-thumbnail.png"
-          alt="Preview of Manav Somani resume"
-        >
+          <img
+            src="resume-thumbnail.png"
+            alt="Manav Somani Resume"
+            class="hero-resume-image">
 
-        <span class="resume-label">
-          View Resume ↗
-        </span>
+          <div class="hero-resume-overlay">
+            <span>Resume ↗</span>
+          </div>
 
-      </a>
+        </a>
 
-    </div>
+        <div class="hero-resume-label">
+          RESUME
+        </div>
 
-  </section>
-
-
-  <!-- =========================
-       LOGO STRIP
-       ========================= -->
-
-  <section
-    class="logo-strip"
-    aria-label="Organizations"
-  >
-
-    <div class="logo-strip-inner">
-
-      <!-- 1. CMU -->
-
-      <div class="logo-item">
-        <img
-          src="cmu_logo.jpeg"
-          alt="Carnegie Mellon University"
-        >
-      </div>
-
-
-      <!-- 2. T-Mobile -->
-
-      <div class="logo-item">
-        <img
-          src="tmobile_logo.png"
-          alt="T-Mobile"
-        >
-      </div>
-
-
-      <!-- 3. Hellbender -->
-
-      <div class="logo-item">
-        <img
-          src="hellbender_logo.png"
-          alt="Hellbender"
-        >
-      </div>
-
-
-      <!-- 4. Walmart / Flipkart -->
-
-      <div class="logo-item">
-        <img
-          src="flipkart_walmart_logo.jpeg"
-          alt="Walmart and Flipkart"
-        >
-      </div>
-
-
-      <!-- 5. Amazon / Axio -->
-
-      <div class="logo-item">
-        <img
-          src="axio_amazon_logo.png"
-          alt="Amazon and Axio"
-        >
       </div>
 
     </div>
 
   </section>
-
 
   <!-- =========================
        ABOUT
@@ -1267,7 +1177,6 @@
 
   </section>
 
-
   <!-- =========================
        EDUCATION
        ========================= -->
@@ -1284,9 +1193,8 @@
 
         <img
           class="cmu-logo"
-          src="cmu_logo_small.jpg"
-          alt="Carnegie Mellon University logo"
-        >
+          src="cmu_logo.jpg"
+          alt="Carnegie Mellon University logo">
 
         <div>
 
@@ -1306,7 +1214,6 @@
 
       </div>
 
-
       <div class="cmu-meta">
 
         <strong>Location</strong>
@@ -1320,19 +1227,15 @@
 
       </div>
 
-
       <p class="cmu-coursework">
-
         <strong>Coursework:</strong>
         Product Management Essentials, Data Science for PMs,
         Corporate Startup Lab, Advanced Business Analytics,
         Unstructured Data Analytics, Statistics, Database Management,
         Python, Organizational Design and Implementation, Java.
-
       </p>
 
     </div>
-
 
     <div class="education-secondary">
 
@@ -1355,7 +1258,6 @@
 
   </section>
 
-
   <!-- =========================
        EXPERIENCE
        ========================= -->
@@ -1366,28 +1268,34 @@
       Experience
     </h2>
 
-    <div
-      class="timeline"
-      id="experienceTimeline"
-    >
+    <div class="timeline" id="experienceTimeline">
 
       <div
         class="timeline-track"
-        aria-hidden="true"
-      >
+        aria-hidden="true">
+
         <div
           class="timeline-progress"
-          id="timelineProgress"
-        ></div>
-      </div>
+          id="timelineProgress">
+        </div>
 
+      </div>
 
       <!-- T-MOBILE -->
 
       <article class="entry">
 
         <div class="date">
-          May 2026 – Aug 2026
+
+          <span>
+            May 2026 – Aug 2026
+          </span>
+
+          <img
+            class="company-logo"
+            src="tmobile_logo.png"
+            alt="T-Mobile logo">
+
         </div>
 
         <div class="timeline-node">
@@ -1430,8 +1338,8 @@
             <li>
               Defined governance processes for security reviews,
               vulnerabilities, and dependencies, and developed AI safety
-              guardrails that improved model compliance and accelerated launch
-              readiness.
+              guardrails that improved model compliance and accelerated
+              launch readiness.
             </li>
 
           </ul>
@@ -1440,13 +1348,21 @@
 
       </article>
 
-
       <!-- HELLBENDER -->
 
       <article class="entry">
 
         <div class="date">
-          Jan 2026 – May 2026
+
+          <span>
+            Jan 2026 – May 2026
+          </span>
+
+          <img
+            class="company-logo"
+            src="hellbender_logo.png"
+            alt="Hellbender logo">
+
         </div>
 
         <div class="timeline-node">
@@ -1486,13 +1402,21 @@
 
       </article>
 
-
       <!-- FLIPKART -->
 
       <article class="entry">
 
         <div class="date">
-          Sep 2024 – Aug 2025
+
+          <span>
+            Sep 2024 – Aug 2025
+          </span>
+
+          <img
+            class="company-logo"
+            src="flipkart_walmart_logo.jpeg"
+            alt="Flipkart and Walmart logo">
+
         </div>
 
         <div class="timeline-node">
@@ -1545,13 +1469,21 @@
 
       </article>
 
-
       <!-- AXIO -->
 
       <article class="entry">
 
         <div class="date">
-          Mar 2023 – Sep 2024
+
+          <span>
+            Mar 2023 – Sep 2024
+          </span>
+
+          <img
+            class="company-logo"
+            src="axio_amazon_logo.png"
+            alt="Axio and Amazon logo">
+
         </div>
 
         <div class="timeline-node">
@@ -1596,13 +1528,21 @@
 
       </article>
 
-
-      <!-- FLIPKART INTERNSHIP -->
+      <!-- FLIPKART INTERN -->
 
       <article class="entry">
 
         <div class="date">
-          Feb 2022 – Jul 2022
+
+          <span>
+            Feb 2022 – Jul 2022
+          </span>
+
+          <img
+            class="company-logo"
+            src="flipkart_walmart_logo.jpeg"
+            alt="Flipkart and Walmart logo">
+
         </div>
 
         <div class="timeline-node">
@@ -1645,19 +1585,15 @@
 
   </section>
 
-
   <!-- =========================
-       PROJECT WORK
+       SELECTED WORK
        ========================= -->
 
   <section id="work" class="fade">
 
     <h2 class="section-title">
-      Project Work
+      Selected Work
     </h2>
-
-
-    <!-- RUBRICGUARD -->
 
     <article class="work-item">
 
@@ -1679,30 +1615,7 @@
         bias and ensure rubric alignment.
       </p>
 
-      <div class="work-links">
-
-        <a
-          href="https://docs.google.com/presentation/d/1_msqywUzEA-EAOuEW3-h_doINlCT6iKyaklZhGaveo8/edit?pli=1&slide=id.g3d003946855_2_8#slide=id.g3d003946855_2_8"
-          target="_blank"
-          rel="noopener"
-        >
-          PPT
-        </a>
-
-        <a
-          href="https://rubricguard.vercel.app/"
-          target="_blank"
-          rel="noopener"
-        >
-          Try it
-        </a>
-
-      </div>
-
     </article>
-
-
-    <!-- AIR INDIA -->
 
     <article class="work-item">
 
@@ -1726,9 +1639,6 @@
 
     </article>
 
-
-    <!-- TUI -->
-
     <article class="work-item">
 
       <div class="work-title">
@@ -1750,9 +1660,6 @@
       </p>
 
     </article>
-
-
-    <!-- HELLBENDER -->
 
     <article class="work-item">
 
@@ -1777,7 +1684,6 @@
     </article>
 
   </section>
-
 
   <!-- =========================
        SKILLS
@@ -1805,7 +1711,6 @@
 
       </div>
 
-
       <div class="skill-group">
 
         <h3>
@@ -1822,7 +1727,6 @@
     </div>
 
   </section>
-
 
   <!-- =========================
        CONTACT
@@ -1850,8 +1754,7 @@
         <a
           href="https://www.linkedin.com/in/manavsomani/"
           target="_blank"
-          rel="noopener"
-        >
+          rel="noopener">
           LinkedIn
         </a>
 
@@ -1871,11 +1774,6 @@
 
 </main>
 
-
-<!-- =========================
-     FOOTER
-     ========================= -->
-
 <footer class="site">
 
   <span>
@@ -1888,109 +1786,74 @@
 
 </footer>
 
-
-<!-- BACK TO TOP -->
-
 <a
   href="#top"
   class="back-top"
   id="backTop"
-  aria-label="Back to top"
->
+  aria-label="Back to top">
   ↑
 </a>
 
-
 <script>
 
-  /* =========================
-     MOBILE NAVIGATION
-     ========================= */
+  /* Mobile navigation */
 
-  const menuToggle =
-    document.getElementById('menuToggle');
-
-  const navLinks =
-    document.getElementById('navLinks');
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
 
   menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('open');
   });
 
-  document
-    .querySelectorAll('.nav-links a')
-    .forEach(link => {
+  document.querySelectorAll('.nav-links a').forEach(link => {
 
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-      });
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+    });
+
+  });
+
+
+  /* Scroll reveal */
+
+  const revealObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+
+        entry.target.classList.add('visible');
+
+        revealObserver.unobserve(entry.target);
+
+      }
 
     });
 
-
-  /* =========================
-     SCROLL REVEAL
-     ========================= */
-
-  const revealObserver =
-    new IntersectionObserver(
-      (entries) => {
-
-        entries.forEach(entry => {
-
-          if (entry.isIntersecting) {
-
-            entry.target.classList.add('visible');
-
-            revealObserver.unobserve(
-              entry.target
-            );
-
-          }
-
-        });
-
-      },
-      {
-        threshold: 0.08
-      }
-    );
-
+  }, {
+    threshold: 0.08
+  });
 
   document
     .querySelectorAll('.fade, .entry')
-    .forEach(el => {
-
-      revealObserver.observe(el);
-
-    });
+    .forEach(el => revealObserver.observe(el));
 
 
-  /* =========================
-     EXPERIENCE TIMELINE
-     ========================= */
+  /* Experience timeline */
 
   const timeline =
-    document.getElementById(
-      'experienceTimeline'
-    );
+    document.getElementById('experienceTimeline');
 
   const progress =
-    document.getElementById(
-      'timelineProgress'
-    );
+    document.getElementById('timelineProgress');
 
   const entries =
-    [...document.querySelectorAll(
-      '.timeline .entry'
-    )];
+    [...document.querySelectorAll('.timeline .entry')];
 
 
   function updateTimeline() {
 
-    if (!timeline || !progress) {
-      return;
-    }
+    if (!timeline || !progress) return;
 
     const rect =
       timeline.getBoundingClientRect();
@@ -2002,14 +1865,10 @@
       rect.height;
 
     const raw =
-      (viewportCenter - rect.top) /
-      total;
+      (viewportCenter - rect.top) / total;
 
     const pct =
-      Math.max(
-        0,
-        Math.min(1, raw)
-      );
+      Math.max(0, Math.min(1, raw));
 
     progress.style.height =
       (pct * 100) + '%';
@@ -2022,8 +1881,7 @@
 
       const active =
         r.top < viewportCenter &&
-        r.bottom >
-          viewportCenter - 40;
+        r.bottom > viewportCenter - 40;
 
       entry.classList.toggle(
         'active',
@@ -2049,15 +1907,10 @@
   updateTimeline();
 
 
-  /* =========================
-     BACK TO TOP
-     ========================= */
+  /* Back to top */
 
   const backTop =
-    document.getElementById(
-      'backTop'
-    );
-
+    document.getElementById('backTop');
 
   window.addEventListener(
     'scroll',
