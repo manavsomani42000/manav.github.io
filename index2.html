@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Manav Somani</title>
 
@@ -11,116 +17,192 @@
     content="Manav Somani — Product, Data & AI professional at Carnegie Mellon University."
   >
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Fonts -->
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap"
     rel="stylesheet"
   >
 
+
   <style>
 
+    /* =========================================================
+       VARIABLES
+    ========================================================= */
+
     :root {
+
       --text: #222222;
       --muted: #666666;
       --light: #777777;
+
       --border: #dedede;
+
       --bg: #ffffff;
 
       --accent: #C41230;
+
       --accent-soft: #f9e8eb;
+
       --cmu-black: #111111;
+
       --cmu-gray: #6D6E71;
 
       --max: 1060px;
+
     }
+
+
+    /* =========================================================
+       GLOBAL
+    ========================================================= */
 
     * {
       box-sizing: border-box;
     }
 
+
     html {
       scroll-behavior: smooth;
     }
 
+
     body {
+
       margin: 0;
+
       background: var(--bg);
+
       color: var(--text);
+
       font-family: Inter, Arial, sans-serif;
+
       line-height: 1.7;
+
       font-size: 15px;
+
     }
 
+
     a {
+
       color: inherit;
+
       text-decoration: none;
+
       border-bottom: 1px solid transparent;
+
       transition: .2s ease;
+
     }
+
 
     a:hover {
       color: var(--accent);
     }
 
+
     ::selection {
+
       background: var(--accent);
+
       color: #fff;
+
     }
+
 
     .site {
-      width: min(calc(100% - 40px), var(--max));
+
+      width: min(
+        calc(100% - 40px),
+        var(--max)
+      );
+
       margin: 0 auto;
+
     }
 
 
-    /* =========================
+    /* =========================================================
        HEADER
-    ========================= */
+    ========================================================= */
 
     header {
+
       border-top: 3px solid var(--accent);
+
       border-bottom: 1px solid var(--border);
 
       background: rgba(255,255,255,.94);
 
       position: sticky;
+
       top: 0;
+
       z-index: 20;
 
       backdrop-filter: blur(12px);
+
     }
 
+
     .nav {
+
       min-height: 70px;
 
       display: flex;
+
       align-items: center;
+
       justify-content: space-between;
 
       gap: 24px;
+
     }
 
+
     .brand {
-      font-family: "Source Serif 4", Georgia, serif;
+
+      font-family:
+        "Source Serif 4",
+        Georgia,
+        serif;
 
       font-size: 21px;
+
       font-weight: 600;
 
       white-space: nowrap;
 
       color: var(--cmu-black);
+
     }
 
+
     .brand::before {
+
       content: "CMU / ";
 
       color: var(--accent);
 
-      font-family: Inter, Arial, sans-serif;
+      font-family:
+        Inter,
+        Arial,
+        sans-serif;
 
       font-size: 11px;
+
       font-weight: 700;
 
       letter-spacing: .08em;
@@ -128,9 +210,12 @@
       vertical-align: middle;
 
       margin-right: 4px;
+
     }
 
+
     .nav-links {
+
       display: flex;
 
       gap: 26px;
@@ -140,13 +225,17 @@
       color: #555;
 
       font-size: 14px;
+
     }
+
 
     .nav-links a:hover {
       color: var(--accent);
     }
 
+
     .mobile-toggle {
+
       display: none;
 
       border: 0;
@@ -156,25 +245,34 @@
       font-size: 22px;
 
       cursor: pointer;
+
     }
 
 
-    /* =========================
+    /* =========================================================
        MAIN
-    ========================= */
+    ========================================================= */
 
     main {
       padding-bottom: 70px;
     }
 
+
     section {
+
       padding: 45px 0;
 
       border-top: 1px solid var(--border);
+
     }
 
+
     .section-title {
-      font-family: "Source Serif 4", Georgia, serif;
+
+      font-family:
+        "Source Serif 4",
+        Georgia,
+        serif;
 
       font-size: 30px;
 
@@ -187,34 +285,44 @@
       position: relative;
 
       padding-left: 15px;
+
     }
 
+
     .section-title::before {
+
       content: "";
 
       position: absolute;
 
       left: 0;
+
       top: 7px;
 
       width: 4px;
+
       height: 25px;
 
       background: var(--accent);
+
     }
 
+
     .intro {
+
       max-width: 850px;
 
       color: #555;
+
     }
 
 
-    /* =========================
+    /* =========================================================
        HERO
-    ========================= */
+    ========================================================= */
 
     .hero {
+
       display: grid;
 
       grid-template-columns: 210px 1fr;
@@ -226,17 +334,24 @@
       align-items: start;
 
       position: relative;
+
+      border-top: 0;
+
     }
 
+
     .hero::after {
+
       content: "";
 
       position: absolute;
 
       width: 260px;
+
       height: 260px;
 
       right: -80px;
+
       top: 20px;
 
       border-radius: 50%;
@@ -250,23 +365,34 @@
 
       pointer-events: none;
 
-      animation: floatGlow 7s ease-in-out infinite;
+      animation:
+        floatGlow 7s ease-in-out infinite;
+
     }
+
 
     @keyframes floatGlow {
 
-      0%, 100% {
-        transform: translate(0,0) scale(1);
+      0%,
+      100% {
+        transform:
+          translate(0,0)
+          scale(1);
       }
 
       50% {
-        transform: translate(-12px,10px) scale(1.08);
+        transform:
+          translate(-12px,10px)
+          scale(1.08);
       }
 
     }
 
+
     .portrait {
+
       width: 190px;
+
       height: 190px;
 
       object-fit: cover;
@@ -276,19 +402,23 @@
       border: 1px solid var(--border);
 
       box-shadow:
-        5px 5px 0 rgba(196,18,48,.12);
+        5px 5px 0
+        rgba(196,18,48,.12);
+
     }
 
 
-    /* =========================
+    /* =========================================================
        HERO CONTENT
-    ========================= */
+    ========================================================= */
 
     .hero-content {
+
       display: grid;
 
       grid-template-columns:
-        minmax(0, 1fr) 145px;
+        minmax(0,1fr)
+        145px;
 
       gap: 35px;
 
@@ -297,18 +427,21 @@
       position: relative;
 
       z-index: 2;
+
     }
+
 
     .hero-intro {
       min-width: 0;
     }
 
 
-    /* =========================
+    /* =========================================================
        HERO TEXT
-    ========================= */
+    ========================================================= */
 
     .eyebrow {
+
       color: var(--accent);
 
       font-size: 13px;
@@ -318,14 +451,18 @@
       margin-bottom: 8px;
 
       letter-spacing: .045em;
+
     }
 
+
     .eyebrow::before {
+
       content: "";
 
       display: inline-block;
 
       width: 24px;
+
       height: 2px;
 
       background: var(--accent);
@@ -335,12 +472,23 @@
       margin-right: 8px;
 
       transform: translateY(-1px);
+
     }
 
-    h1 {
-      font-family: "Source Serif 4", Georgia, serif;
 
-      font-size: clamp(42px, 6vw, 64px);
+    h1 {
+
+      font-family:
+        "Source Serif 4",
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          42px,
+          6vw,
+          64px
+        );
 
       line-height: 1.05;
 
@@ -349,9 +497,12 @@
       font-weight: 600;
 
       margin: 0 0 14px;
+
     }
 
+
     .hero-title {
+
       font-size: 18px;
 
       color: #444;
@@ -359,17 +510,23 @@
       margin: 0 0 18px;
 
       font-weight: 500;
+
     }
 
+
     .hero-copy {
+
       max-width: 720px;
 
       color: #555;
 
       margin: 0 0 20px;
+
     }
 
+
     .links {
+
       display: flex;
 
       flex-wrap: wrap;
@@ -377,22 +534,29 @@
       gap: 16px;
 
       font-size: 14px;
+
     }
 
+
     .links a {
+
       color: var(--accent);
 
       font-weight: 500;
 
       position: relative;
+
     }
 
+
     .links a::after {
+
       content: "";
 
       position: absolute;
 
       left: 0;
+
       right: 100%;
 
       bottom: -3px;
@@ -402,26 +566,32 @@
       background: var(--accent);
 
       transition: right .25s ease;
+
     }
+
 
     .links a:hover::after {
       right: 0;
     }
 
 
-    /* =========================
+    /* =========================================================
        RESUME THUMBNAIL
-    ========================= */
+    ========================================================= */
 
     .hero-resume {
+
       width: 145px;
 
       justify-self: end;
 
       text-align: center;
+
     }
 
+
     .hero-resume-link {
+
       display: block;
 
       position: relative;
@@ -435,32 +605,43 @@
       background: #fff;
 
       box-shadow:
-        0 8px 22px rgba(0,0,0,.08);
+        0 8px 22px
+        rgba(0,0,0,.08);
 
       transition:
         transform .3s ease,
         box-shadow .3s ease,
         border-color .3s ease;
+
     }
 
+
     .hero-resume-link:hover {
+
       transform: translateY(-5px);
 
       border-color: var(--accent);
 
       box-shadow:
-        0 14px 30px rgba(196,18,48,.18);
+        0 14px 30px
+        rgba(196,18,48,.18);
+
     }
 
+
     .hero-resume-image {
+
       display: block;
 
       width: 100%;
 
       height: auto;
+
     }
 
+
     .hero-resume-overlay {
+
       position: absolute;
 
       inset: 0;
@@ -471,18 +652,24 @@
 
       justify-content: center;
 
-      background: rgba(196,18,48,.88);
+      background:
+        rgba(196,18,48,.88);
 
       opacity: 0;
 
       transition: opacity .25s ease;
+
     }
 
-    .hero-resume-link:hover .hero-resume-overlay {
+
+    .hero-resume-link:hover
+    .hero-resume-overlay {
       opacity: 1;
     }
 
+
     .hero-resume-overlay span {
+
       color: #fff;
 
       font-size: 14px;
@@ -490,9 +677,12 @@
       font-weight: 600;
 
       letter-spacing: .02em;
+
     }
 
+
     .hero-resume-label {
+
       margin-top: 8px;
 
       color: var(--accent);
@@ -502,49 +692,168 @@
       font-weight: 700;
 
       letter-spacing: .16em;
+
     }
 
 
-    /* =========================
+    /* =========================================================
+       COMPANY / EXPERIENCE LOGO STRIP
+    ========================================================= */
+
+    .logo-strip {
+
+      padding: 26px 0 30px;
+
+      border-top: 1px solid var(--border);
+
+      border-bottom: 1px solid var(--border);
+
+      overflow: hidden;
+
+    }
+
+
+    .logo-strip-inner {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(5, 1fr);
+
+      align-items: center;
+
+      gap: 28px;
+
+      width: 100%;
+
+    }
+
+
+    .logo-item {
+
+      height: 72px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 8px 18px;
+
+      background: #fff;
+
+      transition:
+        transform .3s ease;
+
+    }
+
+
+    .logo-item:hover {
+
+      transform:
+        translateY(-3px);
+
+    }
+
+
+    .logo-item img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: contain;
+
+      display: block;
+
+      opacity: .9;
+
+      transition:
+        opacity .3s ease,
+        transform .3s ease;
+
+    }
+
+
+    .logo-item:hover img {
+
+      opacity: 1;
+
+      transform:
+        scale(1.04);
+
+    }
+
+
+    /* =========================================================
+       ABOUT
+    ========================================================= */
+
+    #about {
+
+      padding-top: 52px;
+
+    }
+
+
+    /* =========================================================
        EDUCATION
-    ========================= */
+    ========================================================= */
 
     .education-grid {
+
       display: grid;
 
       gap: 24px;
+
     }
+
 
     .education-item {
+
       padding-bottom: 22px;
 
-      border-bottom: 1px solid var(--border);
+      border-bottom:
+        1px solid var(--border);
+
     }
+
 
     .education-item:last-child {
       border-bottom: 0;
     }
 
+
     .education-item h3 {
+
       margin: 0 0 3px;
 
       font-size: 17px;
+
     }
 
+
     .education-meta {
+
       color: var(--muted);
 
       font-size: 14px;
+
     }
 
+
     .education-highlight {
+
       position: relative;
 
-      padding: 30px 32px 30px 30px;
+      padding:
+        30px 32px 30px 30px;
 
       border: 1px solid #dedede;
 
-      border-left: 5px solid var(--accent);
+      border-left:
+        5px solid var(--accent);
 
       background:
         linear-gradient(
@@ -555,31 +864,44 @@
         );
 
       box-shadow:
-        0 12px 35px rgba(0,0,0,.045);
+        0 12px 35px
+        rgba(0,0,0,.045);
 
       overflow: hidden;
 
       transition:
         transform .35s ease,
         box-shadow .35s ease;
+
     }
+
 
     .education-highlight:hover {
-      transform: translateY(-4px);
+
+      transform:
+        translateY(-4px);
 
       box-shadow:
-        0 18px 42px rgba(0,0,0,.08);
+        0 18px 42px
+        rgba(0,0,0,.08);
+
     }
 
+
     .education-highlight::after {
+
       content: "CMU";
 
       position: absolute;
 
       right: -8px;
+
       bottom: -35px;
 
-      font-family: "Source Serif 4", Georgia, serif;
+      font-family:
+        "Source Serif 4",
+        Georgia,
+        serif;
 
       font-size: 145px;
 
@@ -587,12 +909,16 @@
 
       font-weight: 600;
 
-      color: rgba(196,18,48,.045);
+      color:
+        rgba(196,18,48,.045);
 
       pointer-events: none;
+
     }
 
+
     .cmu-row {
+
       display: flex;
 
       align-items: center;
@@ -602,10 +928,14 @@
       position: relative;
 
       z-index: 1;
+
     }
 
+
     .cmu-logo {
+
       width: 88px;
+
       height: 88px;
 
       object-fit: contain;
@@ -619,9 +949,12 @@
       border: 1px solid #e2e2e2;
 
       border-radius: 6px;
+
     }
 
+
     .cmu-kicker {
+
       color: var(--accent);
 
       text-transform: uppercase;
@@ -633,10 +966,16 @@
       font-weight: 700;
 
       margin-bottom: 4px;
+
     }
 
+
     .cmu-name {
-      font-family: "Source Serif 4", Georgia, serif;
+
+      font-family:
+        "Source Serif 4",
+        Georgia,
+        serif;
 
       font-size: 25px;
 
@@ -645,17 +984,23 @@
       font-weight: 600;
 
       margin: 0;
+
     }
 
+
     .cmu-degree {
+
       margin: 5px 0 0;
 
       color: #555;
 
       font-size: 14px;
+
     }
 
+
     .cmu-meta {
+
       margin-top: 22px;
 
       padding-top: 18px;
@@ -664,28 +1009,38 @@
 
       display: grid;
 
-      grid-template-columns: auto 1fr;
+      grid-template-columns:
+        auto 1fr;
 
       gap: 10px 24px;
 
       position: relative;
 
       z-index: 1;
+
     }
 
+
     .cmu-meta strong {
+
       color: #333;
 
       font-size: 13px;
+
     }
 
+
     .cmu-meta span {
+
       color: #666;
 
       font-size: 13px;
+
     }
 
+
     .cmu-coursework {
+
       margin: 18px 0 0;
 
       color: #666;
@@ -695,43 +1050,59 @@
       position: relative;
 
       z-index: 1;
+
     }
 
+
     .education-secondary {
+
       margin-top: 24px;
 
       padding-top: 24px;
 
-      border-top: 1px solid var(--border);
+      border-top:
+        1px solid var(--border);
+
     }
 
+
     .education-secondary h3 {
+
       margin: 0 0 3px;
 
       font-size: 17px;
+
     }
+
 
     .education-secondary .education-meta {
+
       margin-bottom: 8px;
+
     }
 
 
-    /* =========================
+    /* =========================================================
        EXPERIENCE TIMELINE
-    ========================= */
+    ========================================================= */
 
     .timeline {
+
       position: relative;
 
       padding: 8px 0;
+
     }
 
+
     .timeline-track {
+
       position: absolute;
 
       left: 202px;
 
       top: 0;
+
       bottom: 0;
 
       width: 2px;
@@ -739,12 +1110,16 @@
       background: #e8e8e8;
 
       overflow: hidden;
+
     }
 
+
     .timeline-progress {
+
       position: absolute;
 
       left: 0;
+
       top: 0;
 
       width: 100%;
@@ -760,10 +1135,14 @@
 
       transform-origin: top;
 
-      transition: height .12s linear;
+      transition:
+        height .12s linear;
+
     }
 
+
     .entry {
+
       display: grid;
 
       grid-template-columns:
@@ -774,13 +1153,17 @@
       padding: 0 0 48px;
 
       position: relative;
+
     }
+
 
     .entry:last-child {
       padding-bottom: 5px;
     }
 
+
     .date {
+
       color: var(--cmu-gray);
 
       font-size: 13px;
@@ -798,15 +1181,21 @@
       transition:
         opacity .3s ease,
         color .3s ease;
+
     }
 
+
     .entry.active .date {
+
       opacity: 1;
 
       color: var(--accent);
+
     }
 
+
     .timeline-node {
+
       position: relative;
 
       z-index: 3;
@@ -816,13 +1205,18 @@
       justify-content: center;
 
       padding-top: 3px;
+
     }
 
+
     .timeline-dot {
+
       width: 13px;
+
       height: 13px;
 
-      border: 3px solid #fff;
+      border:
+        3px solid #fff;
 
       background: #d5d5d5;
 
@@ -832,42 +1226,72 @@
         0 0 0 1px #d5d5d5;
 
       transition: .3s ease;
+
     }
+
 
     .entry.active .timeline-dot,
     .entry:hover .timeline-dot {
+
       background: var(--accent);
 
       box-shadow:
-        0 0 0 4px rgba(196,18,48,.13),
-        0 0 0 1px var(--accent);
+        0 0 0 4px
+        rgba(196,18,48,.13),
 
-      transform: scale(1.1);
+        0 0 0 1px
+        var(--accent);
+
+      transform:
+        scale(1.1);
+
     }
 
+
     .entry-content {
+
       padding-left: 28px;
 
       opacity: 0;
 
-      transform: translateY(18px);
+      transform:
+        translateY(18px);
 
       transition:
         opacity .7s ease,
-        transform .7s cubic-bezier(.22,1,.36,1);
+        transform .7s
+        cubic-bezier(
+          .22,
+          1,
+          .36,
+          1
+        );
+
     }
 
-    .entry.visible .entry-content {
+
+    .entry.visible
+    .entry-content {
+
       opacity: 1;
 
-      transform: translateY(0);
+      transform:
+        translateY(0);
+
     }
 
-    .entry:hover .entry-content {
-      transform: translateX(5px);
+
+    .entry:hover
+    .entry-content {
+
+      transform:
+        translateX(5px);
+
     }
+
 
     .entry h3 {
+
       margin: 0 0 3px;
 
       font-size: 17px;
@@ -875,9 +1299,12 @@
       font-weight: 600;
 
       color: #222;
+
     }
 
+
     .org {
+
       color: var(--accent);
 
       font-size: 14px;
@@ -885,58 +1312,77 @@
       font-weight: 500;
 
       margin-bottom: 8px;
+
     }
 
+
     .location {
+
       color: var(--cmu-gray);
 
       font-size: 13px;
 
       font-weight: 400;
+
     }
 
+
     .entry ul {
+
       margin: 10px 0 0;
 
       padding-left: 19px;
 
       color: #555;
+
     }
+
 
     .entry li {
       margin: 5px 0;
     }
 
 
-    /* =========================
+    /* =========================================================
        SELECTED WORK
-    ========================= */
+    ========================================================= */
 
     .work-item {
+
       padding: 27px 0;
 
-      border-bottom: 1px solid var(--border);
+      border-bottom:
+        1px solid var(--border);
 
       transition:
         transform .3s ease,
         padding-left .3s ease;
+
     }
+
 
     .work-item:first-child {
       padding-top: 0;
     }
 
+
     .work-item:last-child {
       border-bottom: 0;
     }
 
+
     .work-item:hover {
-      transform: translateX(6px);
+
+      transform:
+        translateX(6px);
 
       padding-left: 8px;
+
     }
 
+
     .work-title {
+
       display: flex;
 
       justify-content: space-between;
@@ -944,19 +1390,28 @@
       gap: 20px;
 
       align-items: baseline;
+
     }
 
+
     .work-title h3 {
+
       margin: 0;
 
-      font-family: "Source Serif 4", Georgia, serif;
+      font-family:
+        "Source Serif 4",
+        Georgia,
+        serif;
 
       font-size: 21px;
 
       font-weight: 600;
+
     }
 
+
     .work-number {
+
       color: #aaa;
 
       font-size: 13px;
@@ -964,76 +1419,105 @@
       transition:
         color .25s ease,
         transform .25s ease;
+
     }
 
-    .work-item:hover .work-number {
+
+    .work-item:hover
+    .work-number {
+
       color: var(--accent);
 
-      transform: translateX(-4px);
+      transform:
+        translateX(-4px);
+
     }
 
+
     .work-item p {
+
       margin: 7px 0 0;
 
       color: #555;
 
       max-width: 850px;
+
     }
 
 
-    /* =========================
+    /* =========================================================
        SKILLS
-    ========================= */
+    ========================================================= */
 
     .skills {
+
       display: grid;
 
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns:
+        1fr 1fr;
 
       gap: 25px 50px;
+
     }
+
 
     .skill-group {
+
       transition:
         transform .3s ease;
+
     }
 
+
     .skill-group h3 {
+
       font-size: 15px;
 
       margin: 0 0 8px;
 
       font-weight: 600;
+
     }
 
+
     .skill-group p {
+
       color: #555;
 
       margin: 0;
+
     }
 
 
-    /* =========================
+    /* =========================================================
        CONTACT
-    ========================= */
+    ========================================================= */
 
     .contact {
+
       display: grid;
 
-      grid-template-columns: 1fr auto;
+      grid-template-columns:
+        1fr auto;
 
       gap: 40px;
 
       align-items: end;
+
     }
 
+
     .contact-copy {
+
       max-width: 650px;
 
       color: #555;
+
     }
 
+
     .contact-links {
+
       display: flex;
 
       flex-direction: column;
@@ -1045,17 +1529,21 @@
       color: var(--accent);
 
       font-size: 14px;
+
     }
 
 
-    /* =========================
+    /* =========================================================
        FOOTER
-    ========================= */
+    ========================================================= */
 
     footer {
-      border-top: 1px solid var(--border);
 
-      padding: 25px 0 35px;
+      border-top:
+        1px solid var(--border);
+
+      padding:
+        25px 0 35px;
 
       color: #999;
 
@@ -1066,14 +1554,16 @@
       justify-content: space-between;
 
       gap: 20px;
+
     }
 
 
-    /* =========================
+    /* =========================================================
        BACK TO TOP
-    ========================= */
+    ========================================================= */
 
     .back-top {
+
       position: fixed;
 
       right: 24px;
@@ -1081,13 +1571,16 @@
       bottom: 24px;
 
       width: 40px;
+
       height: 40px;
 
-      border: 1px solid var(--border);
+      border:
+        1px solid var(--border);
 
       border-radius: 50%;
 
-      background: rgba(255,255,255,.92);
+      background:
+        rgba(255,255,255,.92);
 
       color: var(--accent);
 
@@ -1103,67 +1596,111 @@
 
       pointer-events: none;
 
-      transform: translateY(10px);
+      transform:
+        translateY(10px);
 
       transition: .3s ease;
 
       box-shadow:
-        0 5px 20px rgba(0,0,0,.08);
+        0 5px 20px
+        rgba(0,0,0,.08);
+
     }
 
+
     .back-top.show {
+
       opacity: 1;
 
       pointer-events: auto;
 
-      transform: translateY(0);
+      transform:
+        translateY(0);
+
     }
 
+
     .back-top:hover {
-      background: var(--accent);
+
+      background:
+        var(--accent);
 
       color: #fff;
 
-      border-color: var(--accent);
+      border-color:
+        var(--accent);
+
     }
 
 
-    /* =========================
+    /* =========================================================
        ANIMATIONS
-    ========================= */
+    ========================================================= */
 
     .fade {
+
       opacity: 0;
 
-      transform: translateY(18px);
+      transform:
+        translateY(18px);
 
       transition:
-        opacity .75s cubic-bezier(.22,1,.36,1),
-        transform .75s cubic-bezier(.22,1,.36,1);
+        opacity .75s
+        cubic-bezier(
+          .22,
+          1,
+          .36,
+          1
+        ),
+
+        transform .75s
+        cubic-bezier(
+          .22,
+          1,
+          .36,
+          1
+        );
+
     }
+
 
     .fade.visible {
+
       opacity: 1;
 
-      transform: translateY(0);
+      transform:
+        translateY(0);
+
     }
 
 
-    /* =========================
+    /* =========================================================
        MOBILE
-    ========================= */
+    ========================================================= */
 
     @media (max-width: 760px) {
 
+
       .site {
-        width: min(calc(100% - 28px), var(--max));
+
+        width:
+          min(
+            calc(100% - 28px),
+            var(--max)
+          );
+
       }
+
+
+      /* NAV */
 
       .nav {
         min-height: 62px;
       }
 
+
       .nav-links {
+
         display: none;
 
         position: absolute;
@@ -1171,11 +1708,13 @@
         top: 62px;
 
         left: 0;
+
         right: 0;
 
         background: #fff;
 
-        border-bottom: 1px solid var(--border);
+        border-bottom:
+          1px solid var(--border);
 
         padding: 18px 14px;
 
@@ -1184,11 +1723,14 @@
         align-items: flex-start;
 
         gap: 13px;
+
       }
+
 
       .nav-links.open {
         display: flex;
       }
+
 
       .mobile-toggle {
         display: block;
@@ -1198,276 +1740,1534 @@
       /* HERO */
 
       .hero {
+
         grid-template-columns: 1fr;
 
         gap: 24px;
 
-        padding: 48px 0 42px;
+        padding:
+          48px 0 42px;
+
       }
+
 
       .portrait {
+
         width: 145px;
+
         height: 145px;
+
       }
 
+
       .hero-content {
+
         grid-template-columns:
-          minmax(0, 1fr) 100px;
+          minmax(0,1fr)
+          100px;
 
         gap: 20px;
 
         align-items: start;
+
       }
 
+
       .hero-resume {
+
         width: 100px;
 
         justify-self: end;
+
       }
+
 
       .hero-resume-link {
         width: 100px;
       }
+
 
       .hero-resume-label {
         font-size: 8px;
       }
 
 
+      /* LOGOS */
+
+      .logo-strip {
+
+        padding:
+          22px 0;
+
+      }
+
+
+      .logo-strip-inner {
+
+        grid-template-columns:
+          repeat(5, 150px);
+
+        gap: 12px;
+
+        overflow-x: auto;
+
+        padding-bottom: 6px;
+
+        scrollbar-width: none;
+
+      }
+
+
+      .logo-strip-inner::-webkit-scrollbar {
+        display: none;
+      }
+
+
+      .logo-item {
+
+        height: 65px;
+
+        padding:
+          8px 14px;
+
+      }
+
+
       /* TIMELINE */
 
       .timeline-track {
+
         left: 6px;
+
       }
 
+
       .entry {
+
         grid-template-columns:
           28px 1fr;
 
         gap: 0;
 
         padding-bottom: 40px;
+
       }
 
+
       .date {
+
         grid-column: 2;
 
         grid-row: 1;
 
         text-align: left;
 
-        padding: 0 0 6px;
+        padding:
+          0 0 6px;
+
       }
 
+
       .timeline-node {
+
         grid-column: 1;
 
         grid-row: 1 / span 2;
 
-        justify-content: flex-start;
+        justify-content:
+          flex-start;
 
         padding-top: 4px;
+
       }
 
+
       .entry-content {
+
         grid-column: 2;
 
         padding-left: 0;
+
       }
 
 
       /* EDUCATION */
 
       .cmu-row {
-        align-items: flex-start;
+
+        align-items:
+          flex-start;
+
       }
 
+
       .cmu-logo {
+
         width: 68px;
+
         height: 68px;
 
         flex-basis: 68px;
+
       }
+
 
       .cmu-name {
         font-size: 21px;
       }
 
+
       .cmu-meta {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+          1fr;
 
         gap: 2px;
+
       }
+
 
       .cmu-meta strong {
+
         margin-top: 8px;
+
       }
 
+
       .education-highlight {
-        padding: 23px 20px;
+
+        padding:
+          23px 20px;
+
       }
 
 
       /* SKILLS */
 
       .skills {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+          1fr;
+
       }
 
 
       /* CONTACT */
 
       .contact {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+          1fr;
+
       }
 
+
       .contact-links {
-        align-items: flex-start;
+
+        align-items:
+          flex-start;
+
       }
 
 
       /* FOOTER */
 
       footer {
-        flex-direction: column;
+
+        flex-direction:
+          column;
+
       }
 
     }
 
   </style>
+
 </head>
+
 
 
 <body>
 
 
-<!-- =========================
-     HEADER
-========================= -->
+  <!-- =========================================================
+       HEADER
+  ========================================================= -->
 
-<header>
+  <header>
 
-  <div class="site nav">
+    <div class="site nav">
 
-    <a
-      class="brand"
-      href="#top"
-    >
-      Manav Somani
-    </a>
-
-
-    <button
-      class="mobile-toggle"
-      id="menuToggle"
-      aria-label="Open menu"
-    >
-      ☰
-    </button>
-
-
-    <nav
-      class="nav-links"
-      id="navLinks"
-    >
-
-      <a href="#about">
-        About
-      </a>
-
-      <a href="#education">
-        Education
-      </a>
-
-      <a href="#experience">
-        Experience
-      </a>
 
       <a
-        href="resume_manav_somani.pdf"
-        target="_blank"
-        rel="noopener"
+        class="brand"
+        href="#top"
       >
-        Resume
+        Manav Somani
       </a>
 
-      <a href="#work">
-        Selected Work
-      </a>
 
-      <a href="#contact">
-        Contact
-      </a>
-
-    </nav>
-
-  </div>
-
-</header>
+      <button
+        class="mobile-toggle"
+        id="menuToggle"
+        aria-label="Open menu"
+      >
+        ☰
+      </button>
 
 
+      <nav
+        class="nav-links"
+        id="navLinks"
+      >
 
-<!-- =========================
-     MAIN
-========================= -->
-
-<main
-  id="top"
-  class="site"
->
+        <a href="#about">
+          About
+        </a>
 
 
-  <!-- =========================
-       HERO
-  ========================= -->
+        <a href="#education">
+          Education
+        </a>
 
-  <section
-    class="hero fade"
-    style="border-top:0;"
+
+        <a href="#experience">
+          Experience
+        </a>
+
+
+        <a
+          href="resume_manav_somani.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          Resume
+        </a>
+
+
+        <a href="#work">
+          Selected Work
+        </a>
+
+
+        <a href="#contact">
+          Contact
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =========================================================
+       MAIN
+  ========================================================= -->
+
+  <main
+    id="top"
+    class="site"
   >
 
-    <img
-      class="portrait"
-      src="Manav_Somani_Linkedin_Photo_2025_-_Cropped.jpeg"
-      alt="Manav Somani"
+
+    <!-- =======================================================
+         HERO
+    ======================================================= -->
+
+    <section
+      class="hero fade"
     >
 
 
-    <div class="hero-content">
+      <!-- Profile Photo -->
+
+      <img
+        class="portrait"
+        src="Manav_Somani_Linkedin_Photo_2025_-_Cropped.jpeg"
+        alt="Manav Somani"
+      >
 
 
-      <div class="hero-intro">
+      <div class="hero-content">
 
-        <div class="eyebrow">
-          CARNEGIE MELLON UNIVERSITY · PRODUCT · DATA · AI
+
+        <!-- Hero Introduction -->
+
+        <div class="hero-intro">
+
+
+          <div class="eyebrow">
+
+            CARNEGIE MELLON UNIVERSITY
+            · PRODUCT · DATA · AI
+
+          </div>
+
+
+          <h1>
+            Manav Somani
+          </h1>
+
+
+          <p class="hero-title">
+
+            Analytics turned Product &amp;
+            Program Management professional
+
+          </p>
+
+
+          <p class="hero-copy">
+
+            I am a graduate student at Carnegie Mellon University
+            with 3.5+ years of experience across AI, e-commerce,
+            and fintech. I build 0-to-1 products and data platforms,
+            define AI evaluation frameworks, and turn operational
+            data into product and roadmap decisions.
+
+          </p>
+
+
+          <div class="links">
+
+
+            <a
+              href="mailto:msomani@andrew.cmu.edu"
+            >
+              Email
+            </a>
+
+
+            <a
+              href="https://www.linkedin.com/in/manavsomani/"
+              target="_blank"
+              rel="noopener"
+            >
+              LinkedIn
+            </a>
+
+
+            <a
+              href="tel:+14126897119"
+            >
+              412-689-7119
+            </a>
+
+
+            <a href="#work">
+              Selected Work ↓
+            </a>
+
+
+          </div>
+
         </div>
 
 
-        <h1>
-          Manav Somani
-        </h1>
+
+        <!-- =====================================================
+             RESUME THUMBNAIL
+        ===================================================== -->
+
+        <div class="hero-resume">
 
 
-        <p class="hero-title">
-          Analytics turned Product &amp; Program Management professional
-        </p>
+          <a
+            href="resume_manav_somani.pdf"
+            target="_blank"
+            rel="noopener"
+            aria-label="Open Manav Somani Resume"
+            class="hero-resume-link"
+          >
 
 
-        <p class="hero-copy">
-
-          I am a graduate student at Carnegie Mellon University with 3.5+ years
-          of experience across AI, e-commerce, and fintech. I build 0-to-1
-          products and data platforms, define AI evaluation frameworks, and turn
-          operational data into product and roadmap decisions.
-
-        </p>
+            <img
+              src="resume-thumbnail.png"
+              alt="Manav Somani Resume"
+              class="hero-resume-image"
+            >
 
 
-        <div class="links">
+            <div class="hero-resume-overlay">
 
-          <a href="mailto:msomani@andrew.cmu.edu">
-            Email
+              <span>
+                Resume ↗
+              </span>
+
+            </div>
+
+
           </a>
+
+
+          <div class="hero-resume-label">
+            RESUME
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         COMPANY LOGOS
+         CMU → T-MOBILE → HELLBENDER →
+         WALMART/FLIPKART → AMAZON/AXIO
+    ======================================================= -->
+
+    <section
+      class="logo-strip"
+    >
+
+      <div
+        class="logo-strip-inner"
+      >
+
+
+        <!-- CMU -->
+
+        <div class="logo-item">
+
+          <img
+            src="cmu_logo.jpeg"
+            alt="Carnegie Mellon University"
+          >
+
+        </div>
+
+
+
+        <!-- T-MOBILE -->
+
+        <div class="logo-item">
+
+          <img
+            src="tmobile_logo.png"
+            alt="T-Mobile"
+          >
+
+        </div>
+
+
+
+        <!-- HELLBENDER -->
+
+        <div class="logo-item">
+
+          <img
+            src="hellbender_logo.png"
+            alt="Hellbender"
+          >
+
+        </div>
+
+
+
+        <!-- WALMART / FLIPKART -->
+
+        <div class="logo-item">
+
+          <img
+            src="flipkart_walmart_logo.jpeg"
+            alt="Walmart and Flipkart"
+          >
+
+        </div>
+
+
+
+        <!-- AMAZON / AXIO -->
+
+        <div class="logo-item">
+
+          <img
+            src="axio_amazon_logo.png"
+            alt="Amazon and Axio"
+          >
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         ABOUT
+    ======================================================= -->
+
+    <section
+      id="about"
+      class="fade"
+    >
+
+
+      <h2 class="section-title">
+        About
+      </h2>
+
+
+      <p class="intro">
+
+        My background sits at the intersection of product management,
+        analytics, and technology. I enjoy taking ambiguous problems,
+        understanding them through data and users, and translating
+        the insight into products, systems, and strategies that
+        create measurable impact.
+
+        My experience spans T-Mobile's AI Engineering team,
+        Flipkart's supply-chain operations, and Axio's digital
+        collections business.
+
+      </p>
+
+
+    </section>
+
+
+
+    <!-- =======================================================
+         EDUCATION
+    ======================================================= -->
+
+    <section
+      id="education"
+      class="fade"
+    >
+
+
+      <h2 class="section-title">
+        Education
+      </h2>
+
+
+      <!-- CMU -->
+
+      <div
+        class="education-highlight"
+      >
+
+
+        <div class="cmu-row">
+
+
+          <img
+            class="cmu-logo"
+            src="cmu_logo.jpeg"
+            alt="Carnegie Mellon University logo"
+          >
+
+
+          <div>
+
+
+            <div class="cmu-kicker">
+              Carnegie Mellon University
+            </div>
+
+
+            <h3 class="cmu-name">
+
+              Master of Information
+              Systems Management
+
+            </h3>
+
+
+            <p class="cmu-degree">
+
+              MISM · Business Intelligence
+              &amp; Data Analytics
+
+            </p>
+
+
+          </div>
+
+
+        </div>
+
+
+
+        <div class="cmu-meta">
+
+
+          <strong>
+            Location
+          </strong>
+
+
+          <span>
+            Pittsburgh, PA
+          </span>
+
+
+          <strong>
+            Expected
+          </strong>
+
+
+          <span>
+            December 2026
+          </span>
+
+
+          <strong>
+            CGPA
+          </strong>
+
+
+          <span>
+            3.8 / 4.0
+          </span>
+
+
+        </div>
+
+
+
+        <p class="cmu-coursework">
+
+
+          <strong>
+            Coursework:
+          </strong>
+
+
+          Product Management Essentials,
+          Data Science for PMs,
+          Corporate Startup Lab,
+          Advanced Business Analytics,
+          Unstructured Data Analytics,
+          Statistics, Database Management,
+          Python, Organizational Design and
+          Implementation, Java.
+
+
+        </p>
+
+
+      </div>
+
+
+
+      <!-- PES -->
+
+      <div
+        class="education-secondary"
+      >
+
+
+        <h3>
+
+          PES University —
+          Bachelor of Technology in Engineering
+
+        </h3>
+
+
+        <div class="education-meta">
+
+          Bangalore · May 2022 ·
+          Distinction · CGPA 3.8/4.0
+
+        </div>
+
+
+        <p class="intro">
+
+          Head of TEDxPESU, organizing the largest
+          TEDx event in Bangalore, featuring renowned
+          speakers with 5M+ combined followers.
+
+          Team HAYA Off-Roading placed 19/120 teams
+          in BAJA SAE INDIA 2020 and 3rd in Enduro
+          Student India 2020.
+
+        </p>
+
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =======================================================
+         EXPERIENCE
+    ======================================================= -->
+
+    <section
+      id="experience"
+      class="fade"
+    >
+
+
+      <h2 class="section-title">
+        Experience
+      </h2>
+
+
+      <div
+        class="timeline"
+        id="experienceTimeline"
+      >
+
+
+        <div
+          class="timeline-track"
+          aria-hidden="true"
+        >
+
+          <div
+            class="timeline-progress"
+            id="timelineProgress"
+          ></div>
+
+        </div>
+
+
+
+        <!-- ===================================================
+             T-MOBILE
+        =================================================== -->
+
+        <article class="entry">
+
+
+          <div class="date">
+
+            May 2026 –
+            Aug 2026
+
+          </div>
+
+
+          <div class="timeline-node">
+
+            <span class="timeline-dot"></span>
+
+          </div>
+
+
+          <div class="entry-content">
+
+
+            <h3>
+
+              Product Management Intern —
+              AI Engineering Team
+
+            </h3>
+
+
+            <div class="org">
+
+              T-Mobile
+
+              <span class="location">
+                · Bellevue, WA
+              </span>
+
+            </div>
+
+
+            <ul>
+
+
+              <li>
+
+                Defined product requirements,
+                success metrics, and KPI frameworks
+                for the Agentic T-Mobile AI Voice
+                Agent and Ops Center, driving roadmap
+                prioritization and launch decisions.
+
+              </li>
+
+
+              <li>
+
+                Translated feature discussions into
+                well-defined Jira tasks and acceptance
+                criteria, reducing cross-functional
+                ambiguity and enabling faster
+                engineering execution.
+
+              </li>
+
+
+              <li>
+
+                Authored the PRD for a call simulation
+                tool and led an AI evaluation framework
+                of 200+ test cases, surfacing critical
+                failure modes and lifting pre-production
+                issue detection by 33%.
+
+              </li>
+
+
+              <li>
+
+                Defined governance processes for
+                security reviews, vulnerabilities,
+                and dependencies, and developed AI
+                safety guardrails that improved model
+                compliance and accelerated launch
+                readiness.
+
+              </li>
+
+
+            </ul>
+
+
+          </div>
+
+
+        </article>
+
+
+
+        <!-- ===================================================
+             HELLBENDER
+        =================================================== -->
+
+        <article class="entry">
+
+
+          <div class="date">
+
+            Jan 2026 –
+            May 2026
+
+          </div>
+
+
+          <div class="timeline-node">
+
+            <span class="timeline-dot"></span>
+
+          </div>
+
+
+          <div class="entry-content">
+
+
+            <h3>
+
+              Graduate Student Consultant —
+              Corporate Startup Lab
+
+            </h3>
+
+
+            <div class="org">
+
+              Hellbender
+
+              <span class="location">
+                · Pittsburgh, PA
+              </span>
+
+            </div>
+
+
+            <ul>
+
+
+              <li>
+
+                Advised an edge vision AI startup
+                on transitioning hardware sales into
+                a scalable Computer Vision as a Service
+                (CVaaS) recurring revenue model.
+
+              </li>
+
+
+              <li>
+
+                Conducted market research across
+                multiple verticals and built a prioritized
+                go-to-market strategy based on TAM,
+                competitive density, and technical fit.
+
+              </li>
+
+
+            </ul>
+
+
+          </div>
+
+
+        </article>
+
+
+
+        <!-- ===================================================
+             FLIPKART
+        =================================================== -->
+
+        <article class="entry">
+
+
+          <div class="date">
+
+            Sep 2024 –
+            Aug 2025
+
+          </div>
+
+
+          <div class="timeline-node">
+
+            <span class="timeline-dot"></span>
+
+          </div>
+
+
+          <div class="entry-content">
+
+
+            <h3>
+
+              Assistant Manager —
+              Control Tower Operations,
+              Supply Chain
+
+            </h3>
+
+
+            <div class="org">
+
+              Flipkart
+
+              <span class="location">
+                · Bangalore
+              </span>
+
+            </div>
+
+
+            <ul>
+
+
+              <li>
+
+                Owned end-to-end development of an
+                automated centralized data platform
+                unifying nationwide orders and metrics,
+                eliminating 9+ hours of daily manual
+                reporting.
+
+              </li>
+
+
+              <li>
+
+                Built an inventory risk model that
+                prioritized high-risk locations for
+                targeted perpetual stock takes,
+                cutting inventory discrepancies by 50%
+                with no increase in audit time.
+
+              </li>
+
+
+              <li>
+
+                Led inventory strategy for fast-moving
+                SKUs, improving warehouse operations
+                efficiency by 33% and reducing fulfillment
+                lead times and cost.
+
+              </li>
+
+
+              <li>
+
+                Translated ground-team insights and
+                operational data into inventory placement,
+                pick-path changes, and user-story
+                prioritization, reducing picking time
+                by 25% and improving CSAT by 20%.
+
+              </li>
+
+
+            </ul>
+
+
+          </div>
+
+
+        </article>
+
+
+
+        <!-- ===================================================
+             AXIO
+        =================================================== -->
+
+        <article class="entry">
+
+
+          <div class="date">
+
+            Mar 2023 –
+            Sep 2024
+
+          </div>
+
+
+          <div class="timeline-node">
+
+            <span class="timeline-dot"></span>
+
+          </div>
+
+
+          <div class="entry-content">
+
+
+            <h3>
+
+              Product Analyst —
+              Digital Collections,
+              Amazon Pay Later
+
+            </h3>
+
+
+            <div class="org">
+
+              Axio
+
+              <span class="location">
+                · Bangalore
+              </span>
+
+            </div>
+
+
+            <ul>
+
+
+              <li>
+
+                Led 0-to-1 development of an
+                interactive voice and chatbot system
+                for digital debt collections on Amazon
+                Pay Later, owning end-to-end product
+                requirements and user stories.
+
+              </li>
+
+
+              <li>
+
+                Launched curated collections strategies
+                segmented on customer payment profile
+                and behavior, lifting debt recovery
+                from 85% to 95%.
+
+              </li>
+
+
+              <li>
+
+                Reduced data processing time by 80%
+                by creating an automation tool that
+                reduced operational costs.
+
+              </li>
+
+
+            </ul>
+
+
+          </div>
+
+
+        </article>
+
+
+
+        <!-- ===================================================
+             FLIPKART INTERN
+        =================================================== -->
+
+        <article class="entry">
+
+
+          <div class="date">
+
+            Feb 2022 –
+            Jul 2022
+
+          </div>
+
+
+          <div class="timeline-node">
+
+            <span class="timeline-dot"></span>
+
+          </div>
+
+
+          <div class="entry-content">
+
+
+            <h3>
+
+              Intern —
+              Control Tower Operations,
+              Grocery Supply Chain
+
+            </h3>
+
+
+            <div class="org">
+
+              Flipkart
+
+              <span class="location">
+                · Bangalore
+              </span>
+
+            </div>
+
+
+            <ul>
+
+
+              <li>
+
+                Identified key operational gaps and
+                delivered an 80% reduction in grocery
+                product damage through inventory,
+                transit, and consumer analysis.
+
+              </li>
+
+
+              <li>
+
+                Automated processes cutting
+                data-management time by 75%, and
+                drove quality-control improvements
+                with warehouse leadership.
+
+              </li>
+
+
+            </ul>
+
+
+          </div>
+
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =======================================================
+         SELECTED WORK
+    ======================================================= -->
+
+    <section
+      id="work"
+      class="fade"
+    >
+
+
+      <h2 class="section-title">
+        Selected Work
+      </h2>
+
+
+
+      <!-- WORK 1 -->
+
+      <article class="work-item">
+
+
+        <div class="work-title">
+
+
+          <h3>
+
+            RubricGuard —
+            CMU ProdHacks 2026
+
+          </h3>
+
+
+          <span class="work-number">
+            01
+          </span>
+
+
+        </div>
+
+
+        <p>
+
+          Placed 3rd out of 400+ teams.
+          Built an agentic AI-powered grading
+          consistency engine using multi-LLM
+          workflows to detect evaluation bias
+          and ensure rubric alignment.
+
+        </p>
+
+
+      </article>
+
+
+
+      <!-- WORK 2 -->
+
+      <article class="work-item">
+
+
+        <div class="work-title">
+
+
+          <h3>
+
+            Air India Agentic Airline
+            Network Stress Simulator
+
+          </h3>
+
+
+          <span class="work-number">
+            02
+          </span>
+
+
+        </div>
+
+
+        <p>
+
+          Project Manager for a CMU capstone
+          project leading project management
+          and engineering for a multi-agent AI
+          system that models network disruptions
+          and optimizes flight-delay recovery.
+
+        </p>
+
+
+      </article>
+
+
+
+      <!-- WORK 3 -->
+
+      <article class="work-item">
+
+
+        <div class="work-title">
+
+
+          <h3>
+
+            TUI Smiles —
+            Global Loyalty Strategy
+
+          </h3>
+
+
+          <span class="work-number">
+            03
+          </span>
+
+
+        </div>
+
+
+        <p>
+
+          Spearheaded strategic loyalty analysis
+          for TUI Group's global rewards ecosystem,
+          leveraging sentiment modeling to evaluate
+          cross-channel engagement across European
+          source markets.
+
+        </p>
+
+
+      </article>
+
+
+
+      <!-- WORK 4 -->
+
+      <article class="work-item">
+
+
+        <div class="work-title">
+
+
+          <h3>
+
+            Computer Vision as a Service —
+            Hellbender
+
+          </h3>
+
+
+          <span class="work-number">
+            04
+          </span>
+
+
+        </div>
+
+
+        <p>
+
+          Developed a strategic transition from
+          hardware sales to a scalable recurring-
+          revenue CVaaS model and prioritized
+          target markets using TAM, competitive
+          density, and technical fit.
+
+        </p>
+
+
+      </article>
+
+
+    </section>
+
+
+
+    <!-- =======================================================
+         SKILLS
+    ======================================================= -->
+
+    <section
+      id="skills"
+      class="fade"
+    >
+
+
+      <h2 class="section-title">
+        Skills
+      </h2>
+
+
+      <div class="skills">
+
+
+        <div class="skill-group">
+
+
+          <h3>
+            Product &amp; Project Management
+          </h3>
+
+
+          <p>
+
+            Asana · Figma · Jira · Google Studios ·
+            Lovable · Product Strategy · Product Design ·
+            PRDs · Prototyping · KPI Frameworks · Agile ·
+            User Stories · A/B Testing · Go-To-Market ·
+            Tradeoffs
+
+          </p>
+
+
+        </div>
+
+
+
+        <div class="skill-group">
+
+
+          <h3>
+            AI, Data &amp; Analytics
+          </h3>
+
+
+          <p>
+
+            Gen AI · AI Evaluation Frameworks · SQL ·
+            Python · R · Power BI · Tableau ·
+            Safety &amp; Governance
+
+          </p>
+
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =======================================================
+         CONTACT
+    ======================================================= -->
+
+    <section
+      id="contact"
+      class="fade"
+    >
+
+
+      <h2 class="section-title">
+        Contact
+      </h2>
+
+
+      <div class="contact">
+
+
+        <p class="contact-copy">
+
+          Interested in product, AI, data,
+          and the problems that sit at their
+          intersection? I'd be happy to connect.
+
+        </p>
+
+
+        <div class="contact-links">
+
+
+          <a
+            href="mailto:msomani@andrew.cmu.edu"
+          >
+            msomani@andrew.cmu.edu
+          </a>
+
 
           <a
             href="https://www.linkedin.com/in/manavsomani/"
@@ -1477,1054 +3277,327 @@
             LinkedIn
           </a>
 
-          <a href="tel:+14126897119">
+
+          <a
+            href="tel:+14126897119"
+          >
             412-689-7119
           </a>
 
-          <a href="#work">
-            Selected Work ↓
-          </a>
+
+          <span>
+            Pittsburgh, PA
+          </span>
+
 
         </div>
 
-      </div>
-
-
-      <!-- =========================
-           RESUME THUMBNAIL
-      ========================= -->
-
-      <div class="hero-resume">
-
-        <a
-          href="resume_manav_somani.pdf"
-          target="_blank"
-          rel="noopener"
-          aria-label="Open Manav Somani Resume"
-          class="hero-resume-link"
-        >
-
-          <img
-            src="resume-thumbnail.png"
-            alt="Manav Somani Resume"
-            class="hero-resume-image"
-          >
-
-          <div class="hero-resume-overlay">
-
-            <span>
-              Resume ↗
-            </span>
-
-          </div>
-
-        </a>
-
-
-        <div class="hero-resume-label">
-          RESUME
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       ABOUT
-  ========================= -->
-
-  <section
-    id="about"
-    class="fade"
-  >
-
-    <h2 class="section-title">
-      About
-    </h2>
-
-
-    <p class="intro">
-
-      My background sits at the intersection of product management,
-      analytics, and technology. I enjoy taking ambiguous problems,
-      understanding them through data and users, and translating the insight
-      into products, systems, and strategies that create measurable impact.
-      My experience spans T-Mobile's AI Engineering team, Flipkart's
-      supply-chain operations, and Axio's digital collections business.
-
-    </p>
-
-  </section>
-
-
-
-  <!-- =========================
-       EDUCATION
-  ========================= -->
-
-  <section
-    id="education"
-    class="fade"
-  >
-
-    <h2 class="section-title">
-      Education
-    </h2>
-
-
-    <div class="education-highlight">
-
-      <div class="cmu-row">
-
-        <img
-          class="cmu-logo"
-          src="cmu_logo.jpg"
-          alt="Carnegie Mellon University logo"
-        >
-
-
-        <div>
-
-          <div class="cmu-kicker">
-            Carnegie Mellon University
-          </div>
-
-
-          <h3 class="cmu-name">
-            Master of Information Systems Management
-          </h3>
-
-
-          <p class="cmu-degree">
-            MISM · Business Intelligence &amp; Data Analytics
-          </p>
-
-        </div>
 
       </div>
 
 
-      <div class="cmu-meta">
-
-        <strong>
-          Location
-        </strong>
-
-        <span>
-          Pittsburgh, PA
-        </span>
+    </section>
 
 
-        <strong>
-          Expected
-        </strong>
-
-        <span>
-          December 2026
-        </span>
-
-
-        <strong>
-          CGPA
-        </strong>
-
-        <span>
-          3.8 / 4.0
-        </span>
-
-      </div>
-
-
-      <p class="cmu-coursework">
-
-        <strong>
-          Coursework:
-        </strong>
-
-        Product Management Essentials, Data Science for PMs,
-        Corporate Startup Lab, Advanced Business Analytics,
-        Unstructured Data Analytics, Statistics, Database Management,
-        Python, Organizational Design and Implementation, Java.
-
-      </p>
-
-    </div>
-
-
-    <div class="education-secondary">
-
-      <h3>
-        PES University — Bachelor of Technology in Engineering
-      </h3>
-
-
-      <div class="education-meta">
-        Bangalore · May 2022 · Distinction · CGPA 3.8/4.0
-      </div>
-
-
-      <p class="intro">
-
-        Head of TEDxPESU, organizing the largest TEDx event in Bangalore,
-        featuring renowned speakers with 5M+ combined followers.
-        Team HAYA Off-Roading placed 19/120 teams in BAJA SAE INDIA 2020
-        and 3rd in Enduro Student India 2020.
-
-      </p>
-
-    </div>
-
-  </section>
+  </main>
 
 
 
-  <!-- =========================
-       EXPERIENCE
-  ========================= -->
+  <!-- =========================================================
+       FOOTER
+  ========================================================= -->
 
-  <section
-    id="experience"
-    class="fade"
-  >
-
-    <h2 class="section-title">
-      Experience
-    </h2>
+  <footer class="site">
 
 
-    <div
-      class="timeline"
-      id="experienceTimeline"
+    <span>
+      © 2026 Manav Somani
+    </span>
+
+
+    <span
+      style="
+        color: var(--accent);
+        font-weight: 600;
+      "
     >
+      Product · Data · AI
+    </span>
 
-      <div
-        class="timeline-track"
-        aria-hidden="true"
-      >
 
-        <div
-          class="timeline-progress"
-          id="timelineProgress"
-        ></div>
+  </footer>
 
-      </div>
 
 
-      <!-- T-MOBILE -->
+  <!-- =========================================================
+       BACK TO TOP
+  ========================================================= -->
 
-      <article class="entry">
-
-        <div class="date">
-          May 2026 – Aug 2026
-        </div>
-
-
-        <div class="timeline-node">
-
-          <span class="timeline-dot"></span>
-
-        </div>
-
-
-        <div class="entry-content">
-
-          <h3>
-            Product Management Intern — AI Engineering Team
-          </h3>
-
-
-          <div class="org">
-
-            T-Mobile
-
-            <span class="location">
-              · Bellevue, WA
-            </span>
-
-          </div>
-
-
-          <ul>
-
-            <li>
-              Defined product requirements, success metrics, and KPI frameworks
-              for the Agentic T-Mobile AI Voice Agent and Ops Center, driving
-              roadmap prioritization and launch decisions.
-            </li>
-
-
-            <li>
-              Translated feature discussions into well-defined Jira tasks and
-              acceptance criteria, reducing cross-functional ambiguity and
-              enabling faster engineering execution.
-            </li>
-
-
-            <li>
-              Authored the PRD for a call simulation tool and led an AI
-              evaluation framework of 200+ test cases, surfacing critical
-              failure modes and lifting pre-production issue detection by 33%.
-            </li>
-
-
-            <li>
-              Defined governance processes for security reviews,
-              vulnerabilities, and dependencies, and developed AI safety
-              guardrails that improved model compliance and accelerated
-              launch readiness.
-            </li>
-
-          </ul>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- HELLBENDER -->
-
-      <article class="entry">
-
-        <div class="date">
-          Jan 2026 – May 2026
-        </div>
-
-
-        <div class="timeline-node">
-
-          <span class="timeline-dot"></span>
-
-        </div>
-
-
-        <div class="entry-content">
-
-          <h3>
-            Graduate Student Consultant — Corporate Startup Lab
-          </h3>
-
-
-          <div class="org">
-
-            Hellbender
-
-            <span class="location">
-              · Pittsburgh, PA
-            </span>
-
-          </div>
-
-
-          <ul>
-
-            <li>
-              Advised an edge vision AI startup on transitioning hardware
-              sales into a scalable Computer Vision as a Service (CVaaS)
-              recurring revenue model.
-            </li>
-
-
-            <li>
-              Conducted market research across multiple verticals and built
-              a prioritized go-to-market strategy based on TAM, competitive
-              density, and technical fit.
-            </li>
-
-          </ul>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- FLIPKART -->
-
-      <article class="entry">
-
-        <div class="date">
-          Sep 2024 – Aug 2025
-        </div>
-
-
-        <div class="timeline-node">
-
-          <span class="timeline-dot"></span>
-
-        </div>
-
-
-        <div class="entry-content">
-
-          <h3>
-            Assistant Manager — Control Tower Operations, Supply Chain
-          </h3>
-
-
-          <div class="org">
-
-            Flipkart
-
-            <span class="location">
-              · Bangalore
-            </span>
-
-          </div>
-
-
-          <ul>
-
-            <li>
-              Owned end-to-end development of an automated centralized data
-              platform unifying nationwide orders and metrics, eliminating
-              9+ hours of daily manual reporting.
-            </li>
-
-
-            <li>
-              Built an inventory risk model that prioritized high-risk
-              locations for targeted perpetual stock takes, cutting inventory
-              discrepancies by 50% with no increase in audit time.
-            </li>
-
-
-            <li>
-              Led inventory strategy for fast-moving SKUs, improving warehouse
-              operations efficiency by 33% and reducing fulfillment lead times
-              and cost.
-            </li>
-
-
-            <li>
-              Translated ground-team insights and operational data into
-              inventory placement, pick-path changes, and user-story
-              prioritization, reducing picking time by 25% and improving
-              CSAT by 20%.
-            </li>
-
-          </ul>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- AXIO -->
-
-      <article class="entry">
-
-        <div class="date">
-          Mar 2023 – Sep 2024
-        </div>
-
-
-        <div class="timeline-node">
-
-          <span class="timeline-dot"></span>
-
-        </div>
-
-
-        <div class="entry-content">
-
-          <h3>
-            Product Analyst — Digital Collections, Amazon Pay Later
-          </h3>
-
-
-          <div class="org">
-
-            Axio
-
-            <span class="location">
-              · Bangalore
-            </span>
-
-          </div>
-
-
-          <ul>
-
-            <li>
-              Led 0-to-1 development of an interactive voice and chatbot
-              system for digital debt collections on Amazon Pay Later,
-              owning end-to-end product requirements and user stories.
-            </li>
-
-
-            <li>
-              Launched curated collections strategies segmented on customer
-              payment profile and behavior, lifting debt recovery from 85%
-              to 95%.
-            </li>
-
-
-            <li>
-              Reduced data processing time by 80% by creating an automation
-              tool that reduced operational costs.
-            </li>
-
-          </ul>
-
-        </div>
-
-      </article>
-
-
-
-      <!-- FLIPKART INTERN -->
-
-      <article class="entry">
-
-        <div class="date">
-          Feb 2022 – Jul 2022
-        </div>
-
-
-        <div class="timeline-node">
-
-          <span class="timeline-dot"></span>
-
-        </div>
-
-
-        <div class="entry-content">
-
-          <h3>
-            Intern — Control Tower Operations, Grocery Supply Chain
-          </h3>
-
-
-          <div class="org">
-
-            Flipkart
-
-            <span class="location">
-              · Bangalore
-            </span>
-
-          </div>
-
-
-          <ul>
-
-            <li>
-              Identified key operational gaps and delivered an 80% reduction
-              in grocery product damage through inventory, transit, and
-              consumer analysis.
-            </li>
-
-
-            <li>
-              Automated processes cutting data-management time by 75%, and
-              drove quality-control improvements with warehouse leadership.
-            </li>
-
-          </ul>
-
-        </div>
-
-      </article>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       SELECTED WORK
-  ========================= -->
-
-  <section
-    id="work"
-    class="fade"
+  <a
+    href="#top"
+    class="back-top"
+    id="backTop"
+    aria-label="Back to top"
   >
+    ↑
+  </a>
 
-    <h2 class="section-title">
-      Selected Work
-    </h2>
 
 
-    <article class="work-item">
+  <!-- =========================================================
+       JAVASCRIPT
+  ========================================================= -->
 
-      <div class="work-title">
+  <script>
 
-        <h3>
-          RubricGuard — CMU ProdHacks 2026
-        </h3>
 
-        <span class="work-number">
-          01
-        </span>
+    /* =========================================================
+       MOBILE MENU
+    ========================================================= */
 
-      </div>
+    const menuToggle =
+      document.getElementById(
+        "menuToggle"
+      );
 
 
-      <p>
+    const navLinks =
+      document.getElementById(
+        "navLinks"
+      );
 
-        Placed 3rd out of 400+ teams. Built an agentic AI-powered grading
-        consistency engine using multi-LLM workflows to detect evaluation
-        bias and ensure rubric alignment.
 
-      </p>
+    menuToggle.addEventListener(
+      "click",
+      () => {
 
-    </article>
+        navLinks.classList.toggle(
+          "open"
+        );
 
+      }
+    );
 
 
-    <article class="work-item">
+    document
+      .querySelectorAll(
+        ".nav-links a"
+      )
+      .forEach(link => {
 
-      <div class="work-title">
+        link.addEventListener(
+          "click",
+          () => {
 
-        <h3>
-          Air India Agentic Airline Network Stress Simulator
-        </h3>
-
-        <span class="work-number">
-          02
-        </span>
-
-      </div>
-
-
-      <p>
-
-        Project Manager for a CMU capstone project leading project management
-        and engineering for a multi-agent AI system that models network
-        disruptions and optimizes flight-delay recovery.
-
-      </p>
-
-    </article>
-
-
-
-    <article class="work-item">
-
-      <div class="work-title">
-
-        <h3>
-          TUI Smiles — Global Loyalty Strategy
-        </h3>
-
-        <span class="work-number">
-          03
-        </span>
-
-      </div>
-
-
-      <p>
-
-        Spearheaded strategic loyalty analysis for TUI Group's global rewards
-        ecosystem, leveraging sentiment modeling to evaluate cross-channel
-        engagement across European source markets.
-
-      </p>
-
-    </article>
-
-
-
-    <article class="work-item">
-
-      <div class="work-title">
-
-        <h3>
-          Computer Vision as a Service — Hellbender
-        </h3>
-
-        <span class="work-number">
-          04
-        </span>
-
-      </div>
-
-
-      <p>
-
-        Developed a strategic transition from hardware sales to a scalable
-        recurring-revenue CVaaS model and prioritized target markets using
-        TAM, competitive density, and technical fit.
-
-      </p>
-
-    </article>
-
-  </section>
-
-
-
-  <!-- =========================
-       SKILLS
-  ========================= -->
-
-  <section
-    id="skills"
-    class="fade"
-  >
-
-    <h2 class="section-title">
-      Skills
-    </h2>
-
-
-    <div class="skills">
-
-
-      <div class="skill-group">
-
-        <h3>
-          Product &amp; Project Management
-        </h3>
-
-
-        <p>
-
-          Asana · Figma · Jira · Google Studios · Lovable · Product Strategy ·
-          Product Design · PRDs · Prototyping · KPI Frameworks · Agile ·
-          User Stories · A/B Testing · Go-To-Market · Tradeoffs
-
-        </p>
-
-      </div>
-
-
-
-      <div class="skill-group">
-
-        <h3>
-          AI, Data &amp; Analytics
-        </h3>
-
-
-        <p>
-
-          Gen AI · AI Evaluation Frameworks · SQL · Python · R · Power BI ·
-          Tableau · Safety &amp; Governance
-
-        </p>
-
-      </div>
-
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       CONTACT
-  ========================= -->
-
-  <section
-    id="contact"
-    class="fade"
-  >
-
-    <h2 class="section-title">
-      Contact
-    </h2>
-
-
-    <div class="contact">
-
-
-      <p class="contact-copy">
-
-        Interested in product, AI, data, and the problems that sit at their
-        intersection? I’d be happy to connect.
-
-      </p>
-
-
-      <div class="contact-links">
-
-        <a href="mailto:msomani@andrew.cmu.edu">
-          msomani@andrew.cmu.edu
-        </a>
-
-
-        <a
-          href="https://www.linkedin.com/in/manavsomani/"
-          target="_blank"
-          rel="noopener"
-        >
-          LinkedIn
-        </a>
-
-
-        <a href="tel:+14126897119">
-          412-689-7119
-        </a>
-
-
-        <span>
-          Pittsburgh, PA
-        </span>
-
-      </div>
-
-    </div>
-
-  </section>
-
-</main>
-
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer class="site">
-
-  <span>
-    © 2026 Manav Somani
-  </span>
-
-
-  <span
-    style="color: var(--accent); font-weight: 600;"
-  >
-    Product · Data · AI
-  </span>
-
-</footer>
-
-
-
-<!-- =========================
-     BACK TO TOP
-========================= -->
-
-<a
-  href="#top"
-  class="back-top"
-  id="backTop"
-  aria-label="Back to top"
->
-  ↑
-</a>
-
-
-
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
-<script>
-
-  /* =========================
-     MOBILE MENU
-  ========================= */
-
-  const menuToggle =
-    document.getElementById("menuToggle");
-
-  const navLinks =
-    document.getElementById("navLinks");
-
-
-  menuToggle.addEventListener("click", () => {
-
-    navLinks.classList.toggle("open");
-
-  });
-
-
-  document
-    .querySelectorAll(".nav-links a")
-    .forEach(link => {
-
-      link.addEventListener("click", () => {
-
-        navLinks.classList.remove("open");
-
-      });
-
-    });
-
-
-
-  /* =========================
-     SCROLL REVEAL
-  ========================= */
-
-  const revealObserver =
-    new IntersectionObserver(
-
-      (entries) => {
-
-        entries.forEach(entry => {
-
-          if (entry.isIntersecting) {
-
-            entry.target.classList.add("visible");
-
-            revealObserver.unobserve(
-              entry.target
+            navLinks.classList.remove(
+              "open"
             );
 
           }
+        );
 
-        });
+      });
 
-      },
 
-      {
-        threshold: 0.08
+
+    /* =========================================================
+       SCROLL REVEAL
+    ========================================================= */
+
+    const revealObserver =
+      new IntersectionObserver(
+
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (
+              entry.isIntersecting
+            ) {
+
+              entry.target.classList.add(
+                "visible"
+              );
+
+              revealObserver.unobserve(
+                entry.target
+              );
+
+            }
+
+          });
+
+        },
+
+        {
+          threshold: 0.08
+        }
+
+      );
+
+
+    document
+      .querySelectorAll(
+        ".fade, .entry"
+      )
+      .forEach(el => {
+
+        revealObserver.observe(el);
+
+      });
+
+
+
+    /* =========================================================
+       EXPERIENCE TIMELINE
+    ========================================================= */
+
+    const timeline =
+      document.getElementById(
+        "experienceTimeline"
+      );
+
+
+    const progress =
+      document.getElementById(
+        "timelineProgress"
+      );
+
+
+    const entries =
+      [
+        ...document.querySelectorAll(
+          ".timeline .entry"
+        )
+      ];
+
+
+    function updateTimeline() {
+
+
+      if (
+        !timeline ||
+        !progress
+      ) {
+
+        return;
+
       }
 
-    );
+
+      const rect =
+        timeline.getBoundingClientRect();
 
 
-  document
-    .querySelectorAll(".fade, .entry")
-    .forEach(el => {
-
-      revealObserver.observe(el);
-
-    });
+      const viewportCenter =
+        window.innerHeight * 0.48;
 
 
-
-  /* =========================
-     EXPERIENCE TIMELINE
-  ========================= */
-
-  const timeline =
-    document.getElementById(
-      "experienceTimeline"
-    );
+      const total =
+        rect.height;
 
 
-  const progress =
-    document.getElementById(
-      "timelineProgress"
-    );
+      const raw =
+        (
+          viewportCenter -
+          rect.top
+        ) / total;
 
 
-  const entries =
-    [
-      ...document.querySelectorAll(
-        ".timeline .entry"
-      )
-    ];
+      const pct =
+        Math.max(
+          0,
+          Math.min(
+            1,
+            raw
+          )
+        );
 
 
-  function updateTimeline() {
-
-    if (!timeline || !progress) {
-      return;
-    }
-
-
-    const rect =
-      timeline.getBoundingClientRect();
+      progress.style.height =
+        (
+          pct * 100
+        ) + "%";
 
 
-    const viewportCenter =
-      window.innerHeight * 0.48;
+      entries.forEach(
+        entry => {
 
 
-    const total =
-      rect.height;
+          const r =
+            entry.getBoundingClientRect();
 
 
-    const raw =
-      (
-        viewportCenter - rect.top
-      ) / total;
+          const active =
+            r.top <
+              viewportCenter &&
+            r.bottom >
+              viewportCenter - 40;
 
 
-    const pct =
-      Math.max(
-        0,
-        Math.min(1, raw)
+          entry.classList.toggle(
+            "active",
+            active
+          );
+
+
+        }
       );
 
 
-    progress.style.height =
-      (pct * 100) + "%";
-
-
-    entries.forEach(entry => {
-
-      const r =
-        entry.getBoundingClientRect();
-
-
-      const active =
-        r.top < viewportCenter &&
-        r.bottom >
-          viewportCenter - 40;
-
-
-      entry.classList.toggle(
-        "active",
-        active
-      );
-
-    });
-
-  }
-
-
-  window.addEventListener(
-    "scroll",
-    updateTimeline,
-    {
-      passive: true
     }
-  );
 
 
-  window.addEventListener(
-    "resize",
-    updateTimeline
-  );
-
-
-  updateTimeline();
-
-
-
-  /* =========================
-     BACK TO TOP
-  ========================= */
-
-  const backTop =
-    document.getElementById(
-      "backTop"
+    window.addEventListener(
+      "scroll",
+      updateTimeline,
+      {
+        passive: true
+      }
     );
 
 
-  window.addEventListener(
-    "scroll",
-    () => {
+    window.addEventListener(
+      "resize",
+      updateTimeline
+    );
 
-      backTop.classList.toggle(
-        "show",
-        window.scrollY > 500
+
+    updateTimeline();
+
+
+
+    /* =========================================================
+       BACK TO TOP
+    ========================================================= */
+
+    const backTop =
+      document.getElementById(
+        "backTop"
       );
 
-    },
-    {
-      passive: true
-    }
-  );
 
-</script>
+    window.addEventListener(
+      "scroll",
+      () => {
+
+
+        backTop.classList.toggle(
+          "show",
+          window.scrollY > 500
+        );
+
+
+      },
+      {
+        passive: true
+      }
+    );
+
+
+  </script>
 
 
 </body>
+
 </html>
