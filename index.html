@@ -1,674 +1,2361 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manav Somani | Product & Analytics</title>
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts (Inter) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- Custom Tailwind Configuration -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        't-magenta': '#E20074', // Official T-Mobile Magenta
-                        't-grey-dark': '#333333',
-                        't-grey-mid': '#333333', 
-                        't-grey-light': '#1a1a1a',
-                    }
-                },
-            },
-        }
-    </script>
-    
-    <!-- Internal Styles -->
-    <style>
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        /* Setting base font and colors */
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #333333; /* Primary Grey Background */
-            color: #f1f1f1;
-            overflow-x: hidden;
-        }
-        
-        /* Section header styling */
-        .section-header {
-            @apply text-3xl md:text-5xl font-black text-center mb-16 text-white uppercase tracking-tighter italic;
-        }
-        
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #333333;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #E20074;
-            border-radius: 0px;
-        }
+  <meta charset="UTF-8">
 
-        /* Nav link active state */
-        .nav-link {
-            @apply text-slate-300 hover:text-white font-medium transition-colors duration-200 relative after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-[3px] after:w-0 after:bg-[#E20074] after:transition-all after:duration-300 hover:after:w-full;
-        }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        /* Button styles */
-        .btn {
-            @apply px-8 py-3 rounded-none font-black uppercase tracking-wider text-white transition-all duration-300;
-        }
-        .btn-primary {
-            @apply bg-[#E20074] hover:bg-[#b3005c] shadow-lg hover:shadow-[#E20074]/30 transform hover:-translate-y-1;
-        }
-        .btn-secondary {
-            @apply border-2 border-white hover:bg-white hover:text-black transform hover:-translate-y-1;
-        }
+  <title>Manav Somani</title>
 
-        /* Card styles - Unified Grey */
-        .card {
-            @apply bg-[#333333] p-8 rounded-none shadow-2xl border border-white/5 border-l-4 border-l-transparent transition-all duration-300 relative overflow-hidden;
-        }
-        .card-hover {
-            @apply hover:border-l-[#E20074] hover:bg-[#1a1a1a] hover:scale-[1.01];
-        }
+  <meta
+    name="description"
+    content="Manav Somani — Product, Data & AI professional at Carnegie Mellon University."
+  >
 
-        /* Skill Tags format - Translucent White on Dark */
-        .tag-pill {
-            @apply text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300 tracking-wider inline-block;
-        }
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 
-        .skill-badge {
-            @apply bg-[#E20074]/10 text-[#E20074] border border-[#E20074]/30 text-xs font-black uppercase tracking-widest px-4 py-2 rounded-none transition-all hover:bg-[#E20074] hover:text-white;
-        }
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
-        /* Animation Classes */
-        .reveal-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .reveal-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .reveal-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        
-        /* Active state makes them visible */
-        .reveal-left.active, .reveal-right.active, .reveal-up.active {
-            opacity: 1;
-            transform: translate(0, 0);
-        }
-    </style>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    /* =========================================================
+       VARIABLES
+    ========================================================= */
+
+    :root {
+      --text: #222222;
+      --muted: #666666;
+      --light: #777777;
+      --border: #dedede;
+      --bg: #ffffff;
+      --accent: #C41230;
+      --accent-soft: #f9e8eb;
+      --cmu-black: #111111;
+      --cmu-gray: #6D6E71;
+      --max: 1060px;
+    }
+
+
+    /* =========================================================
+       GLOBAL
+    ========================================================= */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, Arial, sans-serif;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: .2s ease;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .site {
+      width: min(calc(100% - 40px), var(--max));
+      margin: 0 auto;
+    }
+
+
+    /* =========================================================
+       HEADER
+    ========================================================= */
+
+    header {
+      border-top: 3px solid var(--accent);
+      border-bottom: 1px solid var(--border);
+      background: rgba(255,255,255,.94);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+    }
+
+    .nav {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 21px;
+      font-weight: 600;
+      white-space: nowrap;
+      color: var(--cmu-black);
+    }
+
+    .brand::before {
+      content: "CMU / ";
+      color: var(--accent);
+      font-family: Inter, Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      vertical-align: middle;
+      margin-right: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      align-items: center;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .mobile-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+
+    /* =========================================================
+       MAIN
+    ========================================================= */
+
+    main {
+      padding-bottom: 70px;
+    }
+
+    section {
+      padding: 45px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-title {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 30px;
+      font-weight: 600;
+      margin: 0 0 28px;
+      letter-spacing: -.02em;
+      position: relative;
+      padding-left: 15px;
+    }
+
+    .section-title::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 4px;
+      height: 25px;
+      background: var(--accent);
+    }
+
+    .intro {
+      max-width: 850px;
+      color: #555;
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      display: grid;
+      grid-template-columns: 210px 1fr;
+      gap: 42px;
+      padding: 70px 0 55px;
+      align-items: start;
+      position: relative;
+      border-top: 0;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      right: -80px;
+      top: 20px;
+      border-radius: 50%;
+      background:
+        radial-gradient(
+          circle,
+          rgba(196,18,48,.08),
+          rgba(196,18,48,0) 68%
+        );
+      pointer-events: none;
+      animation: floatGlow 7s ease-in-out infinite;
+    }
+
+    @keyframes floatGlow {
+      0%, 100% {
+        transform: translate(0,0) scale(1);
+      }
+
+      50% {
+        transform: translate(-12px,10px) scale(1.08);
+      }
+    }
+
+    .portrait {
+      width: 190px;
+      height: 190px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      box-shadow:
+        5px 5px 0 rgba(196,18,48,.12);
+    }
+
+
+    /* =========================================================
+       HERO CONTENT
+    ========================================================= */
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) 145px;
+      gap: 35px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-intro {
+      min-width: 0;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      letter-spacing: .045em;
+    }
+
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 24px;
+      height: 2px;
+      background: var(--accent);
+      vertical-align: middle;
+      margin-right: 8px;
+      transform: translateY(-1px);
+    }
+
+    h1 {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: clamp(42px, 6vw, 64px);
+      line-height: 1.05;
+      letter-spacing: -.035em;
+      font-weight: 600;
+      margin: 0 0 14px;
+    }
+
+    .hero-title {
+      font-size: 18px;
+      color: #444;
+      margin: 0 0 18px;
+      font-weight: 500;
+    }
+
+    .hero-copy {
+      max-width: 720px;
+      color: #555;
+      margin: 0 0 20px;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 14px;
+    }
+
+    .links a {
+      color: var(--accent);
+      font-weight: 500;
+      position: relative;
+    }
+
+    .links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: -3px;
+      height: 1px;
+      background: var(--accent);
+      transition: right .25s ease;
+    }
+
+    .links a:hover::after {
+      right: 0;
+    }
+
+
+    /* =========================================================
+       RESUME THUMBNAIL
+    ========================================================= */
+
+    .hero-resume {
+      width: 145px;
+      justify-self: end;
+      text-align: center;
+    }
+
+    .hero-resume-link {
+      display: block;
+      position: relative;
+      width: 145px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #fff;
+      box-shadow:
+        0 8px 22px rgba(0,0,0,.08);
+      transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+    }
+
+    .hero-resume-link:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+      box-shadow:
+        0 14px 30px rgba(196,18,48,.18);
+    }
+
+    .hero-resume-image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .hero-resume-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(196,18,48,.88);
+      opacity: 0;
+      transition: opacity .25s ease;
+    }
+
+    .hero-resume-link:hover .hero-resume-overlay {
+      opacity: 1;
+    }
+
+    .hero-resume-overlay span {
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: .02em;
+    }
+
+    .hero-resume-label {
+      margin-top: 8px;
+      color: var(--accent);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .16em;
+    }
+
+
+    /* =========================================================
+       COMPANY / EXPERIENCE LOGO STRIP
+    ========================================================= */
+
+    .logo-strip {
+      padding: 30px 0 34px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .logo-strip-inner {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+    }
+
+    .logo-item {
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 12px;
+      background: #fff;
+      overflow: visible;
+      transition: transform .3s ease;
+    }
+
+    .logo-item:hover {
+      transform: translateY(-3px);
+    }
+
+    .logo-item img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 90px;
+      object-fit: contain;
+      object-position: center;
+      opacity: .92;
+      transition:
+        opacity .3s ease,
+        transform .3s ease;
+    }
+
+    .logo-item:hover img {
+      opacity: 1;
+      transform: scale(1.04);
+    }
+
+
+    /* =========================================================
+       ABOUT
+    ========================================================= */
+
+    #about {
+      padding-top: 52px;
+    }
+
+
+    /* =========================================================
+       EDUCATION
+    ========================================================= */
+
+    .education-grid {
+      display: grid;
+      gap: 24px;
+    }
+
+    .education-item {
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .education-item:last-child {
+      border-bottom: 0;
+    }
+
+    .education-item h3 {
+      margin: 0 0 3px;
+      font-size: 17px;
+    }
+
+    .education-meta {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .education-highlight {
+      position: relative;
+      padding: 30px 32px 30px 30px;
+      border: 1px solid #dedede;
+      border-left: 5px solid var(--accent);
+      background:
+        linear-gradient(
+          135deg,
+          #fff 0%,
+          #fff 72%,
+          #fbf4f5 100%
+        );
+      box-shadow:
+        0 12px 35px rgba(0,0,0,.045);
+      overflow: hidden;
+      transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+    }
+
+    .education-highlight:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        0 18px 42px rgba(0,0,0,.08);
+    }
+
+    .education-highlight::after {
+      content: "CMU";
+      position: absolute;
+      right: -8px;
+      bottom: -35px;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 145px;
+      line-height: 1;
+      font-weight: 600;
+      color: rgba(196,18,48,.045);
+      pointer-events: none;
+    }
+
+    .cmu-row {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cmu-logo {
+      width: 88px;
+      height: 88px;
+      object-fit: contain;
+      flex: 0 0 88px;
+      padding: 9px;
+      background: #fff;
+      border: 1px solid #e2e2e2;
+      border-radius: 6px;
+    }
+
+    .cmu-kicker {
+      color: var(--accent);
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: .12em;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .cmu-name {
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 25px;
+      line-height: 1.25;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    .cmu-degree {
+      margin: 5px 0 0;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .cmu-meta {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid #e5e5e5;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 10px 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cmu-meta strong {
+      color: #333;
+      font-size: 13px;
+    }
+
+    .cmu-meta span {
+      color: #666;
+      font-size: 13px;
+    }
+
+    .cmu-coursework {
+      margin: 18px 0 0;
+      color: #666;
+      font-size: 13px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .education-secondary {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .education-secondary h3 {
+      margin: 0 0 3px;
+      font-size: 17px;
+    }
+
+    .education-secondary .education-meta {
+      margin-bottom: 8px;
+    }
+
+
+    /* =========================================================
+       EXPERIENCE TIMELINE
+    ========================================================= */
+
+    .timeline {
+      position: relative;
+      padding: 8px 0;
+    }
+
+    .timeline-track {
+      position: absolute;
+      left: 202px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #e8e8e8;
+      overflow: hidden;
+    }
+
+    .timeline-progress {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 0%;
+      background:
+        linear-gradient(
+          to bottom,
+          #C41230,
+          #9e0e27
+        );
+      transform-origin: top;
+      transition: height .12s linear;
+    }
+
+    .entry {
+      display: grid;
+      grid-template-columns: 185px 35px 1fr;
+      gap: 0;
+      padding: 0 0 48px;
+      position: relative;
+    }
+
+    .entry:last-child {
+      padding-bottom: 5px;
+    }
+
+    .date {
+      color: var(--cmu-gray);
+      font-size: 13px;
+      line-height: 1.6;
+      padding-top: 4px;
+      padding-right: 25px;
+      text-align: right;
+      opacity: .55;
+      transition:
+        opacity .3s ease,
+        color .3s ease;
+    }
+
+    .entry.active .date {
+      opacity: 1;
+      color: var(--accent);
+    }
+
+    .timeline-node {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      justify-content: center;
+      padding-top: 3px;
+    }
+
+    .timeline-dot {
+      width: 13px;
+      height: 13px;
+      border: 3px solid #fff;
+      background: #d5d5d5;
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 1px #d5d5d5;
+      transition: .3s ease;
+    }
+
+    .entry.active .timeline-dot,
+    .entry:hover .timeline-dot {
+      background: var(--accent);
+      box-shadow:
+        0 0 0 4px rgba(196,18,48,.13),
+        0 0 0 1px var(--accent);
+      transform: scale(1.1);
+    }
+
+    .entry-content {
+      padding-left: 28px;
+      opacity: 0;
+      transform: translateY(18px);
+      transition:
+        opacity .7s ease,
+        transform .7s cubic-bezier(.22,1,.36,1);
+    }
+
+    .entry.visible .entry-content {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .entry:hover .entry-content {
+      transform: translateX(5px);
+    }
+
+    .entry h3 {
+      margin: 0 0 3px;
+      font-size: 17px;
+      font-weight: 600;
+      color: #222;
+    }
+
+    .org {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .location {
+      color: var(--cmu-gray);
+      font-size: 13px;
+      font-weight: 400;
+    }
+
+    .entry ul {
+      margin: 10px 0 0;
+      padding-left: 19px;
+      color: #555;
+    }
+
+    .entry li {
+      margin: 5px 0;
+    }
+
+
+    /* =========================================================
+       SELECTED WORK
+    ========================================================= */
+
+    .work-item {
+      padding: 27px 0;
+      border-bottom: 1px solid var(--border);
+      transition:
+        transform .3s ease,
+        padding-left .3s ease;
+    }
+
+    .work-item:first-child {
+      padding-top: 0;
+    }
+
+    .work-item:last-child {
+      border-bottom: 0;
+    }
+
+    .work-item:hover {
+      transform: translateX(6px);
+      padding-left: 8px;
+    }
+
+    .work-title {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: baseline;
+    }
+
+    .work-title h3 {
+      margin: 0;
+      font-family: "Source Serif 4", Georgia, serif;
+      font-size: 21px;
+      font-weight: 600;
+    }
+
+    .work-number {
+      color: #aaa;
+      font-size: 13px;
+      transition:
+        color .25s ease,
+        transform .25s ease;
+    }
+
+    .work-item:hover .work-number {
+      color: var(--accent);
+      transform: translateX(-4px);
+    }
+
+    .work-item p {
+      margin: 7px 0 0;
+      color: #555;
+      max-width: 850px;
+    }
+
+
+    /* =========================================================
+       SKILLS
+    ========================================================= */
+
+    .skills {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px 50px;
+    }
+
+    .skill-group {
+      transition:
+        transform .3s ease;
+    }
+
+    .skill-group h3 {
+      font-size: 15px;
+      margin: 0 0 8px;
+      font-weight: 600;
+    }
+
+    .skill-group p {
+      color: #555;
+      margin: 0;
+    }
+
+
+    /* =========================================================
+       CONTACT
+    ========================================================= */
+
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: end;
+    }
+
+    .contact-copy {
+      max-width: 650px;
+      color: #555;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 7px;
+      color: var(--accent);
+      font-size: 14px;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 25px 0 35px;
+      color: #999;
+      font-size: 12px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+
+    /* =========================================================
+       BACK TO TOP
+    ========================================================= */
+
+    .back-top {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 40px;
+      height: 40px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: rgba(255,255,255,.92);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: .3s ease;
+      box-shadow:
+        0 5px 20px rgba(0,0,0,.08);
+    }
+
+    .back-top.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .back-top:hover {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+
+    /* =========================================================
+       ANIMATIONS
+    ========================================================= */
+
+    .fade {
+      opacity: 0;
+      transform: translateY(18px);
+      transition:
+        opacity .75s cubic-bezier(.22,1,.36,1),
+        transform .75s cubic-bezier(.22,1,.36,1);
+    }
+
+    .fade.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 760px) {
+
+      .site {
+        width: min(
+          calc(100% - 28px),
+          var(--max)
+        );
+      }
+
+
+      /* NAV */
+
+      .nav {
+        min-height: 62px;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 62px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-bottom: 1px solid var(--border);
+        padding: 18px 14px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 13px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .mobile-toggle {
+        display: block;
+      }
+
+
+      /* HERO */
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 48px 0 42px;
+      }
+
+      .portrait {
+        width: 145px;
+        height: 145px;
+      }
+
+      .hero-content {
+        grid-template-columns:
+          minmax(0,1fr)
+          100px;
+
+        gap: 20px;
+        align-items: start;
+      }
+
+      .hero-resume {
+        width: 100px;
+        justify-self: end;
+      }
+
+      .hero-resume-link {
+        width: 100px;
+      }
+
+      .hero-resume-label {
+        font-size: 8px;
+      }
+
+
+      /* LOGOS */
+
+      .logo-strip {
+        padding: 24px 0;
+      }
+
+      .logo-strip-inner {
+        display: flex;
+        gap: 18px;
+        overflow-x: auto;
+        padding: 5px 5px 10px;
+        scrollbar-width: none;
+      }
+
+      .logo-strip-inner::-webkit-scrollbar {
+        display: none;
+      }
+
+      .logo-item {
+        flex: 0 0 150px;
+        height: 80px;
+        padding: 6px 10px;
+      }
+
+      .logo-item img {
+        max-width: 140px;
+        max-height: 72px;
+      }
+
+
+      /* TIMELINE */
+
+      .timeline-track {
+        left: 6px;
+      }
+
+      .entry {
+        grid-template-columns:
+          28px 1fr;
+
+        gap: 0;
+        padding-bottom: 40px;
+      }
+
+      .date {
+        grid-column: 2;
+        grid-row: 1;
+        text-align: left;
+        padding: 0 0 6px;
+      }
+
+      .timeline-node {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        justify-content: flex-start;
+        padding-top: 4px;
+      }
+
+      .entry-content {
+        grid-column: 2;
+        padding-left: 0;
+      }
+
+
+      /* EDUCATION */
+
+      .cmu-row {
+        align-items: flex-start;
+      }
+
+      .cmu-logo {
+        width: 68px;
+        height: 68px;
+        flex-basis: 68px;
+      }
+
+      .cmu-name {
+        font-size: 21px;
+      }
+
+      .cmu-meta {
+        grid-template-columns: 1fr;
+        gap: 2px;
+      }
+
+      .cmu-meta strong {
+        margin-top: 8px;
+      }
+
+      .education-highlight {
+        padding: 23px 20px;
+      }
+
+
+      /* SKILLS */
+
+      .skills {
+        grid-template-columns: 1fr;
+      }
+
+
+      /* CONTACT */
+
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-links {
+        align-items: flex-start;
+      }
+
+
+      /* FOOTER */
+
+      footer {
+        flex-direction: column;
+      }
+
+    }
+
+  </style>
+
 </head>
-<body class="antialiased">
 
-    <!-- Header & Navigation -->
-    <header class="sticky top-0 z-50 w-full bg-[#333333]/95 backdrop-blur-md border-b border-white/5">
-        <nav class="container mx-auto max-w-6xl px-4 py-5 flex justify-between items-center">
-            <!-- Logo / Name -->
-            <a href="#home" class="text-2xl font-black text-white tracking-tighter italic uppercase">
-                MANAV <span class="text-[#E20074]">SOMANI</span>
-            </a>
-            
-            <!-- Desktop Nav -->
-            <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
-                <a href="#about" class="nav-link uppercase text-xs tracking-widest">About</a>
-                <a href="#experience" class="nav-link uppercase text-xs tracking-widest">Experience</a>
-                <a href="#projects" class="nav-link uppercase text-xs tracking-widest">Projects</a>
-                <a href="#certifications" class="nav-link uppercase text-xs tracking-widest">Certifications</a>
-                <a href="#skills" class="nav-link uppercase text-xs tracking-widest">Skills</a>
-                <a href="#contact" class="nav-link uppercase text-xs tracking-widest">Contact</a>
-                <a href="Resume_ManavSomani_CMU-PM.pdf" target="_blank" class="nav-link uppercase text-xs tracking-widest border border-[#E20074] px-3 py-1 text-[#E20074] hover:bg-[#E20074] hover:text-white transition-all duration-300">Resume</a>
-            </div>
-            
-            <!-- Mobile Nav Toggle -->
-            <button id="nav-toggle" class="md:hidden text-white">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-            </button>
-        </nav>
-    </header>
 
-    <!-- Mobile Nav Menu -->
-    <div id="mobile-menu" class="fixed inset-0 bg-[#333333] z-[100] hidden flex-col items-center justify-center space-y-10">
-        <button id="nav-close" class="absolute top-8 right-8 text-white">
-            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-        </button>
-        <a href="#about" class="text-4xl font-black text-white hover:text-[#E20074] uppercase tracking-tighter">About</a>
-        <a href="#experience" class="text-4xl font-black text-white hover:text-[#E20074] uppercase tracking-tighter">Experience</a>
-        <a href="#projects" class="text-4xl font-black text-white hover:text-[#E20074] uppercase tracking-tighter">Projects</a>
-        <a href="#certifications" class="text-4xl font-black text-white hover:text-[#E20074] uppercase tracking-tighter">Certifications</a>
-        <a href="#skills" class="text-4xl font-black text-white hover:text-[#E20074] uppercase tracking-tighter">Skills</a>
-        <a href="#contact" class="text-4xl font-black text-white hover:text-[#E20074] uppercase tracking-tighter">Contact</a>
-        <a href="Resume_ManavSomani_CMU-PM.pdf" target="_blank" class="text-4xl font-black text-[#E20074] hover:text-white uppercase tracking-tighter">Resume</a>
+<body>
+
+
+  <!-- =========================================================
+       HEADER
+  ========================================================= -->
+
+  <header>
+
+    <div class="site nav">
+
+      <a
+        class="brand"
+        href="#top"
+      >
+        Manav Somani
+      </a>
+
+      <button
+        class="mobile-toggle"
+        id="menuToggle"
+        aria-label="Open menu"
+      >
+        ☰
+      </button>
+
+      <nav
+        class="nav-links"
+        id="navLinks"
+      >
+
+        <a href="#about">
+          About
+        </a>
+
+        <a href="#education">
+          Education
+        </a>
+
+        <a href="#experience">
+          Experience
+        </a>
+
+        <a
+          href="resume_manav_somani.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          Resume
+        </a>
+
+        <a href="#work">
+          Selected Work
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
+
+      </nav>
+
     </div>
 
-    <!-- Main Content -->
-    <main>
+  </header>
 
-        <!-- Hero Section -->
-        <section id="home" class="min-h-screen flex items-center justify-center text-center px-4 py-20 relative overflow-hidden bg-[#333333]">
-            <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-[#E20074]/15 rounded-full filter blur-[120px] opacity-40 animate-pulse"></div>
-            <div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#E20074]/15 rounded-full filter blur-[120px] opacity-40 animate-pulse"></div>
 
-            <div class="z-10 flex flex-col items-center">
-                <h1 class="reveal-up text-6xl sm:text-8xl lg:text-9xl font-black mb-4 tracking-tighter italic uppercase text-white">
-                    MANAV <span class="text-[#E20074]">SOMANI</span>
-                </h1>
-                <p class="reveal-up text-xl sm:text-2xl lg:text-3xl text-white font-light mb-1 uppercase tracking-[0.3em]">
-                    PRODUCT <span class="text-[#E20074] font-black">&</span> ANALYTICS (3 YOE)
-                </p>
-                <p class="reveal-up text-base sm:text-lg text-[#E20074] font-bold uppercase tracking-[0.15em] mb-8 italic">
-                    Carnegie Mellon University '2026
-                </p>
+  <!-- =========================================================
+       MAIN
+  ========================================================= -->
 
-                <p class="reveal-up max-w-3xl mx-auto text-lg md:text-xl text-slate-400 mb-12 font-medium leading-relaxed italic">
-                    Skilled in developing and executing strategies by creating and leveraging <span class="text-white">data-driven insights</span> to optimize business and drive <span class="text-[#E20074] font-bold">measurable impact</span>.
-                </p>
-                
-                <!-- Hero Action Area -->
-                <div class="reveal-up flex flex-col items-center gap-8 mb-12">
-                    <a href="#experience" class="btn btn-secondary">View Work</a>
-                    
-                    <div class="flex flex-wrap justify-center gap-6 md:gap-8 items-center text-xs font-bold uppercase tracking-widest text-white">
-                        <a href="https://www.linkedin.com/in/manavsomani/" target="_blank" class="hover:text-[#E20074] transition-colors border-b border-[#E20074] pb-0.5">LinkedIn</a>
-                        
-                        <!-- Email Link -->
-                        <a href="mailto:msomani@andrew.cmu.edu" class="flex items-center gap-2 hover:text-[#E20074] transition-colors border-b border-[#E20074] pb-0.5 lowercase tracking-normal">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                            <span>msomani@andrew.cmu.edu</span>
-                        </a>
+  <main
+    id="top"
+    class="site"
+  >
 
-                        <!-- WhatsApp Link -->
-                        <a href="https://wa.me/919611850688" target="_blank" class="flex items-center gap-2 hover:text-[#E20074] transition-colors border-b border-[#E20074] pb-0.5 tracking-normal">
-                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.143c1.589.943 3.13 1.467 4.788 1.468 5.405 0 9.805-4.4 9.808-9.806.002-2.618-1.018-5.079-2.873-6.934-1.856-1.854-4.315-2.871-6.941-2.872-5.407 0-9.808 4.401-9.811 9.806-.001 1.76.49 3.42 1.417 4.795l-1.063 3.877 3.675-1.034zm11.045-4.758c-.285-.143-1.688-.833-1.947-.928-.26-.095-.448-.143-.639.143-.19.285-.738.928-.905 1.12-.166.19-.332.214-.618.071-.285-.143-1.204-.444-2.293-1.415-.848-.756-1.42-1.689-1.586-1.974-.166-.285-.018-.439.124-.581.128-.127.285-.333.428-.5.143-.167.19-.285.285-.476.095-.19.048-.357-.024-.5-.071-.143-.639-1.542-.875-2.113-.23-.553-.465-.478-.639-.487-.164-.008-.355-.01-.546-.01-.191 0-.5.071-.762.357-.262.285-1 0-1.78.357s-1.31 1.69-1.31 2.452c0 .761.548 1.499.625 1.604.077.105 1.071 1.635 2.595 2.293.363.156.646.25.867.32.364.116.696.099.957.06.291-.044.833-.341 1.024-.668.19-.327.19-.607.134-.668-.056-.06-.21-.143-.496-.285z"/>
-                            </svg>
-                            <span>+91-96118-50688</span>
-                        </a>
 
-                        <span class="text-slate-300 tracking-wider">+1 412-689-7119</span>
-                    </div>
-                </div>
+    <!-- =======================================================
+         HERO
+    ======================================================= -->
 
-                <!-- Profile Photo -->
-                <div class="reveal-up relative w-56 h-56 sm:w-64 sm:h-64 rounded-full overflow-hidden border-4 border-[#E20074] shadow-[0_0_40px_rgba(226,0,116,0.3)] hover:scale-105 transition-transform duration-300">
-                    <img src="Manav_Somani_Linkedin_Photo_2025_-_Cropped.jpeg" alt="Manav Somani" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Manav+Somani&background=E20074&color=fff&size=256&font-size=0.4';">
-                </div>
-            </div>
-        </section>
+    <section class="hero fade">
 
-        <!-- About & Education -->
-        <section id="about" class="py-16 px-6 md:px-16 border-t border-white/5 bg-[#2a2a2a]">
-            <div class="container mx-auto max-w-6xl">
-                <div class="flex flex-col gap-12 items-start text-left">
-                    <!-- Text Block -->
-                    <div class="reveal-left w-full max-w-4xl space-y-8">
-                        <div class="flex justify-between items-center mb-4">
-                            <h3 class="text-2xl font-black uppercase tracking-tighter text-[#E20074] italic"><span class="text-white">ABOUT</span> ME</h3>
-                            <a href="Resume_ManavSomani_CMU-PM.pdf" target="_blank" class="hidden sm:inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-[#E20074] border-b-2 border-[#E20074] pb-1 hover:text-white hover:border-white transition-all">
-                                <span>View Resume</span>
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                            </a>
-                        </div>
-                        <ul class="list-disc ml-5 text-lg text-slate-300 leading-relaxed font-light marker:text-[#E20074] space-y-4">
-                            <li>
-                                <span class="text-white font-bold">Product & Analytics Professional</span> with <span class="text-white font-bold">4 years</span> of experience driving impact in:
-                                <ul class="list-[circle] ml-8 mt-3 space-y-2 marker:text-[#E20074] text-base">
-                                    <li>Telecom (T-Mobile)</li>
-                                    <li>E-commerce (Flipkart)</li>
-                                    <li>Fintech (Axio)</li>
-                                </ul>
-                            </li>
-                            <li>Specialized in translating complex data sets into actionable product roadmaps focused on <span class="text-[#E20074] font-bold">measurable impact</span>.</li>
-                            <li>Combines an Engineering background with advanced training at Carnegie Mellon to approach challenges with technical precision and strategic vision.</li>
-                            <li>Thrives in high-velocity environments, leveraging data science and product strategy to bridge technical potential and commercial success.</li>
-                        </ul>
-                        <div class="pt-4 border-l-4 border-[#E20074] pl-6 italic text-slate-400 text-sm">
-                            "Bridging the gap between technical data science and strategic product development."
-                        </div>
-                    </div>
-                    
-                    <!-- Education Block -->
-                    <div class="w-full max-w-4xl space-y-8">
-                        <h3 class="reveal-left text-2xl font-black uppercase tracking-tighter text-[#E20074] italic mb-8">EDUCATION</h3>
-                        
-                        <!-- CMU Card -->
-                        <div class="reveal-right card card-hover border-l-4 border-[#E20074]">
-                            <div class="flex flex-col md:flex-row gap-6 justify-between items-start">
-                                <div class="flex-1 pl-4">
-                                    <h4 class="text-2xl font-black text-white italic uppercase tracking-tighter mb-2">Carnegie Mellon University</h4>
-                                    <p class="text-sm font-bold text-[#E20074] tracking-widest uppercase mb-1">Master of Information Systems Management - Business Intelligence & Data Analytics</p>
-                                    <p class="text-xs text-slate-400 uppercase italic mb-6">GPA 4.0/4.0</p>
-                                    
-                                    <div class="grid md:grid-cols-2 gap-12 mb-8">
-                                        <div>
-                                            <h5 class="text-[10px] font-black uppercase text-slate-300 tracking-[0.2em] mb-3">Fall 2025</h5>
-                                            <ul class="text-xs text-slate-300 leading-relaxed uppercase list-disc ml-5 space-y-2">
-                                                <li>STATS FOR IT MANAGERS</li>
-                                                <li>Applied Econometrics</li>
-                                                <li>UNSTRUCTURED DATA ANALYSIS</li>
-                                                <li>DATABASE MANAGEMENT</li>
-                                                <li>DATA FOCUSED PYTHON</li>
-                                                <li>Java</li>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <h5 class="text-[10px] font-black uppercase text-slate-300 tracking-[0.2em] mb-3">Spring 2026</h5>
-                                            <ul class="text-xs text-slate-300 leading-relaxed uppercase list-disc ml-5 space-y-2">
-                                                <li>DataScience for Product Managers</li>
-                                                <li>Product Management Essentials</li>
-                                                <li>Advanced Business Analytics</li>
-                                                <li>Machine Learning for Problem Solving</li>
-                                                <li>Corporate Startup Lab</li>
-                                            </ul>
-                                        </div>
-                                    </div>
+      <img
+        class="portrait"
+        src="Manav_Somani_Linkedin_Photo_2025_-_Cropped.jpeg"
+        alt="Manav Somani"
+      >
 
-                                    <div class="mt-8 pt-6 border-t border-white/5">
-                                        <h5 class="text-xs font-black uppercase text-[#E20074] tracking-[0.2em] mb-2 italic">Project: Corporate Startup Lab</h5>
-                                        <ul class="list-disc ml-5 text-sm text-slate-400 leading-relaxed marker:text-[#E20074] space-y-2">
-                                            <li>Highly selective program, with only select students chosen through a rigorous interview process.</li>
-                                            <li>We partner with a startup on a crucial business project and assist them in attaining their goal over a semester.</li>
-                                            <li>We take on multiple responsibilities including: Identifying Customer Pain Points, Market Research, Niche Identification, Product Research, Product Segmentation, Competitor Analysis, and Go-to-Market Strategy.</li>
-                                        </ul>
-                                    </div>
 
-                                    <div class="mt-4 pt-4 border-t border-white/5">
-                                        <h5 class="text-xs font-black uppercase text-[#E20074] tracking-[0.2em] mb-2 italic">CMU PRODUCT HACKATHON FINALIST (PRODHACKS 2026)</h5>
-                                        <ul class="list-disc ml-5 text-sm text-slate-400 leading-relaxed marker:text-[#E20074] space-y-2">
-                                            <li>3rd Place in CMU ProdHacks 2026 Hackathon.</li>
-                                            <li>Built “RubricGuard”, an AI-Powered Grading Consistency & Fairness Engine.</li>
-                                            <li><a href="https://github.com/RubricGuard" target="_blank" class="text-white hover:text-[#E20074] underline underline-offset-4 transition-colors font-bold">GitHub</a></li>
-                                            <li>Hackathon Final Presentation: <a href="https://docs.google.com/presentation/d/1_msqywUzEA-EAOuEW3-h_doINlCT6iKyaklZhGaveo8/edit?usp=sharing" target="_blank" class="text-white hover:text-[#E20074] underline underline-offset-4 transition-colors font-bold">PPT</a></li>
-                                        </ul>
-                                    </div>
+      <div class="hero-content">
 
-                                    <div class="mt-4 pt-4 border-t border-white/5">
-                                        <h5 class="text-xs font-black uppercase text-[#E20074] tracking-[0.2em] mb-2 italic">CAPSTONE PROJECT: STUDENT HOUSING AGGREGATOR</h5>
-                                        <ul class="list-disc ml-5 text-sm text-slate-400 leading-relaxed marker:text-[#E20074] space-y-2">
-                                            <li>Developed a full-stack housing aggregator that integrates multiple data sources via web scraping and APIs to analyze walkability and amenity proximity.</li>
-                                            <li>Engineered a custom scoring algorithm that processes user priorities (restaurants, schools, grocery stores) and distance preferences to generate tailored property rankings.</li>
-                                            <li>Reduced user search time by over <span class="text-white font-bold">50%</span> by delivering optimized, data-driven results.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="hidden md:flex shrink-0 items-center justify-center bg-white p-2 rounded-lg w-32 h-32">
-                                    <img src="cmu_logo.jpg" alt="CMU Logo" class="w-full h-full object-contain">
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- PES Card -->
-                        <div class="reveal-left card card-hover border-l-4 border-transparent">
-                            <div class="flex flex-col md:flex-row gap-6 justify-between items-start">
-                                <div class="flex-1 pl-4">
-                                    <h4 class="text-2xl font-black text-white italic uppercase tracking-tighter mb-2">PES University</h4>
-                                    <p class="text-sm font-bold text-[#E20074] mb-1 tracking-widest uppercase">B.Tech Mechanical</p>
-                                    <p class="text-xs text-slate-400 uppercase italic mb-6">Distinction Graduate • GPA 3.8/4.0</p>
-                                    
-                                    <div class="mt-4 pt-4 border-t border-white/5">
-                                        <h5 class="text-xs font-black uppercase text-[#E20074] tracking-[0.2em] mb-2 italic">Capstone Project</h5>
-                                        <p class="text-sm text-slate-400 leading-relaxed">Conducted extensive research on <b>additive manufacturing</b>, specifically "The Effect of FDM Parameters on Mechanical Properties of Thermoplastic Polyurethane (TPU)", receiving the highest grade. This included an extensive <b>literature survey</b>, professional lab testing via <b>ASTM standards</b>, and rigorous analysis.</p>
-                                    </div>
 
-                                    <div class="mt-4 pt-4 border-t border-white/5">
-                                        <h5 class="text-xs font-black uppercase text-[#E20074] tracking-[0.2em] mb-2 italic">Clubs & Extracurriculars</h5>
-                                        <ul class="list-disc ml-5 text-sm text-slate-400 leading-relaxed marker:text-[#E20074] space-y-3">
-                                            <li><span class="font-bold text-white">Head of TEDxPESU Club:</span> Led the TEDxPESU club, featuring renowned speakers such as Dr. Anuradha TK and Nirmal Pillai.</li>
-                                            <li><span class="font-bold text-white">Team HAYA Off-Roading, Automobile Club:</span> Integral member of the Chassis domain, building an ATV that placed 19th out of 120 teams in BAJA SAE INDIA 2020.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="hidden md:flex shrink-0 items-center justify-center bg-white p-2 rounded-lg w-32 h-32">
-                                    <img src="pes_logo.jpeg" alt="PES University Logo" class="w-full h-full object-contain">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <div class="hero-intro">
 
-        <!-- Professional Journey -->
-        <section id="experience" class="py-16 px-6 md:px-16 bg-[#333333]">
-            <div class="container mx-auto max-w-6xl">
-                <h2 class="reveal-up text-2xl font-black mb-16 text-white uppercase tracking-tighter italic text-left pl-6">PROFESSIONAL <span class="text-[#E20074]">JOURNEY</span></h2>
-                
-                <div class="space-y-16">
+          <div class="eyebrow">
+            CARNEGIE MELLON UNIVERSITY
+            · PRODUCT · DATA · AI
+          </div>
 
-                    <!-- T-Mobile Intern -->
-                    <div class="reveal-left flex flex-col md:flex-row gap-6 items-start group pl-6">
-                        <div class="md:w-32 shrink-0 pt-2 text-left">
-                            <p class="text-slate-500 font-bold text-xs uppercase tracking-widest mb-2">2026</p>
-                            <h4 class="text-[#E20074] font-black uppercase text-xl leading-none tracking-tighter">T-Mobile</h4>
-                            <p class="text-[#E20074] text-[10px] font-bold uppercase mb-3 opacity-80">Bellevue, WA</p>
-                        </div>
-                        <div class="flex-1 card card-hover border-l-4 border-[#E20074] pl-6">
-                            <h3 class="text-xl font-black text-[#E20074] uppercase italic tracking-tighter mb-4">Product Management Intern – AI Engineering Team</h3>
-                            <ul class="list-disc ml-5 space-y-3 text-slate-400 font-medium text-sm leading-relaxed marker:text-[#E20074]">
-                                <li><span class="text-white font-bold">Product Strategy:</span> Defined product requirements and success metrics for the T-Mobile AI Voice Agent and Operations Center, establishing KPI frameworks and developing executive dashboards to guide roadmap prioritization and launch decisions.</li>
-                                <li><span class="text-white font-bold">Execution:</span> Translated product requirements into Jira-ready user stories and acceptance criteria by coordinating across product, engineering, and infra teams, improving engineering delivery velocity by <span class="text-white font-bold">25%</span> and reducing requirement clarification cycles by <span class="text-white font-bold">50%</span>.</li>
-                                <li><span class="text-white font-bold">Validation:</span> Designed and led an AI evaluation framework comprising <span class="text-white font-bold">200+</span> scenario-based and adversarial test cases across multiple verticals and escalation levels, identifying <span class="text-white font-bold">25+</span> critical failure modes and increasing pre-production issue detection by <span class="text-white font-bold">33%</span>.</li>
-                                <li><span class="text-white font-bold">Safety & Quality:</span> Authored AI guardrail and safety specifications that improved model compliance by <span class="text-white font-bold">80%</span> and aligned engineering implementation with product intent.</li>
-                                <li><span class="text-white font-bold">Launch Readiness:</span> Defined governance frameworks for security reviews, vulnerability management, dependency tracking, and executive reporting, enabling risk-based production launch decisions and improving release readiness by <span class="text-white font-bold">20%</span> (2 weeks).</li>
-                            </ul>
-                        </div>
-                    </div>
+          <h1>
+            Manav Somani
+          </h1>
 
-                    <!-- Flipkart AM -->
-                    <div class="reveal-right flex flex-col md:flex-row gap-6 items-start group pl-6">
-                        <div class="md:w-32 shrink-0 pt-2 text-left">
-                            <p class="text-slate-500 font-bold text-xs uppercase tracking-widest mb-2">2024 — 2025</p>
-                            <h4 class="text-[#E20074] font-black uppercase text-xl leading-none tracking-tighter">Flipkart</h4>
-                            <p class="text-[#E20074] text-[10px] font-bold uppercase mb-1 opacity-80">Bangalore</p>
-                            <p class="text-[#E20074] text-[10px] font-bold uppercase mb-3 opacity-60">(Subsidiary of Walmart)</p>
-                        </div>
-                        <div class="flex-1 card card-hover border-l-4 border-[#E20074] pl-6">
-                            <h3 class="text-xl font-black text-[#E20074] uppercase italic tracking-tighter mb-4">Assistant Manager - Control Tower Operations</h3>
-                            <ul class="list-disc ml-5 space-y-3 text-slate-400 font-medium text-sm leading-relaxed marker:text-[#E20074]">
-                                <li>Pioneered a <span class="text-white font-bold">data-as-a-product platform</span> integrating nationwide data to empower leadership with real-time views, replacing manual processes that required 9+ man-hours daily.</li>
-                                <li>Drove a <span class="text-white font-bold">33% improvement</span> in warehouse operational efficiency.</li>
-                                <li>Reduced inventory discrepancies by <span class="text-white font-bold">50%</span> via an internal inventory data models.</li>
-                                <li>Improved CSAT by <span class="text-white font-bold">20%</span> by authoring and prioritizing user stories that guided internal operations teams to resolve key customer pain points in delivery and returns.</li>
-                                <li>Reduced picking time by <span class="text-white font-bold">25%</span> through data-driven pick-path optimization.</li>
-                            </ul>
-                        </div>
-                    </div>
+          <p class="hero-title">
+            Analytics turned Product &amp;
+            Program Management professional
+          </p>
 
-                    <!-- Axio -->
-                    <div class="reveal-left flex flex-col md:flex-row gap-6 items-start group pl-6">
-                        <div class="md:w-32 shrink-0 pt-2 text-left">
-                            <p class="text-slate-500 font-bold text-xs uppercase tracking-widest mb-2">2023 — 2024</p>
-                            <h4 class="text-[#E20074] font-black uppercase text-xl leading-none tracking-tighter">Axio</h4>
-                            <p class="text-[#E20074] text-[10px] font-bold uppercase mb-1 opacity-80">Bangalore</p>
-                            <p class="text-[#E20074] text-[10px] font-bold uppercase mb-3 opacity-60">(Acquired by Amazon)</p>
-                        </div>
-                        <div class="flex-1 card card-hover border-l-4 border-[#E20074] pl-6">
-                            <h3 class="text-xl font-black text-[#E20074] uppercase italic tracking-tighter mb-4">Product Analyst – Digital Collections, Amazon Pay Later</h3>
-                            <ul class="list-disc ml-5 space-y-3 text-slate-400 font-medium text-sm leading-relaxed marker:text-[#E20074]">
-                                <li>Drove a <span class="text-white font-bold">2x increase</span> in the user base via defined product strategies for expansion.</li>
-                                <li>Boosted debt recovery from <span class="text-white font-bold">85% to 95%</span> via region-specific recovery strategies launched within interactive bot logic.</li>
-                                <li>Managed development of an <span class="text-white font-bold">interactive voice and chatbot</span> for debt collections.</li>
-                                <li>Served as a key bridge between technical and collections teams, managing a prioritized backlog of engineering requirements.</li>
-                                <li>Reduced data processing time by <span class="text-white font-bold">80%</span> through automation tools.</li>
-                            </ul>
-                        </div>
-                    </div>
+          <p class="hero-copy">
+            I am a graduate student at Carnegie Mellon University
+            with 3.5+ years of experience across AI, e-commerce,
+            and fintech. I build 0-to-1 products and data platforms,
+            define AI evaluation frameworks, and turn operational
+            data into product and roadmap decisions.
+          </p>
 
-                    <!-- Flipkart Intern -->
-                    <div class="reveal-right flex flex-col md:flex-row gap-6 items-start group pl-6">
-                        <div class="md:w-32 shrink-0 pt-2 text-left">
-                            <p class="text-slate-500 font-bold text-xs uppercase tracking-widest mb-2">2022</p>
-                            <h4 class="text-[#E20074] font-black uppercase text-xl leading-none tracking-tighter">Flipkart</h4>
-                            <p class="text-[#E20074] text-[10px] font-bold uppercase mb-1 opacity-80">Bangalore</p>
-                            <p class="text-[#E20074] text-[10px] font-bold uppercase mb-3 opacity-60">(Subsidiary of Walmart)</p>
-                        </div>
-                        <div class="flex-1 card card-hover border-l-4 border-[#E20074] pl-6">
-                            <h3 class="text-xl font-black text-[#E20074] uppercase italic tracking-tighter mb-4">Intern – Control Tower Operations</h3>
-                            <ul class="list-disc ml-5 space-y-3 text-slate-400 font-medium text-sm leading-relaxed marker:text-[#E20074]">
-                                <li>Sole candidate selected from a pool of <span class="text-white font-bold">250</span> students for this prestigious internship.</li>
-                                <li>Accomplished <span class="text-white font-bold">80% reduction</span> in product damage at fulfillment centers through transit strategy optimization.</li>
-                                <li>Achieved reduction of data management time by <span class="text-white font-bold">75%</span> by developing Python scripts and macros.</li>
-                                <li>Facilitated new quality control measures in collaboration with Warehouse Managers.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+          <div class="links">
 
-        <!-- Projects -->
-        <section id="projects" class="py-16 px-6 md:px-16 bg-[#333333]">
-            <div class="container mx-auto max-w-6xl">
-                <h2 class="reveal-up text-2xl font-black mb-16 text-[#E20074] uppercase tracking-tighter italic text-left pl-6">PROJECTS</h2>
-                
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    <!-- Corporate Startup Lab -->
-                    <div class="reveal-left card card-hover group pl-6">
-                        <div class="flex justify-between items-start mb-6">
-                            <h3 class="text-3xl font-black text-white italic tracking-tighter uppercase leading-none">Corporate Startup Lab</h3>
-                            <div class="bg-white/10 p-3 text-[#E20074]"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg></div>
-                        </div>
-                        <ul class="list-disc ml-5 text-sm text-slate-400 leading-relaxed marker:text-[#E20074] space-y-2">
-                            <li>Highly selective program, with only select students chosen through a rigorous interview process.</li>
-                            <li>We partner with a startup on a crucial business project and assist them in attaining their goal over a semester.</li>
-                            <li>We take on multiple responsibilities including: Identifying Customer Pain Points, Market Research, Niche Identification, Product Research, Product Segmentation, Competitor Analysis, and Go-to-Market Strategy.</li>
-                            <li>It has given me hands-on exposure in product management and multiple other domains in an early-stage fast paced environment.</li>
-                        </ul>
-                        <div class="mt-6 flex flex-wrap gap-2">
-                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Product Research</span>
-                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Product Strategy</span>
-                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Market Research</span>
-                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Market Sizing</span>
-                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Go-to-Market Strategy</span>
-                        </div>
-                    </div>
+            <a href="mailto:msomani@andrew.cmu.edu">
+              Email
+            </a>
 
-                    <!-- Housing Aggregator -->
-                    <div class="reveal-up card card-hover group border-l-4 border-[#E20074] pl-6">
-                        <div class="flex justify-between items-start mb-6">
-                            <h3 class="text-3xl font-black text-white italic tracking-tighter uppercase leading-none">Housing Aggregator</h3>
-                            <div class="bg-white/10 p-3 text-[#E20074]"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg></div>
-                        </div>
-                        <ul class="list-disc ml-5 text-sm text-slate-400 leading-relaxed marker:text-[#E20074] space-y-2">
-                            <li>Developed a full-stack housing aggregator that integrates <span class="text-white font-bold">multiple data sources via web scraping and APIs</span> to analyze walkability and amenity proximity.</li>
-                            <li>Engineered a custom scoring algorithm that processes user priorities (restaurants, schools, grocery stores) and distance preferences to generate tailored property rankings.</li>
-                            <li>Reduced user search time by over <span class="text-white font-bold">50%</span> by delivering optimized, data-driven results.</li>
-                        </ul>
-                        <div class="mt-6 flex flex-wrap gap-2">
-                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Python</span>
-                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Web Scraping</span>
-                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">API Integration</span>
-                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Algorithm Design</span>
-                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Data Analytics</span>
-                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Full Stack</span>
-                        </div>
-                    </div>
+            <a
+              href="https://www.linkedin.com/in/manavsomani/"
+              target="_blank"
+              rel="noopener"
+            >
+              LinkedIn
+            </a>
 
-                    <!-- B.Tech Capstone Project -->
-                    <div class="reveal-right card card-hover group border-l-4 border-[#E20074] pl-6">
-                        <div class="flex justify-between items-start mb-6">
-                            <h3 class="text-3xl font-black text-white italic tracking-tighter uppercase leading-none">B.Tech Capstone Project</h3>
-                            <div class="bg-white/10 p-3 text-[#E20074]">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                </svg>
-                            </div>
-                        </div>
-                        <ul class="list-disc ml-5 text-sm text-slate-400 leading-relaxed marker:text-[#E20074] space-y-2">
-                            <li>Conducted extensive research on <b>additive manufacturing</b>, specifically "The Effect of FDM Parameters on Mechanical Properties of Thermoplastic Polyurethane (TPU)", receiving the highest grade.</li>
-                            <li>Performed a comprehensive <b>literature survey</b> and professional lab testing using <b>ASTM standards</b> to evaluate mechanical structural integrity.</li>
-                            <li>Executed rigorous data analysis to optimize print parameters and mechanical output, contributing to performance additive manufacturing research.</li>
-                        </ul>
-                        <div class="mt-6 flex flex-wrap gap-2">
-                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Literature Survey</span>
-                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Additive Mfg</span>
-                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">ASTM Testing</span>
-                            <span class="text-[10px] bg-white/10 px-2 py-1 uppercase font-bold text-slate-300">Data Analysis</span>
-                        </div>
-                    </div>
-                </div>
+            <a href="tel:+14126897119">
+              412-689-7119
+            </a>
 
-                <!-- Certifications Strip -->
-                <div id="certifications" class="reveal-up mt-20 scroll-mt-24 pl-6">
-                    <h3 class="text-2xl font-black text-[#E20074] italic uppercase tracking-tighter mb-8">CERTIFICATIONS</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="flex flex-col gap-3">
-                            <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074] min-h-[6rem] flex items-center">
-                                <h4 class="text-lg font-black text-black uppercase tracking-tighter">Google Data Analytics Specialization</h4>
-                            </div>
-                            <p class="text-sm text-slate-400 leading-relaxed">An intensive 8-course professional certificate covering the entire data analysis lifecycle: Ask, Prepare, Process, Analyze, Share, and Act. Developed hands-on skills in data cleaning, analysis, and visualization using SQL, R Programming, and Tableau.</p>
-                        </div>
-                        <div class="flex flex-col gap-3">
-                            <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074] min-h-[6rem] flex items-center">
-                                <h4 class="text-lg font-black text-black uppercase tracking-tighter">Project Management and Agile Specialization</h4>
-                            </div>
-                            <p class="text-sm text-slate-400 leading-relaxed">6-course program by Google, mastering project management skills, including planning, execution, monitoring, and closure, with a focus on Agile and Scrum methodologies.</p>
-                        </div>
-                        <div class="flex flex-col gap-3">
-                            <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074] min-h-[6rem] flex items-center">
-                                <h4 class="text-lg font-black text-black uppercase tracking-tighter">Digital Marketing Specialization [Gies School of Business]</h4>
-                            </div>
-                            <p class="text-sm text-slate-400 leading-relaxed">4-course specialization covering fundamentals of Digital Marketing including case studies like Zoom and Burger King.</p>
-                        </div>
-                        <div class="flex flex-col gap-3">
-                            <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074] min-h-[6rem] flex items-center">
-                                <h4 class="text-lg font-black text-black uppercase tracking-tighter">Data Analysis with Python [IBM]</h4>
-                            </div>
-                            <p class="text-sm text-slate-400 leading-relaxed">Upskilled in data analysis using Python, utilizing libraries like Pandas and NumPy for data manipulation and visualization to derive insights.</p>
-                        </div>
-                        <div class="flex flex-col gap-3">
-                            <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074] min-h-[6rem] flex items-center">
-                                <h4 class="text-lg font-black text-black uppercase tracking-tighter">Advanced PowerBI Certification [iNeuron]</h4>
-                            </div>
-                            <p class="text-sm text-slate-400 leading-relaxed">Comprehensive training in data modeling, DAX functions, and advanced visualization techniques to transform raw data into interactive dashboards.</p>
-                        </div>
-                        <div class="flex flex-col gap-3">
-                            <div class="bg-white p-5 shadow-xl border-l-4 border-[#E20074] min-h-[6rem] flex items-center">
-                                <h4 class="text-lg font-black text-black uppercase tracking-tighter">Full Stack Data Analysis [iNeuron]</h4>
-                            </div>
-                            <p class="text-sm text-slate-400 leading-relaxed">End-to-end coverage of the data analysis lifecycle, including SQL for database management, statistics, and machine learning fundamentals for scalable solutions.</p>
-                        </div>
-                    </div>
-                    <div class="mt-10">
-                        <a href="https://www.linkedin.com/in/manavsomani/details/certifications/" target="_blank" class="btn btn-primary inline-flex items-center gap-2">
-                            <span>View Certifications on LinkedIn</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <a href="#work">
+              Selected Work ↓
+            </a>
 
-        <!-- Technical Arsenal -->
-        <section id="skills" class="py-16 px-6 md:px-16 border-y border-white/5 bg-[#333333]">
-            <div class="container mx-auto max-w-6xl">
-                <h2 class="reveal-up text-2xl font-black mb-16 text-white uppercase tracking-tighter italic text-left pl-6">TECHNICAL <span class="text-[#E20074]">ARSENAL</span></h2>
-                
-                <div class="grid md:grid-cols-2 gap-12">
-                    <!-- Product & PM -->
-                    <div class="reveal-left card space-y-6">
-                        <div class="pl-4">
-                            <h3 class="text-xs font-black uppercase tracking-[0.4em] text-white text-left border-b border-[#E20074] pb-4 mb-6">Product & PM</h3>
-                            <ul class="list-disc ml-5 space-y-2 text-slate-400 font-medium text-sm leading-relaxed marker:text-[#E20074]">
-                                <li>Product Strategy</li>
-                                <li>Roadmapping</li>
-                                <li>User Stories</li>
-                                <li>Figma</li>
-                                <li>Agile/Scrum</li>
-                                <li>Jira</li>
-                                <li>A/B Testing</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <!-- Analytics -->
-                    <div class="reveal-up card space-y-6">
-                        <div class="pl-4">
-                            <h3 class="text-xs font-black uppercase tracking-[0.4em] text-white text-left border-b border-[#E20074] pb-4 mb-6">Analytics</h3>
-                            <ul class="list-disc ml-5 space-y-2 text-slate-400 font-medium text-sm leading-relaxed marker:text-[#E20074]">
-                                <li>SQL</li>
-                                <li>Python and R</li>
-                                <li>Tableau & PowerBI</li>
-                                <li>Excel</li>
-                                <li>G-Suite</li>
-                                <li>MATLAB & KNIME</li>
-                                <li>Supply Chain</li>
-                                <li>Fintech (Microfinance)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+          </div>
 
-        <!-- Contact Section -->
-        <section id="contact" class="reveal-up py-32 px-4 bg-[#E20074] text-black">
-            <div class="container mx-auto max-w-4xl text-center">
-                <h2 class="text-6xl md:text-8xl font-black uppercase italic tracking-tighter mb-8 leading-none text-[#1f1f1f]">Let's Drive <br>Impact</h2>
-                
-                <div class="flex flex-col items-center gap-6">
-                    <a href="mailto:msomani@andrew.cmu.edu" class="text-2xl md:text-4xl font-black hover:opacity-70 transition-opacity tracking-tighter italic underline text-[#1f1f1f] lowercase">
-                        msomani@andrew.cmu.edu
-                    </a>
-                    <div class="flex flex-wrap justify-center gap-6 md:gap-10 mt-6">
-                        <a href="https://www.linkedin.com/in/manavsomani/" target="_blank" class="text-sm font-black uppercase border-b-4 border-[#1f1f1f] pb-1 hover:translate-y-1 transition-transform text-[#1f1f1f]">LinkedIn</a>
-                        
-                        <a href="https://wa.me/919611850688" target="_blank" class="flex items-center gap-2 text-sm font-black uppercase border-b-4 border-[#1f1f1f] pb-1 hover:translate-y-1 transition-transform text-[#1f1f1f]">
-                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.143c1.589.943 3.13 1.467 4.788 1.468 5.405 0 9.805-4.4 9.808-9.806.002-2.618-1.018-5.079-2.873-6.934-1.856-1.854-4.315-2.871-6.941-2.872-5.407 0-9.808 4.401-9.811 9.806-.001 1.76.49 3.42 1.417 4.795l-1.063 3.877 3.675-1.034zm11.045-4.758c-.285-.143-1.688-.833-1.947-.928-.26-.095-.448-.143-.639.143-.19.285-.738.928-.905 1.12-.166.19-.332.214-.618.071-.285-.143-1.204-.444-2.293-1.415-.848-.756-1.42-1.689-1.586-1.974-.166-.285-.018-.439.124-.581.128-.127.285-.333.428-.5.143-.167.19-.285.285-.476.095-.19.048-.357-.024-.5-.071-.143-.639-1.542-.875-2.113-.23-.553-.465-.478-.639-.487-.164-.008-.355-.01-.546-.01-.191 0-.5.071-.762.357-.262.285-1 0-1.78.357s-1.31 1.69-1.31 2.452c0 .761.548 1.499.625 1.604.077.105 1.071 1.635 2.595 2.293.363.156.646.25.867.32.364.116.696.099.957.06.291-.044.833-.341 1.024-.668.19-.327.19-.607.134-.668-.056-.06-.21-.143-.496-.285z"/>
-                            </svg>
-                            <span>+91-96118-50688</span>
-                        </a>
-
-                        <span class="text-sm font-black uppercase border-b-4 border-[#1f1f1f] pb-1 text-[#1f1f1f]">+1 412-689-7119</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="py-12 bg-[#333333] border-t border-white/5">
-        <div class="container mx-auto px-4 text-center">
-            <p class="text-[10px] font-black uppercase tracking-[1em] text-slate-700 italic">
-                © 2025 MANAV SOMANI / PRODUCT & ANALYTICS SPECIALIST
-            </p>
         </div>
-    </footer>
 
-    <!-- JavaScript -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const navToggle = document.getElementById('nav-toggle');
-            const navClose = document.getElementById('nav-close');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const navLinks = document.querySelectorAll('#mobile-menu a');
 
-            const toggleMenu = (show) => {
-                if(!mobileMenu) return;
-                mobileMenu.classList.toggle('hidden', !show);
-                mobileMenu.classList.toggle('flex', show);
-                document.body.style.overflow = show ? 'hidden' : 'auto';
-            };
+        <!-- RESUME -->
 
-            navToggle?.addEventListener('click', () => toggleMenu(true));
-            navClose?.addEventListener('click', () => toggleMenu(false));
-            navLinks.forEach(link => link.addEventListener('click', () => toggleMenu(false)));
+        <div class="hero-resume">
 
-            const observerOptions = { threshold: 0.15 };
-            const revealObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    entry.target.classList.toggle('active', entry.isIntersecting);
-                });
-            }, observerOptions);
+          <a
+            href="resume_manav_somani.pdf"
+            target="_blank"
+            rel="noopener"
+            aria-label="Open Manav Somani Resume"
+            class="hero-resume-link"
+          >
 
-            const revealElements = document.querySelectorAll('.reveal-left, .reveal-right, .reveal-up');
-            revealElements.forEach(el => revealObserver.observe(el));
-        });
-    </script>
+            <img
+              src="resume-thumbnail.png"
+              alt="Manav Somani Resume"
+              class="hero-resume-image"
+            >
+
+            <div class="hero-resume-overlay">
+
+              <span>
+                Resume ↗
+              </span>
+
+            </div>
+
+          </a>
+
+          <div class="hero-resume-label">
+            RESUME
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         COMPANY LOGOS
+
+         ORDER:
+         CMU
+         T-MOBILE
+         HELLBENDER
+         WALMART / FLIPKART
+         AMAZON / AXIO
+    ======================================================= -->
+
+    <section class="logo-strip">
+
+      <div class="logo-strip-inner">
+
+
+        <!-- CMU -->
+
+        <div class="logo-item">
+
+          <img
+            src="cmu_logo.jpeg"
+            alt="Carnegie Mellon University"
+          >
+
+        </div>
+
+
+        <!-- T-MOBILE -->
+
+        <div class="logo-item">
+
+          <img
+            src="tmobile_logo.png"
+            alt="T-Mobile"
+          >
+
+        </div>
+
+
+        <!-- HELLBENDER -->
+
+        <div class="logo-item">
+
+          <img
+            src="hellbender_logo.png"
+            alt="Hellbender"
+          >
+
+        </div>
+
+
+        <!-- WALMART / FLIPKART -->
+
+        <div class="logo-item">
+
+          <img
+            src="flipkart_walmart_logo.jpeg"
+            alt="Walmart and Flipkart"
+          >
+
+        </div>
+
+
+        <!-- AMAZON / AXIO -->
+
+        <div class="logo-item">
+
+          <img
+            src="axio_amazon_logo.png"
+            alt="Amazon and Axio"
+          >
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         ABOUT
+    ======================================================= -->
+
+    <section
+      id="about"
+      class="fade"
+    >
+
+      <h2 class="section-title">
+        About
+      </h2>
+
+      <p class="intro">
+        My background sits at the intersection of product management,
+        analytics, and technology. I enjoy taking ambiguous problems,
+        understanding them through data and users, and translating
+        the insight into products, systems, and strategies that
+        create measurable impact.
+
+        My experience spans T-Mobile's AI Engineering team,
+        Flipkart's supply-chain operations, and Axio's digital
+        collections business.
+      </p>
+
+    </section>
+
+
+    <!-- =======================================================
+         EDUCATION
+    ======================================================= -->
+
+    <section
+      id="education"
+      class="fade"
+    >
+
+      <h2 class="section-title">
+        Education
+      </h2>
+
+
+      <!-- CMU -->
+
+      <div class="education-highlight">
+
+        <div class="cmu-row">
+
+          <img
+            class="cmu-logo"
+            src="cmu_logo.jpeg"
+            alt="Carnegie Mellon University logo"
+          >
+
+          <div>
+
+            <div class="cmu-kicker">
+              Carnegie Mellon University
+            </div>
+
+            <h3 class="cmu-name">
+              Master of Information
+              Systems Management
+            </h3>
+
+            <p class="cmu-degree">
+              MISM · Business Intelligence
+              &amp; Data Analytics
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="cmu-meta">
+
+          <strong>
+            Location
+          </strong>
+
+          <span>
+            Pittsburgh, PA
+          </span>
+
+          <strong>
+            Expected
+          </strong>
+
+          <span>
+            December 2026
+          </span>
+
+          <strong>
+            CGPA
+          </strong>
+
+          <span>
+            3.8 / 4.0
+          </span>
+
+        </div>
+
+
+        <p class="cmu-coursework">
+
+          <strong>
+            Coursework:
+          </strong>
+
+          Product Management Essentials,
+          Data Science for PMs,
+          Corporate Startup Lab,
+          Advanced Business Analytics,
+          Unstructured Data Analytics,
+          Statistics, Database Management,
+          Python, Organizational Design and
+          Implementation, Java.
+
+        </p>
+
+      </div>
+
+
+      <!-- PES -->
+
+      <div class="education-secondary">
+
+        <h3>
+          PES University —
+          Bachelor of Technology in Engineering
+        </h3>
+
+        <div class="education-meta">
+          Bangalore · May 2022 ·
+          Distinction · CGPA 3.8/4.0
+        </div>
+
+        <p class="intro">
+          Head of TEDxPESU, organizing the largest
+          TEDx event in Bangalore, featuring renowned
+          speakers with 5M+ combined followers.
+
+          Team HAYA Off-Roading placed 19/120 teams
+          in BAJA SAE INDIA 2020 and 3rd in Enduro
+          Student India 2020.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         EXPERIENCE
+    ======================================================= -->
+
+    <section
+      id="experience"
+      class="fade"
+    >
+
+      <h2 class="section-title">
+        Experience
+      </h2>
+
+      <div
+        class="timeline"
+        id="experienceTimeline"
+      >
+
+        <div
+          class="timeline-track"
+          aria-hidden="true"
+        >
+
+          <div
+            class="timeline-progress"
+            id="timelineProgress"
+          ></div>
+
+        </div>
+
+
+        <!-- T-MOBILE -->
+
+        <article class="entry">
+
+          <div class="date">
+            May 2026 –
+            Aug 2026
+          </div>
+
+          <div class="timeline-node">
+            <span class="timeline-dot"></span>
+          </div>
+
+          <div class="entry-content">
+
+            <h3>
+              Product Management Intern —
+              AI Engineering Team
+            </h3>
+
+            <div class="org">
+              T-Mobile
+              <span class="location">
+                · Bellevue, WA
+              </span>
+            </div>
+
+            <ul>
+
+              <li>
+                Defined product requirements,
+                success metrics, and KPI frameworks
+                for the Agentic T-Mobile AI Voice
+                Agent and Ops Center, driving roadmap
+                prioritization and launch decisions.
+              </li>
+
+              <li>
+                Translated feature discussions into
+                well-defined Jira tasks and acceptance
+                criteria, reducing cross-functional
+                ambiguity and enabling faster
+                engineering execution.
+              </li>
+
+              <li>
+                Authored the PRD for a call simulation
+                tool and led an AI evaluation framework
+                of 200+ test cases, surfacing critical
+                failure modes and lifting pre-production
+                issue detection by 33%.
+              </li>
+
+              <li>
+                Defined governance processes for
+                security reviews, vulnerabilities,
+                and dependencies, and developed AI
+                safety guardrails that improved model
+                compliance and accelerated launch
+                readiness.
+              </li>
+
+            </ul>
+
+          </div>
+
+        </article>
+
+
+        <!-- HELLBENDER -->
+
+        <article class="entry">
+
+          <div class="date">
+            Jan 2026 –
+            May 2026
+          </div>
+
+          <div class="timeline-node">
+            <span class="timeline-dot"></span>
+          </div>
+
+          <div class="entry-content">
+
+            <h3>
+              Graduate Student Consultant —
+              Corporate Startup Lab
+            </h3>
+
+            <div class="org">
+              Hellbender
+              <span class="location">
+                · Pittsburgh, PA
+              </span>
+            </div>
+
+            <ul>
+
+              <li>
+                Advised an edge vision AI startup
+                on transitioning hardware sales into
+                a scalable Computer Vision as a Service
+                (CVaaS) recurring revenue model.
+              </li>
+
+              <li>
+                Conducted market research across
+                multiple verticals and built a prioritized
+                go-to-market strategy based on TAM,
+                competitive density, and technical fit.
+              </li>
+
+            </ul>
+
+          </div>
+
+        </article>
+
+
+        <!-- FLIPKART -->
+
+        <article class="entry">
+
+          <div class="date">
+            Sep 2024 –
+            Aug 2025
+          </div>
+
+          <div class="timeline-node">
+            <span class="timeline-dot"></span>
+          </div>
+
+          <div class="entry-content">
+
+            <h3>
+              Assistant Manager —
+              Control Tower Operations,
+              Supply Chain
+            </h3>
+
+            <div class="org">
+              Flipkart
+              <span class="location">
+                · Bangalore
+              </span>
+            </div>
+
+            <ul>
+
+              <li>
+                Owned end-to-end development of an
+                automated centralized data platform
+                unifying nationwide orders and metrics,
+                eliminating 9+ hours of daily manual
+                reporting.
+              </li>
+
+              <li>
+                Built an inventory risk model that
+                prioritized high-risk locations for
+                targeted perpetual stock takes,
+                cutting inventory discrepancies by 50%
+                with no increase in audit time.
+              </li>
+
+              <li>
+                Led inventory strategy for fast-moving
+                SKUs, improving warehouse operations
+                efficiency by 33% and reducing fulfillment
+                lead times and cost.
+              </li>
+
+              <li>
+                Translated ground-team insights and
+                operational data into inventory placement,
+                pick-path changes, and user-story
+                prioritization, reducing picking time
+                by 25% and improving CSAT by 20%.
+              </li>
+
+            </ul>
+
+          </div>
+
+        </article>
+
+
+        <!-- AXIO -->
+
+        <article class="entry">
+
+          <div class="date">
+            Mar 2023 –
+            Sep 2024
+          </div>
+
+          <div class="timeline-node">
+            <span class="timeline-dot"></span>
+          </div>
+
+          <div class="entry-content">
+
+            <h3>
+              Product Analyst —
+              Digital Collections,
+              Amazon Pay Later
+            </h3>
+
+            <div class="org">
+              Axio
+              <span class="location">
+                · Bangalore
+              </span>
+            </div>
+
+            <ul>
+
+              <li>
+                Led 0-to-1 development of an
+                interactive voice and chatbot system
+                for digital debt collections on Amazon
+                Pay Later, owning end-to-end product
+                requirements and user stories.
+              </li>
+
+              <li>
+                Launched curated collections strategies
+                segmented on customer payment profile
+                and behavior, lifting debt recovery
+                from 85% to 95%.
+              </li>
+
+              <li>
+                Reduced data processing time by 80%
+                by creating an automation tool that
+                reduced operational costs.
+              </li>
+
+            </ul>
+
+          </div>
+
+        </article>
+
+
+        <!-- FLIPKART INTERN -->
+
+        <article class="entry">
+
+          <div class="date">
+            Feb 2022 –
+            Jul 2022
+          </div>
+
+          <div class="timeline-node">
+            <span class="timeline-dot"></span>
+          </div>
+
+          <div class="entry-content">
+
+            <h3>
+              Intern —
+              Control Tower Operations,
+              Grocery Supply Chain
+            </h3>
+
+            <div class="org">
+              Flipkart
+              <span class="location">
+                · Bangalore
+              </span>
+            </div>
+
+            <ul>
+
+              <li>
+                Identified key operational gaps and
+                delivered an 80% reduction in grocery
+                product damage through inventory,
+                transit, and consumer analysis.
+              </li>
+
+              <li>
+                Automated processes cutting
+                data-management time by 75%, and
+                drove quality-control improvements
+                with warehouse leadership.
+              </li>
+
+            </ul>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         SELECTED WORK
+    ======================================================= -->
+
+    <section
+      id="work"
+      class="fade"
+    >
+
+      <h2 class="section-title">
+        Selected Work
+      </h2>
+
+
+      <!-- WORK 1 -->
+
+      <article class="work-item">
+
+        <div class="work-title">
+
+          <h3>
+            RubricGuard —
+            CMU ProdHacks 2026
+          </h3>
+
+          <span class="work-number">
+            01
+          </span>
+
+        </div>
+
+        <p>
+          Placed 3rd out of 400+ teams.
+          Built an agentic AI-powered grading
+          consistency engine using multi-LLM
+          workflows to detect evaluation bias
+          and ensure rubric alignment.
+        </p>
+
+      </article>
+
+
+      <!-- WORK 2 -->
+
+      <article class="work-item">
+
+        <div class="work-title">
+
+          <h3>
+            Air India Agentic Airline
+            Network Stress Simulator
+          </h3>
+
+          <span class="work-number">
+            02
+          </span>
+
+        </div>
+
+        <p>
+          Project Manager for a CMU capstone
+          project leading project management
+          and engineering for a multi-agent AI
+          system that models network disruptions
+          and optimizes flight-delay recovery.
+        </p>
+
+      </article>
+
+
+      <!-- WORK 3 -->
+
+      <article class="work-item">
+
+        <div class="work-title">
+
+          <h3>
+            TUI Smiles —
+            Global Loyalty Strategy
+          </h3>
+
+          <span class="work-number">
+            03
+          </span>
+
+        </div>
+
+        <p>
+          Spearheaded strategic loyalty analysis
+          for TUI Group's global rewards ecosystem,
+          leveraging sentiment modeling to evaluate
+          cross-channel engagement across European
+          source markets.
+        </p>
+
+      </article>
+
+
+      <!-- WORK 4 -->
+
+      <article class="work-item">
+
+        <div class="work-title">
+
+          <h3>
+            Computer Vision as a Service —
+            Hellbender
+          </h3>
+
+          <span class="work-number">
+            04
+          </span>
+
+        </div>
+
+        <p>
+          Developed a strategic transition from
+          hardware sales to a scalable recurring-
+          revenue CVaaS model and prioritized
+          target markets using TAM, competitive
+          density, and technical fit.
+        </p>
+
+      </article>
+
+    </section>
+
+
+    <!-- =======================================================
+         SKILLS
+    ======================================================= -->
+
+    <section
+      id="skills"
+      class="fade"
+    >
+
+      <h2 class="section-title">
+        Skills
+      </h2>
+
+      <div class="skills">
+
+        <div class="skill-group">
+
+          <h3>
+            Product &amp; Project Management
+          </h3>
+
+          <p>
+            Asana · Figma · Jira · Google Studios ·
+            Lovable · Product Strategy · Product Design ·
+            PRDs · Prototyping · KPI Frameworks · Agile ·
+            User Stories · A/B Testing · Go-To-Market ·
+            Tradeoffs
+          </p>
+
+        </div>
+
+
+        <div class="skill-group">
+
+          <h3>
+            AI, Data &amp; Analytics
+          </h3>
+
+          <p>
+            Gen AI · AI Evaluation Frameworks · SQL ·
+            Python · R · Power BI · Tableau ·
+            Safety &amp; Governance
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =======================================================
+         CONTACT
+    ======================================================= -->
+
+    <section
+      id="contact"
+      class="fade"
+    >
+
+      <h2 class="section-title">
+        Contact
+      </h2>
+
+      <div class="contact">
+
+        <p class="contact-copy">
+          Interested in product, AI, data,
+          and the problems that sit at their
+          intersection? I'd be happy to connect.
+        </p>
+
+        <div class="contact-links">
+
+          <a href="mailto:msomani@andrew.cmu.edu">
+            msomani@andrew.cmu.edu
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/manavsomani/"
+            target="_blank"
+            rel="noopener"
+          >
+            LinkedIn
+          </a>
+
+          <a href="tel:+14126897119">
+            412-689-7119
+          </a>
+
+          <span>
+            Pittsburgh, PA
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================
+       FOOTER
+  ========================================================= -->
+
+  <footer class="site">
+
+    <span>
+      © 2026 Manav Somani
+    </span>
+
+    <span
+      style="
+        color: var(--accent);
+        font-weight: 600;
+      "
+    >
+      Product · Data · AI
+    </span>
+
+  </footer>
+
+
+  <!-- =========================================================
+       BACK TO TOP
+  ========================================================= -->
+
+  <a
+    href="#top"
+    class="back-top"
+    id="backTop"
+    aria-label="Back to top"
+  >
+    ↑
+  </a>
+
+
+  <!-- =========================================================
+       JAVASCRIPT
+  ========================================================= -->
+
+  <script>
+
+    /* =========================================================
+       MOBILE MENU
+    ========================================================= */
+
+    const menuToggle =
+      document.getElementById("menuToggle");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+    menuToggle.addEventListener(
+      "click",
+      () => {
+        navLinks.classList.toggle("open");
+      }
+    );
+
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(link => {
+
+        link.addEventListener(
+          "click",
+          () => {
+            navLinks.classList.remove("open");
+          }
+        );
+
+      });
+
+
+    /* =========================================================
+       SCROLL REVEAL
+    ========================================================= */
+
+    const revealObserver =
+      new IntersectionObserver(
+
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("visible");
+
+              revealObserver.unobserve(
+                entry.target
+              );
+
+            }
+
+          });
+
+        },
+
+        {
+          threshold: 0.08
+        }
+
+      );
+
+
+    document
+      .querySelectorAll(".fade, .entry")
+      .forEach(el => {
+
+        revealObserver.observe(el);
+
+      });
+
+
+    /* =========================================================
+       EXPERIENCE TIMELINE
+    ========================================================= */
+
+    const timeline =
+      document.getElementById(
+        "experienceTimeline"
+      );
+
+    const progress =
+      document.getElementById(
+        "timelineProgress"
+      );
+
+    const entries =
+      [
+        ...document.querySelectorAll(
+          ".timeline .entry"
+        )
+      ];
+
+
+    function updateTimeline() {
+
+      if (!timeline || !progress) {
+        return;
+      }
+
+      const rect =
+        timeline.getBoundingClientRect();
+
+      const viewportCenter =
+        window.innerHeight * 0.48;
+
+      const total =
+        rect.height;
+
+      const raw =
+        (
+          viewportCenter -
+          rect.top
+        ) / total;
+
+      const pct =
+        Math.max(
+          0,
+          Math.min(
+            1,
+            raw
+          )
+        );
+
+      progress.style.height =
+        (pct * 100) + "%";
+
+
+      entries.forEach(entry => {
+
+        const r =
+          entry.getBoundingClientRect();
+
+        const active =
+          r.top < viewportCenter &&
+          r.bottom >
+            viewportCenter - 40;
+
+        entry.classList.toggle(
+          "active",
+          active
+        );
+
+      });
+
+    }
+
+
+    window.addEventListener(
+      "scroll",
+      updateTimeline,
+      {
+        passive: true
+      }
+    );
+
+    window.addEventListener(
+      "resize",
+      updateTimeline
+    );
+
+    updateTimeline();
+
+
+    /* =========================================================
+       BACK TO TOP
+    ========================================================= */
+
+    const backTop =
+      document.getElementById(
+        "backTop"
+      );
+
+    window.addEventListener(
+      "scroll",
+      () => {
+
+        backTop.classList.toggle(
+          "show",
+          window.scrollY > 500
+        );
+
+      },
+      {
+        passive: true
+      }
+    );
+
+  </script>
+
 </body>
+
 </html>
