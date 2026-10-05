@@ -3,7 +3,6 @@
 
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Manav Somani</title>
@@ -13,19 +12,18 @@
     content="Manav Somani — Product, Data & AI professional at Carnegie Mellon University."
   >
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- =========================================================
+       FONTS
+  ========================================================== -->
 
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap"
     rel="stylesheet"
   >
+
 
   <style>
 
@@ -39,10 +37,13 @@
       --light: #777777;
       --border: #dedede;
       --bg: #ffffff;
+
       --accent: #C41230;
       --accent-soft: #f9e8eb;
+
       --cmu-black: #111111;
       --cmu-gray: #6D6E71;
+
       --max: 1060px;
     }
 
@@ -97,45 +98,64 @@
     header {
       border-top: 3px solid var(--accent);
       border-bottom: 1px solid var(--border);
+
       background: rgba(255,255,255,.94);
+
       position: sticky;
       top: 0;
+
       z-index: 20;
+
       backdrop-filter: blur(12px);
     }
 
     .nav {
       min-height: 70px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       gap: 24px;
     }
 
     .brand {
       font-family: "Source Serif 4", Georgia, serif;
+
       font-size: 21px;
       font-weight: 600;
+
       white-space: nowrap;
+
       color: var(--cmu-black);
     }
 
     .brand::before {
       content: "CMU / ";
+
       color: var(--accent);
+
       font-family: Inter, Arial, sans-serif;
+
       font-size: 11px;
       font-weight: 700;
+
       letter-spacing: .08em;
+
       vertical-align: middle;
+
       margin-right: 4px;
     }
 
     .nav-links {
       display: flex;
+
       gap: 26px;
+
       align-items: center;
+
       color: #555;
+
       font-size: 14px;
     }
 
@@ -145,9 +165,13 @@
 
     .mobile-toggle {
       display: none;
+
       border: 0;
+
       background: transparent;
+
       font-size: 22px;
+
       cursor: pointer;
     }
 
@@ -162,31 +186,42 @@
 
     section {
       padding: 45px 0;
+
       border-top: 1px solid var(--border);
     }
 
     .section-title {
       font-family: "Source Serif 4", Georgia, serif;
+
       font-size: 30px;
       font-weight: 600;
+
       margin: 0 0 28px;
+
       letter-spacing: -.02em;
+
       position: relative;
+
       padding-left: 15px;
     }
 
     .section-title::before {
       content: "";
+
       position: absolute;
+
       left: 0;
       top: 7px;
+
       width: 4px;
       height: 25px;
+
       background: var(--accent);
     }
 
     .intro {
       max-width: 850px;
+
       color: #555;
     }
 
@@ -197,33 +232,47 @@
 
     .hero {
       display: grid;
+
       grid-template-columns: 210px 1fr;
+
       gap: 42px;
+
       padding: 70px 0 55px;
+
       align-items: start;
+
       position: relative;
+
       border-top: 0;
     }
 
     .hero::after {
       content: "";
+
       position: absolute;
+
       width: 260px;
       height: 260px;
+
       right: -80px;
       top: 20px;
+
       border-radius: 50%;
+
       background:
         radial-gradient(
           circle,
           rgba(196,18,48,.08),
           rgba(196,18,48,0) 68%
         );
+
       pointer-events: none;
+
       animation: floatGlow 7s ease-in-out infinite;
     }
 
     @keyframes floatGlow {
+
       0%, 100% {
         transform: translate(0,0) scale(1);
       }
@@ -231,14 +280,19 @@
       50% {
         transform: translate(-12px,10px) scale(1.08);
       }
+
     }
 
     .portrait {
       width: 190px;
       height: 190px;
+
       object-fit: cover;
+
       border-radius: 8px;
+
       border: 1px solid var(--border);
+
       box-shadow:
         5px 5px 0 rgba(196,18,48,.12);
     }
@@ -250,10 +304,17 @@
 
     .hero-content {
       display: grid;
-      grid-template-columns: minmax(0,1fr) 145px;
+
+      grid-template-columns:
+        minmax(0,1fr)
+        145px;
+
       gap: 35px;
+
       align-items: center;
+
       position: relative;
+
       z-index: 2;
     }
 
@@ -263,66 +324,97 @@
 
     .eyebrow {
       color: var(--accent);
+
       font-size: 13px;
+
       font-weight: 600;
+
       margin-bottom: 8px;
+
       letter-spacing: .045em;
     }
 
     .eyebrow::before {
       content: "";
+
       display: inline-block;
+
       width: 24px;
       height: 2px;
+
       background: var(--accent);
+
       vertical-align: middle;
+
       margin-right: 8px;
+
       transform: translateY(-1px);
     }
 
     h1 {
       font-family: "Source Serif 4", Georgia, serif;
+
       font-size: clamp(42px, 6vw, 64px);
+
       line-height: 1.05;
+
       letter-spacing: -.035em;
+
       font-weight: 600;
+
       margin: 0 0 14px;
     }
 
     .hero-title {
       font-size: 18px;
+
       color: #444;
+
       margin: 0 0 18px;
+
       font-weight: 500;
     }
 
     .hero-copy {
       max-width: 720px;
+
       color: #555;
+
       margin: 0 0 20px;
     }
 
     .links {
       display: flex;
+
       flex-wrap: wrap;
+
       gap: 16px;
+
       font-size: 14px;
     }
 
     .links a {
       color: var(--accent);
+
       font-weight: 500;
+
       position: relative;
     }
 
     .links a::after {
       content: "";
+
       position: absolute;
+
       left: 0;
       right: 100%;
+
       bottom: -3px;
+
       height: 1px;
+
       background: var(--accent);
+
       transition: right .25s ease;
     }
 
@@ -337,19 +429,28 @@
 
     .hero-resume {
       width: 145px;
+
       justify-self: end;
+
       text-align: center;
     }
 
     .hero-resume-link {
       display: block;
+
       position: relative;
+
       width: 145px;
+
       overflow: hidden;
+
       border: 1px solid var(--border);
+
       background: #fff;
+
       box-shadow:
         0 8px 22px rgba(0,0,0,.08);
+
       transition:
         transform .3s ease,
         box-shadow .3s ease,
@@ -358,25 +459,35 @@
 
     .hero-resume-link:hover {
       transform: translateY(-5px);
+
       border-color: var(--accent);
+
       box-shadow:
         0 14px 30px rgba(196,18,48,.18);
     }
 
     .hero-resume-image {
       display: block;
+
       width: 100%;
+
       height: auto;
     }
 
     .hero-resume-overlay {
       position: absolute;
+
       inset: 0;
+
       display: flex;
+
       align-items: center;
       justify-content: center;
+
       background: rgba(196,18,48,.88);
+
       opacity: 0;
+
       transition: opacity .25s ease;
     }
 
@@ -386,16 +497,23 @@
 
     .hero-resume-overlay span {
       color: #fff;
+
       font-size: 14px;
+
       font-weight: 600;
+
       letter-spacing: .02em;
     }
 
     .hero-resume-label {
       margin-top: 8px;
+
       color: var(--accent);
+
       font-size: 9px;
+
       font-weight: 700;
+
       letter-spacing: .16em;
     }
 
@@ -406,28 +524,50 @@
 
     .logo-strip {
       padding: 30px 0 34px;
+
       border-top: 1px solid var(--border);
+
       border-bottom: 1px solid var(--border);
+
       overflow: hidden;
     }
 
     .logo-strip-inner {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+
+      grid-template-columns:
+        repeat(5, 1fr);
+
       align-items: center;
-      gap: 20px;
+
+      gap: 22px;
+
       width: 100%;
     }
 
     .logo-item {
-      height: 100px;
+      height: 105px;
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
-      padding: 8px 12px;
+
+      /*
+        IMPORTANT:
+        Extra horizontal padding prevents logos
+        from touching/cutting against their edges.
+      */
+
+      padding: 12px 22px;
+
       background: #fff;
+
       overflow: visible;
-      transition: transform .3s ease;
+
+      transition:
+        transform .3s ease;
     }
 
     .logo-item:hover {
@@ -436,13 +576,21 @@
 
     .logo-item img {
       display: block;
+
       width: auto;
+
       height: auto;
+
       max-width: 100%;
-      max-height: 90px;
+
+      max-height: 82px;
+
       object-fit: contain;
+
       object-position: center;
+
       opacity: .92;
+
       transition:
         opacity .3s ease,
         transform .3s ease;
@@ -450,7 +598,32 @@
 
     .logo-item:hover img {
       opacity: 1;
-      transform: scale(1.04);
+
+      transform: scale(1.03);
+    }
+
+
+    /* =========================================================
+       HELLBENDER LOGO FIX
+    ========================================================= */
+
+    /*
+      Hellbender is the 3rd logo.
+
+      It gets extra horizontal breathing room
+      so the H cannot touch the edge.
+    */
+
+    .logo-item:nth-child(3) {
+      padding-left: 32px;
+
+      padding-right: 32px;
+    }
+
+    .logo-item:nth-child(3) img {
+      max-width: 90%;
+
+      max-height: 72px;
     }
 
 
@@ -469,11 +642,13 @@
 
     .education-grid {
       display: grid;
+
       gap: 24px;
     }
 
     .education-item {
       padding-bottom: 22px;
+
       border-bottom: 1px solid var(--border);
     }
 
@@ -483,19 +658,25 @@
 
     .education-item h3 {
       margin: 0 0 3px;
+
       font-size: 17px;
     }
 
     .education-meta {
       color: var(--muted);
+
       font-size: 14px;
     }
 
     .education-highlight {
       position: relative;
+
       padding: 30px 32px 30px 30px;
+
       border: 1px solid #dedede;
+
       border-left: 5px solid var(--accent);
+
       background:
         linear-gradient(
           135deg,
@@ -503,9 +684,12 @@
           #fff 72%,
           #fbf4f5 100%
         );
+
       box-shadow:
         0 12px 35px rgba(0,0,0,.045);
+
       overflow: hidden;
+
       transition:
         transform .35s ease,
         box-shadow .35s ease;
@@ -513,102 +697,156 @@
 
     .education-highlight:hover {
       transform: translateY(-4px);
+
       box-shadow:
         0 18px 42px rgba(0,0,0,.08);
     }
 
     .education-highlight::after {
       content: "CMU";
+
       position: absolute;
+
       right: -8px;
+
       bottom: -35px;
-      font-family: "Source Serif 4", Georgia, serif;
+
+      font-family:
+        "Source Serif 4",
+        Georgia,
+        serif;
+
       font-size: 145px;
+
       line-height: 1;
+
       font-weight: 600;
+
       color: rgba(196,18,48,.045);
+
       pointer-events: none;
     }
 
     .cmu-row {
       display: flex;
+
       align-items: center;
+
       gap: 22px;
+
       position: relative;
+
       z-index: 1;
     }
 
     .cmu-logo {
       width: 88px;
       height: 88px;
+
       object-fit: contain;
+
       flex: 0 0 88px;
+
       padding: 9px;
+
       background: #fff;
+
       border: 1px solid #e2e2e2;
+
       border-radius: 6px;
     }
 
     .cmu-kicker {
       color: var(--accent);
+
       text-transform: uppercase;
+
       font-size: 11px;
+
       letter-spacing: .12em;
+
       font-weight: 700;
+
       margin-bottom: 4px;
     }
 
     .cmu-name {
-      font-family: "Source Serif 4", Georgia, serif;
+      font-family:
+        "Source Serif 4",
+        Georgia,
+        serif;
+
       font-size: 25px;
+
       line-height: 1.25;
+
       font-weight: 600;
+
       margin: 0;
     }
 
     .cmu-degree {
       margin: 5px 0 0;
+
       color: #555;
+
       font-size: 14px;
     }
 
     .cmu-meta {
       margin-top: 22px;
+
       padding-top: 18px;
+
       border-top: 1px solid #e5e5e5;
+
       display: grid;
-      grid-template-columns: auto 1fr;
+
+      grid-template-columns:
+        auto 1fr;
+
       gap: 10px 24px;
+
       position: relative;
+
       z-index: 1;
     }
 
     .cmu-meta strong {
       color: #333;
+
       font-size: 13px;
     }
 
     .cmu-meta span {
       color: #666;
+
       font-size: 13px;
     }
 
     .cmu-coursework {
       margin: 18px 0 0;
+
       color: #666;
+
       font-size: 13px;
+
       position: relative;
+
       z-index: 1;
     }
 
     .education-secondary {
       margin-top: 24px;
+
       padding-top: 24px;
+
       border-top: 1px solid var(--border);
     }
 
     .education-secondary h3 {
       margin: 0 0 3px;
+
       font-size: 17px;
     }
 
@@ -623,40 +861,58 @@
 
     .timeline {
       position: relative;
+
       padding: 8px 0;
     }
 
     .timeline-track {
       position: absolute;
+
       left: 202px;
+
       top: 0;
       bottom: 0;
+
       width: 2px;
+
       background: #e8e8e8;
+
       overflow: hidden;
     }
 
     .timeline-progress {
       position: absolute;
+
       left: 0;
       top: 0;
+
       width: 100%;
+
       height: 0%;
+
       background:
         linear-gradient(
           to bottom,
           #C41230,
           #9e0e27
         );
+
       transform-origin: top;
-      transition: height .12s linear;
+
+      transition:
+        height .12s linear;
     }
 
     .entry {
       display: grid;
-      grid-template-columns: 185px 35px 1fr;
+
+      grid-template-columns:
+        185px 35px 1fr;
+
       gap: 0;
+
       padding: 0 0 48px;
+
       position: relative;
     }
 
@@ -666,12 +922,19 @@
 
     .date {
       color: var(--cmu-gray);
+
       font-size: 13px;
+
       line-height: 1.6;
+
       padding-top: 4px;
+
       padding-right: 25px;
+
       text-align: right;
+
       opacity: .55;
+
       transition:
         opacity .3s ease,
         color .3s ease;
@@ -679,41 +942,56 @@
 
     .entry.active .date {
       opacity: 1;
+
       color: var(--accent);
     }
 
     .timeline-node {
       position: relative;
+
       z-index: 3;
+
       display: flex;
+
       justify-content: center;
+
       padding-top: 3px;
     }
 
     .timeline-dot {
       width: 13px;
       height: 13px;
+
       border: 3px solid #fff;
+
       background: #d5d5d5;
+
       border-radius: 50%;
+
       box-shadow:
         0 0 0 1px #d5d5d5;
+
       transition: .3s ease;
     }
 
     .entry.active .timeline-dot,
     .entry:hover .timeline-dot {
       background: var(--accent);
+
       box-shadow:
         0 0 0 4px rgba(196,18,48,.13),
         0 0 0 1px var(--accent);
+
       transform: scale(1.1);
     }
 
     .entry-content {
       padding-left: 28px;
+
       opacity: 0;
+
       transform: translateY(18px);
+
       transition:
         opacity .7s ease,
         transform .7s cubic-bezier(.22,1,.36,1);
@@ -721,6 +999,7 @@
 
     .entry.visible .entry-content {
       opacity: 1;
+
       transform: translateY(0);
     }
 
@@ -730,27 +1009,37 @@
 
     .entry h3 {
       margin: 0 0 3px;
+
       font-size: 17px;
+
       font-weight: 600;
+
       color: #222;
     }
 
     .org {
       color: var(--accent);
+
       font-size: 14px;
+
       font-weight: 500;
+
       margin-bottom: 8px;
     }
 
     .location {
       color: var(--cmu-gray);
+
       font-size: 13px;
+
       font-weight: 400;
     }
 
     .entry ul {
       margin: 10px 0 0;
+
       padding-left: 19px;
+
       color: #555;
     }
 
@@ -765,7 +1054,9 @@
 
     .work-item {
       padding: 27px 0;
+
       border-bottom: 1px solid var(--border);
+
       transition:
         transform .3s ease,
         padding-left .3s ease;
@@ -781,26 +1072,38 @@
 
     .work-item:hover {
       transform: translateX(6px);
+
       padding-left: 8px;
     }
 
     .work-title {
       display: flex;
+
       justify-content: space-between;
+
       gap: 20px;
+
       align-items: baseline;
     }
 
     .work-title h3 {
       margin: 0;
-      font-family: "Source Serif 4", Georgia, serif;
+
+      font-family:
+        "Source Serif 4",
+        Georgia,
+        serif;
+
       font-size: 21px;
+
       font-weight: 600;
     }
 
     .work-number {
       color: #aaa;
+
       font-size: 13px;
+
       transition:
         color .25s ease,
         transform .25s ease;
@@ -808,12 +1111,15 @@
 
     .work-item:hover .work-number {
       color: var(--accent);
+
       transform: translateX(-4px);
     }
 
     .work-item p {
       margin: 7px 0 0;
+
       color: #555;
+
       max-width: 850px;
     }
 
@@ -824,7 +1130,10 @@
 
     .skills {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+
+      grid-template-columns:
+        1fr 1fr;
+
       gap: 25px 50px;
     }
 
@@ -835,12 +1144,15 @@
 
     .skill-group h3 {
       font-size: 15px;
+
       margin: 0 0 8px;
+
       font-weight: 600;
     }
 
     .skill-group p {
       color: #555;
+
       margin: 0;
     }
 
@@ -851,22 +1163,32 @@
 
     .contact {
       display: grid;
-      grid-template-columns: 1fr auto;
+
+      grid-template-columns:
+        1fr auto;
+
       gap: 40px;
+
       align-items: end;
     }
 
     .contact-copy {
       max-width: 650px;
+
       color: #555;
     }
 
     .contact-links {
       display: flex;
+
       flex-direction: column;
+
       align-items: flex-end;
+
       gap: 7px;
+
       color: var(--accent);
+
       font-size: 14px;
     }
 
@@ -877,11 +1199,17 @@
 
     footer {
       border-top: 1px solid var(--border);
+
       padding: 25px 0 35px;
+
       color: #999;
+
       font-size: 12px;
+
       display: flex;
+
       justify-content: space-between;
+
       gap: 20px;
     }
 
@@ -892,35 +1220,53 @@
 
     .back-top {
       position: fixed;
+
       right: 24px;
       bottom: 24px;
+
       width: 40px;
       height: 40px;
+
       border: 1px solid var(--border);
+
       border-radius: 50%;
+
       background: rgba(255,255,255,.92);
+
       color: var(--accent);
+
       display: flex;
+
       align-items: center;
       justify-content: center;
+
       font-size: 16px;
+
       opacity: 0;
+
       pointer-events: none;
+
       transform: translateY(10px);
+
       transition: .3s ease;
+
       box-shadow:
         0 5px 20px rgba(0,0,0,.08);
     }
 
     .back-top.show {
       opacity: 1;
+
       pointer-events: auto;
+
       transform: translateY(0);
     }
 
     .back-top:hover {
       background: var(--accent);
+
       color: #fff;
+
       border-color: var(--accent);
     }
 
@@ -931,7 +1277,9 @@
 
     .fade {
       opacity: 0;
+
       transform: translateY(18px);
+
       transition:
         opacity .75s cubic-bezier(.22,1,.36,1),
         transform .75s cubic-bezier(.22,1,.36,1);
@@ -939,6 +1287,7 @@
 
     .fade.visible {
       opacity: 1;
+
       transform: translateY(0);
     }
 
@@ -950,10 +1299,11 @@
     @media (max-width: 760px) {
 
       .site {
-        width: min(
-          calc(100% - 28px),
-          var(--max)
-        );
+        width:
+          min(
+            calc(100% - 28px),
+            var(--max)
+          );
       }
 
 
@@ -965,15 +1315,24 @@
 
       .nav-links {
         display: none;
+
         position: absolute;
+
         top: 62px;
+
         left: 0;
         right: 0;
+
         background: #fff;
+
         border-bottom: 1px solid var(--border);
+
         padding: 18px 14px;
+
         flex-direction: column;
+
         align-items: flex-start;
+
         gap: 13px;
       }
 
@@ -990,7 +1349,9 @@
 
       .hero {
         grid-template-columns: 1fr;
+
         gap: 24px;
+
         padding: 48px 0 42px;
       }
 
@@ -1005,11 +1366,13 @@
           100px;
 
         gap: 20px;
+
         align-items: start;
       }
 
       .hero-resume {
         width: 100px;
+
         justify-self: end;
       }
 
@@ -1022,7 +1385,9 @@
       }
 
 
-      /* LOGOS */
+      /* =====================================================
+         MOBILE LOGOS
+      ===================================================== */
 
       .logo-strip {
         padding: 24px 0;
@@ -1030,9 +1395,14 @@
 
       .logo-strip-inner {
         display: flex;
+
         gap: 18px;
+
         overflow-x: auto;
-        padding: 5px 5px 10px;
+
+        padding:
+          5px 5px 10px;
+
         scrollbar-width: none;
       }
 
@@ -1042,13 +1412,32 @@
 
       .logo-item {
         flex: 0 0 150px;
+
         height: 80px;
-        padding: 6px 10px;
+
+        padding: 8px 16px;
       }
 
       .logo-item img {
-        max-width: 140px;
-        max-height: 72px;
+        max-width: 130px;
+
+        max-height: 65px;
+      }
+
+      /*
+        Hellbender mobile fix
+      */
+
+      .logo-item:nth-child(3) {
+        padding-left: 20px;
+
+        padding-right: 20px;
+      }
+
+      .logo-item:nth-child(3) img {
+        max-width: 125px;
+
+        max-height: 58px;
       }
 
 
@@ -1063,25 +1452,34 @@
           28px 1fr;
 
         gap: 0;
+
         padding-bottom: 40px;
       }
 
       .date {
         grid-column: 2;
+
         grid-row: 1;
+
         text-align: left;
-        padding: 0 0 6px;
+
+        padding:
+          0 0 6px;
       }
 
       .timeline-node {
         grid-column: 1;
+
         grid-row: 1 / span 2;
+
         justify-content: flex-start;
+
         padding-top: 4px;
       }
 
       .entry-content {
         grid-column: 2;
+
         padding-left: 0;
       }
 
@@ -1095,6 +1493,7 @@
       .cmu-logo {
         width: 68px;
         height: 68px;
+
         flex-basis: 68px;
       }
 
@@ -1104,6 +1503,7 @@
 
       .cmu-meta {
         grid-template-columns: 1fr;
+
         gap: 2px;
       }
 
@@ -1112,7 +1512,8 @@
       }
 
       .education-highlight {
-        padding: 23px 20px;
+        padding:
+          23px 20px;
       }
 
 
@@ -1152,7 +1553,7 @@
 
   <!-- =========================================================
        HEADER
-  ========================================================= -->
+  ========================================================== -->
 
   <header>
 
@@ -1165,6 +1566,7 @@
         Manav Somani
       </a>
 
+
       <button
         class="mobile-toggle"
         id="menuToggle"
@@ -1172,6 +1574,7 @@
       >
         ☰
       </button>
+
 
       <nav
         class="nav-links"
@@ -1215,7 +1618,7 @@
 
   <!-- =========================================================
        MAIN
-  ========================================================= -->
+  ========================================================== -->
 
   <main
     id="top"
@@ -1246,14 +1649,17 @@
             · PRODUCT · DATA · AI
           </div>
 
+
           <h1>
             Manav Somani
           </h1>
+
 
           <p class="hero-title">
             Analytics turned Product &amp;
             Program Management professional
           </p>
+
 
           <p class="hero-copy">
             I am a graduate student at Carnegie Mellon University
@@ -1262,6 +1668,7 @@
             define AI evaluation frameworks, and turn operational
             data into product and roadmap decisions.
           </p>
+
 
           <div class="links">
 
@@ -1290,7 +1697,9 @@
         </div>
 
 
-        <!-- RESUME -->
+        <!-- =====================================================
+             RESUME THUMBNAIL
+        ====================================================== -->
 
         <div class="hero-resume">
 
@@ -1308,6 +1717,7 @@
               class="hero-resume-image"
             >
 
+
             <div class="hero-resume-overlay">
 
               <span>
@@ -1317,6 +1727,7 @@
             </div>
 
           </a>
+
 
           <div class="hero-resume-label">
             RESUME
@@ -1333,11 +1744,12 @@
          COMPANY LOGOS
 
          ORDER:
-         CMU
-         T-MOBILE
-         HELLBENDER
-         WALMART / FLIPKART
-         AMAZON / AXIO
+
+         1. CMU
+         2. T-Mobile
+         3. Hellbender
+         4. Walmart / Flipkart
+         5. Amazon / Axio
     ======================================================= -->
 
     <section class="logo-strip">
@@ -1422,6 +1834,7 @@
         About
       </h2>
 
+
       <p class="intro">
         My background sits at the intersection of product management,
         analytics, and technology. I enjoy taking ambiguous problems,
@@ -1463,16 +1876,19 @@
             alt="Carnegie Mellon University logo"
           >
 
+
           <div>
 
             <div class="cmu-kicker">
               Carnegie Mellon University
             </div>
 
+
             <h3 class="cmu-name">
               Master of Information
               Systems Management
             </h3>
+
 
             <p class="cmu-degree">
               MISM · Business Intelligence
@@ -1494,6 +1910,7 @@
             Pittsburgh, PA
           </span>
 
+
           <strong>
             Expected
           </strong>
@@ -1501,6 +1918,7 @@
           <span>
             December 2026
           </span>
+
 
           <strong>
             CGPA
@@ -1542,12 +1960,15 @@
           Bachelor of Technology in Engineering
         </h3>
 
+
         <div class="education-meta">
           Bangalore · May 2022 ·
           Distinction · CGPA 3.8/4.0
         </div>
 
+
         <p class="intro">
+
           Head of TEDxPESU, organizing the largest
           TEDx event in Bangalore, featuring renowned
           speakers with 5M+ combined followers.
@@ -1555,6 +1976,7 @@
           Team HAYA Off-Roading placed 19/120 teams
           in BAJA SAE INDIA 2020 and 3rd in Enduro
           Student India 2020.
+
         </p>
 
       </div>
@@ -1575,10 +1997,12 @@
         Experience
       </h2>
 
+
       <div
         class="timeline"
         id="experienceTimeline"
       >
+
 
         <div
           class="timeline-track"
@@ -1593,7 +2017,9 @@
         </div>
 
 
-        <!-- T-MOBILE -->
+        <!-- ===================================================
+             T-MOBILE
+        ==================================================== -->
 
         <article class="entry">
 
@@ -1602,9 +2028,13 @@
             Aug 2026
           </div>
 
+
           <div class="timeline-node">
+
             <span class="timeline-dot"></span>
+
           </div>
+
 
           <div class="entry-content">
 
@@ -1613,12 +2043,17 @@
               AI Engineering Team
             </h3>
 
+
             <div class="org">
+
               T-Mobile
+
               <span class="location">
                 · Bellevue, WA
               </span>
+
             </div>
+
 
             <ul>
 
@@ -1662,7 +2097,9 @@
         </article>
 
 
-        <!-- HELLBENDER -->
+        <!-- ===================================================
+             HELLBENDER
+        ==================================================== -->
 
         <article class="entry">
 
@@ -1671,9 +2108,13 @@
             May 2026
           </div>
 
+
           <div class="timeline-node">
+
             <span class="timeline-dot"></span>
+
           </div>
+
 
           <div class="entry-content">
 
@@ -1682,12 +2123,17 @@
               Corporate Startup Lab
             </h3>
 
+
             <div class="org">
+
               Hellbender
+
               <span class="location">
                 · Pittsburgh, PA
               </span>
+
             </div>
+
 
             <ul>
 
@@ -1712,7 +2158,9 @@
         </article>
 
 
-        <!-- FLIPKART -->
+        <!-- ===================================================
+             FLIPKART
+        ==================================================== -->
 
         <article class="entry">
 
@@ -1721,9 +2169,13 @@
             Aug 2025
           </div>
 
+
           <div class="timeline-node">
+
             <span class="timeline-dot"></span>
+
           </div>
+
 
           <div class="entry-content">
 
@@ -1733,12 +2185,17 @@
               Supply Chain
             </h3>
 
+
             <div class="org">
+
               Flipkart
+
               <span class="location">
                 · Bangalore
               </span>
+
             </div>
+
 
             <ul>
 
@@ -1780,7 +2237,9 @@
         </article>
 
 
-        <!-- AXIO -->
+        <!-- ===================================================
+             AXIO
+        ==================================================== -->
 
         <article class="entry">
 
@@ -1789,9 +2248,13 @@
             Sep 2024
           </div>
 
+
           <div class="timeline-node">
+
             <span class="timeline-dot"></span>
+
           </div>
+
 
           <div class="entry-content">
 
@@ -1801,12 +2264,17 @@
               Amazon Pay Later
             </h3>
 
+
             <div class="org">
+
               Axio
+
               <span class="location">
                 · Bangalore
               </span>
+
             </div>
+
 
             <ul>
 
@@ -1838,7 +2306,9 @@
         </article>
 
 
-        <!-- FLIPKART INTERN -->
+        <!-- ===================================================
+             FLIPKART INTERN
+        ==================================================== -->
 
         <article class="entry">
 
@@ -1847,9 +2317,13 @@
             Jul 2022
           </div>
 
+
           <div class="timeline-node">
+
             <span class="timeline-dot"></span>
+
           </div>
+
 
           <div class="entry-content">
 
@@ -1859,12 +2333,17 @@
               Grocery Supply Chain
             </h3>
 
+
             <div class="org">
+
               Flipkart
+
               <span class="location">
                 · Bangalore
               </span>
+
             </div>
+
 
             <ul>
 
@@ -1924,6 +2403,7 @@
 
         </div>
 
+
         <p>
           Placed 3rd out of 400+ teams.
           Built an agentic AI-powered grading
@@ -1951,6 +2431,7 @@
           </span>
 
         </div>
+
 
         <p>
           Project Manager for a CMU capstone
@@ -1980,6 +2461,7 @@
 
         </div>
 
+
         <p>
           Spearheaded strategic loyalty analysis
           for TUI Group's global rewards ecosystem,
@@ -2008,6 +2490,7 @@
 
         </div>
 
+
         <p>
           Developed a strategic transition from
           hardware sales to a scalable recurring-
@@ -2034,7 +2517,9 @@
         Skills
       </h2>
 
+
       <div class="skills">
+
 
         <div class="skill-group">
 
@@ -2085,13 +2570,18 @@
         Contact
       </h2>
 
+
       <div class="contact">
 
+
         <p class="contact-copy">
+
           Interested in product, AI, data,
           and the problems that sit at their
           intersection? I'd be happy to connect.
+
         </p>
+
 
         <div class="contact-links">
 
@@ -2126,7 +2616,7 @@
 
   <!-- =========================================================
        FOOTER
-  ========================================================= -->
+  ========================================================== -->
 
   <footer class="site">
 
@@ -2148,7 +2638,7 @@
 
   <!-- =========================================================
        BACK TO TOP
-  ========================================================= -->
+  ========================================================== -->
 
   <a
     href="#top"
@@ -2162,13 +2652,13 @@
 
   <!-- =========================================================
        JAVASCRIPT
-  ========================================================= -->
+  ========================================================== -->
 
   <script>
 
     /* =========================================================
        MOBILE MENU
-    ========================================================= */
+    ========================================================== */
 
     const menuToggle =
       document.getElementById("menuToggle");
@@ -2176,12 +2666,16 @@
     const navLinks =
       document.getElementById("navLinks");
 
+
     menuToggle.addEventListener(
       "click",
       () => {
+
         navLinks.classList.toggle("open");
+
       }
     );
+
 
     document
       .querySelectorAll(".nav-links a")
@@ -2190,7 +2684,9 @@
         link.addEventListener(
           "click",
           () => {
+
             navLinks.classList.remove("open");
+
           }
         );
 
@@ -2199,7 +2695,7 @@
 
     /* =========================================================
        SCROLL REVEAL
-    ========================================================= */
+    ========================================================== */
 
     const revealObserver =
       new IntersectionObserver(
@@ -2210,7 +2706,9 @@
 
             if (entry.isIntersecting) {
 
-              entry.target.classList.add("visible");
+              entry.target.classList.add(
+                "visible"
+              );
 
               revealObserver.unobserve(
                 entry.target
@@ -2240,7 +2738,7 @@
 
     /* =========================================================
        EXPERIENCE TIMELINE
-    ========================================================= */
+    ========================================================== */
 
     const timeline =
       document.getElementById(
@@ -2266,20 +2764,25 @@
         return;
       }
 
+
       const rect =
         timeline.getBoundingClientRect();
+
 
       const viewportCenter =
         window.innerHeight * 0.48;
 
+
       const total =
         rect.height;
+
 
       const raw =
         (
           viewportCenter -
           rect.top
         ) / total;
+
 
       const pct =
         Math.max(
@@ -2290,6 +2793,7 @@
           )
         );
 
+
       progress.style.height =
         (pct * 100) + "%";
 
@@ -2299,10 +2803,12 @@
         const r =
           entry.getBoundingClientRect();
 
+
         const active =
           r.top < viewportCenter &&
           r.bottom >
             viewportCenter - 40;
+
 
         entry.classList.toggle(
           "active",
@@ -2322,22 +2828,25 @@
       }
     );
 
+
     window.addEventListener(
       "resize",
       updateTimeline
     );
+
 
     updateTimeline();
 
 
     /* =========================================================
        BACK TO TOP
-    ========================================================= */
+    ========================================================== */
 
     const backTop =
       document.getElementById(
         "backTop"
       );
+
 
     window.addEventListener(
       "scroll",
