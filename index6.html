@@ -26,13 +26,10 @@
       --light: #777777;
       --border: #dedede;
       --bg: #ffffff;
-
       --accent: #C41230;
       --accent-soft: #f9e8eb;
-
       --cmu-black: #111111;
       --cmu-gray: #6D6E71;
-
       --max: 1060px;
     }
 
@@ -75,7 +72,7 @@
     }
 
     /* =========================
-       HEADER / NAVIGATION
+       HEADER
        ========================= */
 
     header {
@@ -147,7 +144,7 @@
       display: grid;
       grid-template-columns: 210px 1fr;
       gap: 42px;
-      padding: 70px 0 55px;
+      padding: 70px 0 45px;
       align-items: start;
       position: relative;
     }
@@ -177,6 +174,15 @@
       border-radius: 8px;
       border: 1px solid var(--border);
       box-shadow: 5px 5px 0 rgba(196,18,48,.12);
+    }
+
+    .hero-main {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 145px;
+      gap: 35px;
+      align-items: start;
+      position: relative;
+      z-index: 1;
     }
 
     .eyebrow {
@@ -250,6 +256,104 @@
     }
 
     /* =========================
+       RESUME
+       ========================= */
+
+    .resume-preview {
+      display: block;
+      width: 145px;
+      text-align: center;
+      border: 0;
+      transition: transform .3s ease;
+    }
+
+    .resume-preview img {
+      display: block;
+      width: 145px;
+      height: auto;
+      border: 1px solid #d8d8d8;
+      box-shadow: 5px 6px 18px rgba(0,0,0,.10);
+      transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+    }
+
+    .resume-preview:hover {
+      color: var(--accent);
+      transform: translateY(-4px);
+    }
+
+    .resume-preview:hover img {
+      box-shadow: 7px 10px 24px rgba(0,0,0,.15);
+    }
+
+    .resume-label {
+      display: block;
+      margin-top: 9px;
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* =========================
+       LOGO STRIP
+       ========================= */
+
+    .logo-strip {
+      padding: 18px 0 28px;
+      border-top: 0;
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .logo-strip-inner {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 20px;
+      align-items: center;
+    }
+
+    .logo-item {
+      height: 105px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 22px;
+      background: #fff;
+      overflow: visible;
+    }
+
+    .logo-item img {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 82px;
+      object-fit: contain;
+      object-position: center;
+      opacity: .92;
+      transition:
+        transform .3s ease,
+        opacity .3s ease;
+    }
+
+    .logo-item:hover img {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+
+    /* Extra room for Hellbender */
+    .logo-item:nth-child(3) {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+
+    .logo-item:nth-child(3) img {
+      max-width: 90%;
+      max-height: 72px;
+    }
+
+    /* =========================
        SECTIONS
        ========================= */
 
@@ -286,11 +390,6 @@
     /* =========================
        EDUCATION
        ========================= */
-
-    .education-grid {
-      display: grid;
-      gap: 24px;
-    }
 
     .education-highlight {
       position: relative;
@@ -411,10 +510,6 @@
       font-size: 17px;
     }
 
-    .education-secondary .education-meta {
-      margin-bottom: 8px;
-    }
-
     .education-meta {
       color: var(--muted);
       font-size: 14px;
@@ -460,7 +555,6 @@
       grid-template-columns: 185px 35px 1fr;
       gap: 0;
       padding: 0 0 48px;
-      border-bottom: 0;
       position: relative;
     }
 
@@ -641,10 +735,6 @@
       gap: 25px 50px;
     }
 
-    .skill-group {
-      transition: transform .3s ease;
-    }
-
     .skill-group h3 {
       font-size: 15px;
       margin: 0 0 8px;
@@ -730,7 +820,7 @@
     }
 
     .entry:nth-child(3) .entry-content {
-      transition-delay: .1s;
+      transition-delay: .10s;
     }
 
     .entry:nth-child(4) .entry-content {
@@ -839,12 +929,59 @@
       .hero {
         grid-template-columns: 1fr;
         gap: 24px;
-        padding: 48px 0 42px;
+        padding: 48px 0 35px;
       }
 
       .portrait {
         width: 145px;
         height: 145px;
+      }
+
+      .hero-main {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .resume-preview {
+        width: 125px;
+      }
+
+      .resume-preview img {
+        width: 125px;
+      }
+
+      /* Logo strip becomes horizontally scrollable */
+      .logo-strip-inner {
+        display: flex;
+        gap: 18px;
+        overflow-x: auto;
+        padding: 5px 5px 10px;
+        scrollbar-width: none;
+      }
+
+      .logo-strip-inner::-webkit-scrollbar {
+        display: none;
+      }
+
+      .logo-item {
+        flex: 0 0 150px;
+        height: 80px;
+        padding: 8px 16px;
+      }
+
+      .logo-item img {
+        max-width: 130px;
+        max-height: 65px;
+      }
+
+      .logo-item:nth-child(3) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .logo-item:nth-child(3) img {
+        max-width: 125px;
+        max-height: 58px;
       }
 
       .timeline-track {
@@ -968,49 +1105,140 @@
       alt="Manav Somani"
     >
 
-    <div>
+    <div class="hero-main">
 
-      <div class="eyebrow">
-        CARNEGIE MELLON UNIVERSITY · PRODUCT · DATA · AI
+      <div>
+
+        <div class="eyebrow">
+          CARNEGIE MELLON UNIVERSITY · PRODUCT · DATA · AI
+        </div>
+
+        <h1>
+          Manav Somani
+        </h1>
+
+        <p class="hero-title">
+          PRODUCT and ANALYTICS professional (3.5+ YOE)
+        </p>
+
+        <p class="hero-copy">
+          I am a graduate student at Carnegie Mellon University with 3.5+ years
+          of experience across AI, e-commerce, and fintech. I build 0-to-1
+          products and data platforms, define AI evaluation frameworks, and
+          turn operational data into product and roadmap decisions.
+        </p>
+
+        <div class="links">
+
+          <a href="mailto:msomani@andrew.cmu.edu">
+            Email
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/manavsomani/"
+            target="_blank"
+            rel="noopener"
+          >
+            LinkedIn
+          </a>
+
+          <a href="tel:+14126897119">
+            412-689-7119
+          </a>
+
+          <a href="#work">
+            Selected Work ↓
+          </a>
+
+        </div>
+
       </div>
 
-      <h1>
-        Manav Somani
-      </h1>
 
-      <p class="hero-title">
-        PRODUCT and ANALYTICS professional (3.5+ YOE)
-      </p>
+      <!-- RESUME THUMBNAIL -->
 
-      <p class="hero-copy">
-        I am a graduate student at Carnegie Mellon University with 3.5+ years
-        of experience across AI, e-commerce, and fintech. I build 0-to-1
-        products and data platforms, define AI evaluation frameworks, and turn
-        operational data into product and roadmap decisions.
-      </p>
+      <a
+        class="resume-preview"
+        href="resume_manav_somani.pdf"
+        target="_blank"
+        rel="noopener"
+        aria-label="Open Manav Somani resume"
+      >
 
-      <div class="links">
-
-        <a href="mailto:msomani@andrew.cmu.edu">
-          Email
-        </a>
-
-        <a
-          href="https://www.linkedin.com/in/manavsomani/"
-          target="_blank"
-          rel="noopener"
+        <img
+          src="resume-thumbnail.png"
+          alt="Preview of Manav Somani resume"
         >
-          LinkedIn
-        </a>
 
-        <a href="tel:+14126897119">
-          412-689-7119
-        </a>
+        <span class="resume-label">
+          View Resume ↗
+        </span>
 
-        <a href="#work">
-          Selected Work ↓
-        </a>
+      </a>
 
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       LOGO STRIP
+       ========================= -->
+
+  <section
+    class="logo-strip"
+    aria-label="Organizations"
+  >
+
+    <div class="logo-strip-inner">
+
+      <!-- 1. CMU -->
+
+      <div class="logo-item">
+        <img
+          src="cmu_logo.jpg"
+          alt="Carnegie Mellon University"
+        >
+      </div>
+
+
+      <!-- 2. T-Mobile -->
+
+      <div class="logo-item">
+        <img
+          src="tmobile_logo.png"
+          alt="T-Mobile"
+        >
+      </div>
+
+
+      <!-- 3. Hellbender -->
+
+      <div class="logo-item">
+        <img
+          src="hellbender_logo.png"
+          alt="Hellbender"
+        >
+      </div>
+
+
+      <!-- 4. Walmart / Flipkart -->
+
+      <div class="logo-item">
+        <img
+          src="flipkart_walmart_logo.jpeg"
+          alt="Walmart and Flipkart"
+        >
+      </div>
+
+
+      <!-- 5. Amazon / Axio -->
+
+      <div class="logo-item">
+        <img
+          src="axio_amazon_logo.png"
+          alt="Amazon and Axio"
+        >
       </div>
 
     </div>
@@ -1673,74 +1901,96 @@
 </a>
 
 
-<!-- =========================
-     JAVASCRIPT
-     ========================= -->
-
 <script>
 
-  /* Mobile Navigation */
+  /* =========================
+     MOBILE NAVIGATION
+     ========================= */
 
-  const menuToggle = document.getElementById('menuToggle');
-  const navLinks = document.getElementById('navLinks');
+  const menuToggle =
+    document.getElementById('menuToggle');
+
+  const navLinks =
+    document.getElementById('navLinks');
 
   menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('open');
   });
 
-  document.querySelectorAll('.nav-links a').forEach(link => {
+  document
+    .querySelectorAll('.nav-links a')
+    .forEach(link => {
 
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-    });
-
-  });
-
-
-  /* Scroll Reveal */
-
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-
-      entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-          entry.target.classList.add('visible');
-
-          revealObserver.unobserve(entry.target);
-
-        }
-
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
       });
 
-    },
-    {
-      threshold: 0.08
-    }
-  );
+    });
+
+
+  /* =========================
+     SCROLL REVEAL
+     ========================= */
+
+  const revealObserver =
+    new IntersectionObserver(
+      (entries) => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add('visible');
+
+            revealObserver.unobserve(
+              entry.target
+            );
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.08
+      }
+    );
 
 
   document
     .querySelectorAll('.fade, .entry')
-    .forEach(el => revealObserver.observe(el));
+    .forEach(el => {
+
+      revealObserver.observe(el);
+
+    });
 
 
-  /* Experience Timeline */
+  /* =========================
+     EXPERIENCE TIMELINE
+     ========================= */
 
   const timeline =
-    document.getElementById('experienceTimeline');
+    document.getElementById(
+      'experienceTimeline'
+    );
 
   const progress =
-    document.getElementById('timelineProgress');
+    document.getElementById(
+      'timelineProgress'
+    );
 
   const entries =
-    [...document.querySelectorAll('.timeline .entry')];
+    [...document.querySelectorAll(
+      '.timeline .entry'
+    )];
 
 
   function updateTimeline() {
 
-    if (!timeline || !progress) return;
+    if (!timeline || !progress) {
+      return;
+    }
 
     const rect =
       timeline.getBoundingClientRect();
@@ -1752,7 +2002,8 @@
       rect.height;
 
     const raw =
-      (viewportCenter - rect.top) / total;
+      (viewportCenter - rect.top) /
+      total;
 
     const pct =
       Math.max(
@@ -1771,7 +2022,8 @@
 
       const active =
         r.top < viewportCenter &&
-        r.bottom > viewportCenter - 40;
+        r.bottom >
+          viewportCenter - 40;
 
       entry.classList.toggle(
         'active',
@@ -1797,10 +2049,14 @@
   updateTimeline();
 
 
-  /* Back To Top */
+  /* =========================
+     BACK TO TOP
+     ========================= */
 
   const backTop =
-    document.getElementById('backTop');
+    document.getElementById(
+      'backTop'
+    );
 
 
   window.addEventListener(
