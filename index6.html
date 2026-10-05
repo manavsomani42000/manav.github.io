@@ -342,6 +342,7 @@
       opacity: 1;
     }
 
+    /* Extra room for Hellbender */
     .logo-item:nth-child(3) {
       padding-left: 32px;
       padding-right: 32px;
@@ -561,11 +562,6 @@
       padding-bottom: 5px;
     }
 
-    /*
-      EXPERIENCE LOGOS
-      Larger than before, with natural aspect ratio.
-    */
-
     .date {
       color: var(--cmu-gray);
       font-size: 13px;
@@ -573,7 +569,6 @@
       padding-top: 4px;
       padding-right: 18px;
       text-align: right;
-
       display: flex;
       flex-direction: column;
       align-items: flex-end;
@@ -585,14 +580,12 @@
       width: auto;
       max-width: 180px;
       height: auto;
-      max-height: 72px;
+      max-height: 75px;
       object-fit: contain;
       object-position: center;
       opacity: .88;
       filter: saturate(.92);
-      transition:
-        opacity .3s ease,
-        transform .3s ease;
+      transition: opacity .3s ease, transform .3s ease;
     }
 
     .entry:hover .company-logo {
@@ -645,7 +638,7 @@
 
     .org {
       color: var(--accent);
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 500;
       margin-bottom: 8px;
     }
@@ -723,6 +716,8 @@
       color: #555;
       max-width: 850px;
     }
+
+    /* RubricGuard links */
 
     .work-links {
       display: flex;
@@ -977,8 +972,7 @@
         width: 125px;
       }
 
-      /* Logo strip */
-
+      /* Logo strip becomes horizontally scrollable */
       .logo-strip-inner {
         display: flex;
         gap: 18px;
@@ -1012,8 +1006,6 @@
         max-height: 58px;
       }
 
-      /* Timeline */
-
       .timeline-track {
         left: 6px;
       }
@@ -1028,15 +1020,8 @@
         grid-column: 2;
         grid-row: 1;
         text-align: left;
-        align-items: flex-start;
         padding: 0 0 6px;
-        gap: 8px;
       }
-
-      /*
-        Mobile logos:
-        still large, but constrained to the screen width.
-      */
 
       .company-logo {
         max-width: 150px;
@@ -1234,12 +1219,17 @@
 
     <div class="logo-strip-inner">
 
+      <!-- 1. CMU -->
+
       <div class="logo-item">
         <img
           src="cmu_logo.jpeg"
           alt="Carnegie Mellon University"
         >
       </div>
+
+
+      <!-- 2. T-Mobile -->
 
       <div class="logo-item">
         <img
@@ -1248,6 +1238,9 @@
         >
       </div>
 
+
+      <!-- 3. Hellbender -->
+
       <div class="logo-item">
         <img
           src="hellbender_logo.png"
@@ -1255,12 +1248,18 @@
         >
       </div>
 
+
+      <!-- 4. Walmart / Flipkart -->
+
       <div class="logo-item">
         <img
           src="flipkart_walmart_logo.jpeg"
           alt="Walmart and Flipkart"
         >
       </div>
+
+
+      <!-- 5. Amazon / Axio -->
 
       <div class="logo-item">
         <img
@@ -1415,17 +1414,8 @@
       <article class="entry">
 
         <div class="date">
-
-          <span>
-            May 2026 – Aug 2026
-          </span>
-
-          <img
-            class="company-logo"
-            src="tmobile_logo.png"
-            alt="T-Mobile logo"
-          >
-
+          <span>May 2026 – Aug 2026</span>
+          <img class="company-logo" src="tmobile_logo.png" alt="T-Mobile logo">
         </div>
 
         <div class="timeline-node">
@@ -1484,17 +1474,8 @@
       <article class="entry">
 
         <div class="date">
-
-          <span>
-            Jan 2026 – May 2026
-          </span>
-
-          <img
-            class="company-logo"
-            src="hellbender_logo.png"
-            alt="Hellbender logo"
-          >
-
+          <span>Jan 2026 – May 2026</span>
+          <img class="company-logo" src="hellbender_logo.png" alt="Hellbender logo">
         </div>
 
         <div class="timeline-node">
@@ -1540,17 +1521,8 @@
       <article class="entry">
 
         <div class="date">
-
-          <span>
-            Sep 2024 – Aug 2025
-          </span>
-
-          <img
-            class="company-logo"
-            src="flipkart_walmart_logo.jpeg"
-            alt="Flipkart and Walmart logo"
-          >
-
+          <span>Sep 2024 – Aug 2025</span>
+          <img class="company-logo" src="flipkart_walmart_logo.jpeg" alt="Flipkart and Walmart logo">
         </div>
 
         <div class="timeline-node">
@@ -1609,17 +1581,8 @@
       <article class="entry">
 
         <div class="date">
-
-          <span>
-            Mar 2023 – Sep 2024
-          </span>
-
-          <img
-            class="company-logo"
-            src="axio_amazon_logo.png"
-            alt="Amazon and Axio logo"
-          >
-
+          <span>Mar 2023 – Sep 2024</span>
+          <img class="company-logo" src="axio_amazon_logo.png" alt="Amazon and Axio logo">
         </div>
 
         <div class="timeline-node">
@@ -1670,17 +1633,8 @@
       <article class="entry">
 
         <div class="date">
-
-          <span>
-            Feb 2022 – Jul 2022
-          </span>
-
-          <img
-            class="company-logo"
-            src="flipkart_walmart_logo.jpeg"
-            alt="Flipkart and Walmart logo"
-          >
-
+          <span>Feb 2022 – Jul 2022</span>
+          <img class="company-logo" src="flipkart_walmart_logo.jpeg" alt="Flipkart and Walmart logo">
         </div>
 
         <div class="timeline-node">
