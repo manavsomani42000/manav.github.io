@@ -28,7 +28,6 @@
       --border: #dedede;
       --bg: #ffffff;
 
-      /* CMU */
       --accent: #C41230;
       --accent-soft: #f9e8eb;
       --cmu-black: #111111;
@@ -161,7 +160,7 @@
 
 
     /* =========================
-       GENERAL
+       MAIN
     ========================= */
 
     main {
@@ -280,6 +279,35 @@
         5px 5px 0 rgba(196,18,48,.12);
     }
 
+
+    /* =========================
+       HERO CONTENT
+    ========================= */
+
+    .hero-content {
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1fr) 145px;
+
+      gap: 35px;
+
+      align-items: center;
+
+      position: relative;
+
+      z-index: 2;
+    }
+
+    .hero-intro {
+      min-width: 0;
+    }
+
+
+    /* =========================
+       HERO TEXT
+    ========================= */
+
     .eyebrow {
       color: var(--accent);
 
@@ -382,49 +410,49 @@
 
 
     /* =========================
-       RESUME
+       RESUME THUMBNAIL
     ========================= */
 
-    .resume-container {
-      display: flex;
+    .hero-resume {
+      width: 145px;
 
-      justify-content: center;
+      justify-self: end;
 
-      padding: 5px 0 10px;
+      text-align: center;
     }
 
-    .resume-thumbnail {
+    .hero-resume-link {
       display: block;
 
       position: relative;
 
-      width: min(420px, 100%);
+      width: 145px;
+
+      overflow: hidden;
 
       border: 1px solid var(--border);
 
       background: #fff;
 
       box-shadow:
-        0 12px 30px rgba(0,0,0,.08);
-
-      overflow: hidden;
+        0 8px 22px rgba(0,0,0,.08);
 
       transition:
-        transform .35s ease,
-        box-shadow .35s ease,
-        border-color .35s ease;
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
     }
 
-    .resume-thumbnail:hover {
-      transform: translateY(-6px);
+    .hero-resume-link:hover {
+      transform: translateY(-5px);
 
       border-color: var(--accent);
 
       box-shadow:
-        0 20px 42px rgba(196,18,48,.18);
+        0 14px 30px rgba(196,18,48,.18);
     }
 
-    .resume-thumbnail img {
+    .hero-resume-image {
       display: block;
 
       width: 100%;
@@ -432,7 +460,7 @@
       height: auto;
     }
 
-    .resume-hover {
+    .hero-resume-overlay {
       position: absolute;
 
       inset: 0;
@@ -447,21 +475,33 @@
 
       opacity: 0;
 
-      transition: opacity .3s ease;
+      transition: opacity .25s ease;
     }
 
-    .resume-thumbnail:hover .resume-hover {
+    .hero-resume-link:hover .hero-resume-overlay {
       opacity: 1;
     }
 
-    .resume-hover span {
+    .hero-resume-overlay span {
       color: #fff;
 
-      font-size: 18px;
+      font-size: 14px;
 
       font-weight: 600;
 
       letter-spacing: .02em;
+    }
+
+    .hero-resume-label {
+      margin-top: 8px;
+
+      color: var(--accent);
+
+      font-size: 9px;
+
+      font-weight: 700;
+
+      letter-spacing: .16em;
     }
 
 
@@ -726,7 +766,8 @@
     .entry {
       display: grid;
 
-      grid-template-columns: 185px 35px 1fr;
+      grid-template-columns:
+        185px 35px 1fr;
 
       gap: 0;
 
@@ -820,22 +861,6 @@
       opacity: 1;
 
       transform: translateY(0);
-    }
-
-    .entry:nth-child(2) .entry-content {
-      transition-delay: .06s;
-    }
-
-    .entry:nth-child(3) .entry-content {
-      transition-delay: .10s;
-    }
-
-    .entry:nth-child(4) .entry-content {
-      transition-delay: .14s;
-    }
-
-    .entry:nth-child(5) .entry-content {
-      transition-delay: .18s;
     }
 
     .entry:hover .entry-content {
@@ -1045,27 +1070,6 @@
 
 
     /* =========================
-       ANIMATIONS
-    ========================= */
-
-    .fade {
-      opacity: 0;
-
-      transform: translateY(18px);
-
-      transition:
-        opacity .75s cubic-bezier(.22,1,.36,1),
-        transform .75s cubic-bezier(.22,1,.36,1);
-    }
-
-    .fade.visible {
-      opacity: 1;
-
-      transform: translateY(0);
-    }
-
-
-    /* =========================
        BACK TO TOP
     ========================= */
 
@@ -1125,6 +1129,27 @@
 
 
     /* =========================
+       ANIMATIONS
+    ========================= */
+
+    .fade {
+      opacity: 0;
+
+      transform: translateY(18px);
+
+      transition:
+        opacity .75s cubic-bezier(.22,1,.36,1),
+        transform .75s cubic-bezier(.22,1,.36,1);
+    }
+
+    .fade.visible {
+      opacity: 1;
+
+      transform: translateY(0);
+    }
+
+
+    /* =========================
        MOBILE
     ========================= */
 
@@ -1170,6 +1195,8 @@
       }
 
 
+      /* HERO */
+
       .hero {
         grid-template-columns: 1fr;
 
@@ -1183,26 +1210,39 @@
         height: 145px;
       }
 
+      .hero-content {
+        grid-template-columns:
+          minmax(0, 1fr) 100px;
 
-      /* Resume */
+        gap: 20px;
 
-      .resume-container {
-        justify-content: flex-start;
+        align-items: start;
       }
 
-      .resume-thumbnail {
-        width: min(360px, 100%);
+      .hero-resume {
+        width: 100px;
+
+        justify-self: end;
+      }
+
+      .hero-resume-link {
+        width: 100px;
+      }
+
+      .hero-resume-label {
+        font-size: 8px;
       }
 
 
-      /* Timeline */
+      /* TIMELINE */
 
       .timeline-track {
         left: 6px;
       }
 
       .entry {
-        grid-template-columns: 28px 1fr;
+        grid-template-columns:
+          28px 1fr;
 
         gap: 0;
 
@@ -1236,7 +1276,7 @@
       }
 
 
-      /* Education */
+      /* EDUCATION */
 
       .cmu-row {
         align-items: flex-start;
@@ -1268,14 +1308,14 @@
       }
 
 
-      /* Skills */
+      /* SKILLS */
 
       .skills {
         grid-template-columns: 1fr;
       }
 
 
-      /* Contact */
+      /* CONTACT */
 
       .contact {
         grid-template-columns: 1fr;
@@ -1286,7 +1326,7 @@
       }
 
 
-      /* Footer */
+      /* FOOTER */
 
       footer {
         flex-direction: column;
@@ -1343,7 +1383,11 @@
         Experience
       </a>
 
-      <a href="#resume">
+      <a
+        href="resume_manav_somani.pdf"
+        target="_blank"
+        rel="noopener"
+      >
         Resume
       </a>
 
@@ -1389,102 +1433,99 @@
     >
 
 
-    <div>
-
-      <div class="eyebrow">
-        CARNEGIE MELLON UNIVERSITY · PRODUCT · DATA · AI
-      </div>
+    <div class="hero-content">
 
 
-      <h1>
-        Manav Somani
-      </h1>
+      <div class="hero-intro">
+
+        <div class="eyebrow">
+          CARNEGIE MELLON UNIVERSITY · PRODUCT · DATA · AI
+        </div>
 
 
-      <p class="hero-title">
-        Analytics turned Product &amp; Program Management professional
-      </p>
+        <h1>
+          Manav Somani
+        </h1>
 
 
-      <p class="hero-copy">
-
-        I am a graduate student at Carnegie Mellon University with 3.5+ years
-        of experience across AI, e-commerce, and fintech. I build 0-to-1
-        products and data platforms, define AI evaluation frameworks, and turn
-        operational data into product and roadmap decisions.
-
-      </p>
+        <p class="hero-title">
+          Analytics turned Product &amp; Program Management professional
+        </p>
 
 
-      <div class="links">
+        <p class="hero-copy">
 
-        <a href="mailto:msomani@andrew.cmu.edu">
-          Email
-        </a>
+          I am a graduate student at Carnegie Mellon University with 3.5+ years
+          of experience across AI, e-commerce, and fintech. I build 0-to-1
+          products and data platforms, define AI evaluation frameworks, and turn
+          operational data into product and roadmap decisions.
 
-        <a
-          href="https://www.linkedin.com/in/manavsomani/"
-          target="_blank"
-          rel="noopener"
-        >
-          LinkedIn
-        </a>
-
-        <a href="tel:+14126897119">
-          412-689-7119
-        </a>
-
-        <a href="#work">
-          Selected Work ↓
-        </a>
-
-      </div>
-
-    </div>
-
-  </section>
+        </p>
 
 
+        <div class="links">
 
-  <!-- =========================
-       RESUME
-  ========================= -->
+          <a href="mailto:msomani@andrew.cmu.edu">
+            Email
+          </a>
 
-  <section
-    id="resume"
-    class="fade"
-  >
+          <a
+            href="https://www.linkedin.com/in/manavsomani/"
+            target="_blank"
+            rel="noopener"
+          >
+            LinkedIn
+          </a>
 
-    <h2 class="section-title">
-      Resume
-    </h2>
+          <a href="tel:+14126897119">
+            412-689-7119
+          </a>
 
-
-    <div class="resume-container">
-
-      <a
-        href="resume_manav_somani.pdf"
-        target="_blank"
-        rel="noopener"
-        class="resume-thumbnail"
-        aria-label="Open Manav Somani resume"
-      >
-
-        <img
-          src="resume-thumbnail.png"
-          alt="Manav Somani Resume"
-        >
-
-
-        <div class="resume-hover">
-
-          <span>
-            View Resume ↗
-          </span>
+          <a href="#work">
+            Selected Work ↓
+          </a>
 
         </div>
 
-      </a>
+      </div>
+
+
+      <!-- =========================
+           RESUME THUMBNAIL
+      ========================= -->
+
+      <div class="hero-resume">
+
+        <a
+          href="resume_manav_somani.pdf"
+          target="_blank"
+          rel="noopener"
+          aria-label="Open Manav Somani Resume"
+          class="hero-resume-link"
+        >
+
+          <img
+            src="resume-thumbnail.png"
+            alt="Manav Somani Resume"
+            class="hero-resume-image"
+          >
+
+          <div class="hero-resume-overlay">
+
+            <span>
+              Resume ↗
+            </span>
+
+          </div>
+
+        </a>
+
+
+        <div class="hero-resume-label">
+          RESUME
+        </div>
+
+      </div>
 
     </div>
 
@@ -1508,12 +1549,12 @@
 
     <p class="intro">
 
-      My background sits at the intersection of product management, analytics,
-      and technology. I enjoy taking ambiguous problems, understanding them
-      through data and users, and translating the insight into products,
-      systems, and strategies that create measurable impact. My experience
-      spans T-Mobile's AI Engineering team, Flipkart's supply-chain operations,
-      and Axio's digital collections business.
+      My background sits at the intersection of product management,
+      analytics, and technology. I enjoy taking ambiguous problems,
+      understanding them through data and users, and translating the insight
+      into products, systems, and strategies that create measurable impact.
+      My experience spans T-Mobile's AI Engineering team, Flipkart's
+      supply-chain operations, and Axio's digital collections business.
 
     </p>
 
@@ -1536,7 +1577,6 @@
 
 
     <div class="education-highlight">
-
 
       <div class="cmu-row">
 
@@ -1566,7 +1606,6 @@
         </div>
 
       </div>
-
 
 
       <div class="cmu-meta">
@@ -1600,7 +1639,6 @@
       </div>
 
 
-
       <p class="cmu-coursework">
 
         <strong>
@@ -1615,7 +1653,6 @@
       </p>
 
     </div>
-
 
 
     <div class="education-secondary">
@@ -1664,7 +1701,6 @@
       id="experienceTimeline"
     >
 
-
       <div
         class="timeline-track"
         aria-hidden="true"
@@ -1676,7 +1712,6 @@
         ></div>
 
       </div>
-
 
 
       <!-- T-MOBILE -->
